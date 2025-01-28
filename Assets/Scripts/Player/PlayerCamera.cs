@@ -5,6 +5,13 @@ using UnityEngine;
 public class PlayerCamera : MonoBehaviour
 {
     float xMovement, yMovement;
+
+    private void Start()
+    {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
     private void FixedUpdate()
     {
         UpdateCameraRotation();

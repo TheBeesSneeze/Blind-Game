@@ -6,6 +6,7 @@ public class PlayerJump : MonoBehaviour
 {
     [Tooltip("A scaler to help with MJC. If it feels like its not doing anything, increase the other 2")][SerializeField] float jumpPower;
     [Tooltip("How long the player can charge by holding space (in seconds)")][SerializeField] float maxJumpCharge;
+    [SerializeField] SoundWaveProperties soundWave;
 
     private Rigidbody rb;
     private PlayerManager playerManager;
@@ -21,6 +22,7 @@ public class PlayerJump : MonoBehaviour
         playerManager = GetComponent<PlayerManager>();
         InputEvents.JumpStarted.AddListener(ChargeJump);
         InputEvents.JumpCanceled.AddListener(ReleaseJump);
+        EventManager.OnPlayerGrounded.AddListener(OnPlayerLand);
     }
 
     private void ChargeJump()
@@ -65,5 +67,10 @@ public class PlayerJump : MonoBehaviour
         StopCoroutine(JumpingCounter());
         time = 0f;
         chargingJump = false;
+    }
+
+    private void OnPlayerLand()
+    {
+        SoundWaveManager.Instance.CreateSoundWaveAtPosition(rb.position, soundWave);
     }
 }
