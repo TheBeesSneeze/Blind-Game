@@ -16,7 +16,7 @@ public class PlayerManager : MonoBehaviour
     [ReadOnly] public bool isGrounded;
 
     private Collider collider;
-    public float playerHeight, playerWidth;
+    private float playerHeight, playerWidth;
 
     private void Start()
     {

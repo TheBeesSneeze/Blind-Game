@@ -6,6 +6,7 @@ public class PlayerJump : MonoBehaviour
 {
     [SerializeField] float gravityForce;
     [SerializeField] float jumpHeight;
+    [SerializeField] SoundWaveProperties soundWave;
 
     private Rigidbody rb;
     private PlayerManager playerManager;
@@ -16,6 +17,7 @@ public class PlayerJump : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         playerManager = GetComponent<PlayerManager>();
         InputEvents.JumpStarted.AddListener(Jump);
+        EventManager.OnPlayerGrounded.AddListener(OnPlayerLand);
     }
 
     private void Jump()
@@ -28,5 +30,10 @@ public class PlayerJump : MonoBehaviour
         {
             rb.AddForce(Vector3.up * (Mathf.Sqrt(2 * jumpHeight * grav)), ForceMode.Impulse);
         }
+    }
+
+    private void OnPlayerLand()
+    {
+        SoundWaveManager.Instance.CreateSoundWaveAtPosition(rb.position, soundWave);
     }
 }
