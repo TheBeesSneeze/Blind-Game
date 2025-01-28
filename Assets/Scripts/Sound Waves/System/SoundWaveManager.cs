@@ -30,7 +30,7 @@ public class SoundWaveManager : Singleton<SoundWaveManager>
         particle.Play(false);
 
         if(particle.transform.parent != null)
-            Destroy(particle.transform.parent, lifetime);
+            Destroy(particle.transform.parent.gameObject, lifetime);
         else
             Destroy(particle.gameObject);
     }
