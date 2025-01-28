@@ -29,7 +29,10 @@ public class SoundWaveManager : Singleton<SoundWaveManager>
         ParticleSystem particle = InstantiateSoundWave(position, colorOverLifetime, maxRadius, lifetime);
         particle.Play(false);
 
-        Destroy(particle.gameObject, lifetime);
+        if(particle.transform.parent != null)
+            Destroy(particle.transform.parent, lifetime);
+        else
+            Destroy(particle.gameObject);
     }
 
     /// <summary>
