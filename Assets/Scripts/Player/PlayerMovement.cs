@@ -35,8 +35,8 @@ public class PlayerMovement : MonoBehaviour
     {
         movementDirection = InputEvents.Instance.InputDirection;
 
-        rb.AddForce(movementDirection.normalized * speed, ForceMode.Force);
+        //rb.AddForce(movementDirection.normalized * speed, ForceMode.Force);
 
-        rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
+        //rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
     }
 }

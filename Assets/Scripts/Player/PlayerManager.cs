@@ -16,12 +16,14 @@ public class PlayerManager : MonoBehaviour
     [ReadOnly] public bool isGrounded;
 
     private Collider collider;
+    private Rigidbody rb;
     public float playerHeight, playerWidth;
+    public float GravityForce;
 
     private void Start()
     {
         collider = GetComponent<Collider>();
-
+        rb = GetComponent<Rigidbody>();
 
         playerHeight = collider.bounds.size.y;
         playerWidth = collider.bounds.size.x; //code copied from a 2d project, just hoping that the players z size is the same as the x size lol
@@ -31,7 +33,7 @@ public class PlayerManager : MonoBehaviour
     { 
         // Calculating IsGrounded every frame because im anticipating that isGrounded is going to be needed multiple times/ per frame in some scripts,
         // so having multiple scripts call the check grounded function is redundant
-        GroundedUpdate(); 
+        GroundedUpdate();
     }
 
     void GroundedUpdate()
@@ -49,6 +51,7 @@ public class PlayerManager : MonoBehaviour
             EventManager.WhilePlayerGrounded.Invoke();
         else
             EventManager.WhilePlayerNotGrounded.Invoke();
+            rb.AddForce(Physics.gravity * GravityForce, ForceMode.Acceleration);
     }
 
     private bool CheckIfGrounded()
