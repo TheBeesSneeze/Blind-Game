@@ -7,7 +7,6 @@ public class PlayerJump : MonoBehaviour
     [Tooltip("A scaler to help with MJC. If it feels like its not doing anything, increase the other 2")][SerializeField] float jumpPower;
     [Tooltip("How long the player can charge by holding space (in seconds)")][SerializeField] float maxJumpCharge;
     [SerializeField] SoundWaveProperties soundWave;
-    [SerializeField] List<SoundWaveProperties> test;
 
     private Rigidbody rb;
     private PlayerManager playerManager;
