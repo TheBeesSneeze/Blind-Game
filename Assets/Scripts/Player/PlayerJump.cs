@@ -1,3 +1,8 @@
+/*
+ * Handles regular player jumping (SPACE)
+ * 
+ * Toby, Eli
+ */
 using NaughtyAttributes;
 using System.Collections;
 using UnityEngine;
