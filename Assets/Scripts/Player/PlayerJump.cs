@@ -7,6 +7,7 @@ public class PlayerJump : MonoBehaviour
     [SerializeField] float gravityForce;
     [SerializeField] float jumpHeight;
     [SerializeField] SoundWaveProperties soundWave;
+    [SerializeField] List<SoundWaveProperties> test;
 
     private Rigidbody rb;
     private PlayerManager playerManager;
