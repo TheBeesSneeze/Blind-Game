@@ -72,13 +72,14 @@ public class InputEvents : Singleton<InputEvents>
         Jump.started += ctx => ActionStarted(ref JumpPressed, JumpStarted);
         LeftClick.started += ctx => ActionStarted(ref LeftClickPressed, LeftClickStarted);
         Pause.started += ctx => { PausePressed = true; PauseStarted.Invoke(); };
-        Interact.started += ctx => { InteractPressed = true; InteractStarted.Invoke(); };
+        Interact.started += ctx => ActionStarted(ref InteractPressed, InteractStarted);
 
         Move.canceled += ctx => ActionCanceled(ref MovePressed, MoveCanceled);
         Jump.canceled += ctx => ActionCanceled(ref JumpPressed, JumpCanceled);
         LeftClick.canceled += ctx => ActionCanceled(ref LeftClickPressed, LeftClickCanceled);
         Pause.canceled += ctx => { PausePressed = false; PauseCanceled.Invoke(); };
-        Interact.canceled += ctx => { InteractPressed = false; InteractCanceled.Invoke(); };
+        Interact.canceled += ctx => ActionCanceled(ref InteractPressed, InteractCanceled);
+
     }
     void ActionStarted(ref bool pressedFlag, UnityEvent actionEvent)
     {
