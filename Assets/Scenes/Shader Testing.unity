@@ -2378,6 +2378,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8c7a330612d011408bfb5386b1ddbb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1565968186 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9179949463330598672, guid: 774f3d8cc9528ef4c9b38caef8f2d8c0, type: 3}
+  m_PrefabInstance: {fileID: 7472489999260342867}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1565968189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1565968186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c639e481f3b0414da492a78fde5a485, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: e8a6673731156264c916187e3a39c91d, type: 2}
+  propertyPath: _PlayerPosition
+  shader: {fileID: -6465566751694194690, guid: 1cda39d4692b4764d826ec872a46b4d4, type: 3}
+  obj: {fileID: 1902911084}
 --- !u!1 &1687258581
 GameObject:
   m_ObjectHideFlags: 0
@@ -2740,7 +2761,7 @@ MonoBehaviour:
   jumpHeight: 3
   soundWave:
     MaxRadius: 20
-    Lifetime: 8
+    Lifetime: 3
     ColorOverLifetime:
       serializedVersion: 2
       key0: {r: 0, g: 1, b: 0.082012415, a: 1}
@@ -2770,6 +2791,71 @@ MonoBehaviour:
       m_Mode: 0
       m_ColorSpace: 0
       m_NumColorKeys: 3
+      m_NumAlphaKeys: 2
+  test:
+  - MaxRadius: 0
+    Lifetime: 0
+    ColorOverLifetime:
+      serializedVersion: 2
+      key0: {r: 0, g: 0, b: 0, a: 0}
+      key1: {r: 0, g: 0, b: 0, a: 0}
+      key2: {r: 0, g: 0, b: 0, a: 0}
+      key3: {r: 0, g: 0, b: 0, a: 0}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
+      key6: {r: 0, g: 0, b: 0, a: 0}
+      key7: {r: 0, g: 0, b: 0, a: 0}
+      ctime0: 0
+      ctime1: 65535
+      ctime2: 0
+      ctime3: 0
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
+      ctime7: 0
+      atime0: 0
+      atime1: 65535
+      atime2: 0
+      atime3: 0
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 0
+      m_ColorSpace: 0
+      m_NumColorKeys: 2
+      m_NumAlphaKeys: 2
+  - MaxRadius: 0
+    Lifetime: 0
+    ColorOverLifetime:
+      serializedVersion: 2
+      key0: {r: 0, g: 0, b: 0, a: 0}
+      key1: {r: 0, g: 0, b: 0, a: 0}
+      key2: {r: 0, g: 0, b: 0, a: 0}
+      key3: {r: 0, g: 0, b: 0, a: 0}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
+      key6: {r: 0, g: 0, b: 0, a: 0}
+      key7: {r: 0, g: 0, b: 0, a: 0}
+      ctime0: 0
+      ctime1: 65535
+      ctime2: 0
+      ctime3: 0
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
+      ctime7: 0
+      atime0: 0
+      atime1: 65535
+      atime2: 0
+      atime3: 0
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 0
+      m_ColorSpace: 0
+      m_NumColorKeys: 2
       m_NumAlphaKeys: 2
 --- !u!114 &1902911087
 MonoBehaviour:
@@ -3009,5 +3095,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9179949463330598672, guid: 774f3d8cc9528ef4c9b38caef8f2d8c0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1565968189}
   m_SourcePrefab: {fileID: 100100000, guid: 774f3d8cc9528ef4c9b38caef8f2d8c0, type: 3}

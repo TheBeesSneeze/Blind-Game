@@ -1,10 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerCamera : MonoBehaviour
 {
     float xMovement, yMovement;
+    public float sensitivity;
 
     private void Start()
     {
@@ -21,10 +20,10 @@ public class PlayerCamera : MonoBehaviour
     private void UpdateCameraRotation()
     {
         var mouse = InputEvents.Instance.LookDelta;
-        //float mouseX = mouse.x * OptionInstance.sensitivity * Time.fixedDeltaTime;
-        //float mouseY = mouse.y * OptionInstance.sensitivity * Time.fixedDeltaTime;
-        float mouseX = mouse.x * 80 * Time.fixedDeltaTime;
-        float mouseY = mouse.y * 80 * Time.fixedDeltaTime;
+        float mouseX = mouse.x * sensitivity * Time.fixedDeltaTime;
+        float mouseY = mouse.y * sensitivity / 1.5f * Time.fixedDeltaTime;
+        //float mouseX = mouse.x * 80 * Time.fixedDeltaTime;
+        //float mouseY = mouse.y * 80 * Time.fixedDeltaTime;
         Vector3 rot = transform.localRotation.eulerAngles;
         xMovement = rot.y + mouseX;
         yMovement -= mouseY;
