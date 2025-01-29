@@ -50,8 +50,10 @@ public class PlayerManager : MonoBehaviour
         if (isGrounded)
             EventManager.WhilePlayerGrounded.Invoke();
         else
+        {
             EventManager.WhilePlayerNotGrounded.Invoke();
             rb.AddForce(Physics.gravity * GravityForce, ForceMode.Acceleration);
+        }       
     }
 
     private bool CheckIfGrounded()

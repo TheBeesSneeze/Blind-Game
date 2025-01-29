@@ -33,10 +33,31 @@ public class PlayerMovement : MonoBehaviour
 
     private void DoMovement()
     {
-        movementDirection = InputEvents.Instance.InputDirection;
+        Vector2 inputDir = InputEvents.Instance.InputDirection2D;
+        Vector3 moveDirection = new Vector3(inputDir.x, 0, inputDir.y);
 
-        //rb.AddForce(movementDirection.normalized * speed, ForceMode.Force);
+        // Convert input to be relative to the player's forward direction
+        Vector3 forward = playerOrientationTracker.forward;
+        Vector3 right = playerOrientationTracker.right;
+
+        // Flatten forward and right vectors to ignore vertical tilt
+        forward.y = 0;
+        right.y = 0;
+        forward.Normalize();
+        right.Normalize();
+
+        // Compute movement direction relative to where the player is looking
+        Vector3 movement = (right * moveDirection.x + forward * moveDirection.z).normalized;
+
+        rb.AddForce(movement * speed, ForceMode.Force);
 
         //rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
+        Vector3 velocityXZ = new Vector3(rb.velocity.x, 0, rb.velocity.z); //ignoring Y component to clamp only y and z
+
+        print(velocityXZ.magnitude);
+        velocityXZ = Vector3.ClampMagnitude(velocityXZ, maxSpeed);
+
+        rb.velocity = new Vector3(velocityXZ.x, rb.velocity.y, velocityXZ.z); //restore original Y component
+
     }
 }

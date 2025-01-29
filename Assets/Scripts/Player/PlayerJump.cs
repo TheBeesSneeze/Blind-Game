@@ -71,6 +71,6 @@ public class PlayerJump : MonoBehaviour
 
     private void OnPlayerLand()
     {
-        SoundWaveManager.Instance.CreateSoundWaveAtPosition(rb.position, soundWave);
+        //SoundWaveManager.Instance.CreateSoundWaveAtPosition(rb.position, soundWave);
     }
 }

@@ -48,7 +48,7 @@ public class InputEvents : Singleton<InputEvents>
 
     private void Start()
     {
-        movementOrigin = Camera.main.transform;
+        movementOrigin = transform;
         playerInput = GetComponent<PlayerInput>();
         InitializeActions();
     }
