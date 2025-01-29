@@ -14,12 +14,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class Interact : MonoBehaviour
 {
-    PlayerControls _playerControls;
-    private InputAction _interact;
     private Camera _camera;
 
     [SerializeField] private GameObject _targetGameObj;
@@ -33,11 +30,8 @@ public class Interact : MonoBehaviour
 
     private void Awake()
     {
-        _playerControls = new PlayerControls();
-        _playerControls.BasicControls.Enable();
-        _interact = _playerControls.FindAction("Interact");
-        _interact.started += InteractPressed;
-        _interact.canceled += InteractReleased;
+        InputEvents.InteractStarted.AddListener(InteractPressed);
+        InputEvents.InteractCanceled.AddListener(InteractReleased);
 
         _camera = Camera.main;
 
@@ -48,7 +42,7 @@ public class Interact : MonoBehaviour
     /// Called when Interact input is started. Calls Interact() on the detected
     /// interactable game object
     /// </summary>
-    private void InteractPressed(InputAction.CallbackContext ctx)
+    private void InteractPressed()
     {
         if(_interactable != null)
         {
@@ -117,17 +111,11 @@ public class Interact : MonoBehaviour
     /// detected interactable game object.
     /// </summary>
     /// <param name="obj"></param>
-    private void InteractReleased(InputAction.CallbackContext obj)
+    private void InteractReleased()
     {
         if (_interactable != null)
         {
             _interactable.CancelInteract();
         }
-    }
-
-    private void OnDisable()
-    {
-        _interact.started -= InteractPressed;
-        _interact.canceled -= InteractReleased;
     }
 }
