@@ -51,6 +51,19 @@ public class SoundWaveManager : Singleton<SoundWaveManager>
         CreateSoundWaveAtPosition(position, DefaultGradient, maxRadius, lifetime);
     }
 
+    public static void DrawSoundWaveGizmos(Vector3 position, SoundWaveProperties wave)
+    {
+        // big sphere
+        Color color = wave.ColorOverLifetime.Evaluate(1);
+        color.a = 1;
+
+        Gizmos.color = color;
+        Gizmos.DrawWireSphere(position, wave.MaxRadius);
+
+        // smaller inside sphere
+        float time = Time.time % wave.MaxRadius ;
+    }
+
     #region Private Methods
     private ParticleSystem InstantiateSoundWave(Vector3 position, Gradient colorOverLifetime, float maxRadius, float lifetime)
     {
@@ -71,4 +84,5 @@ public class SoundWaveManager : Singleton<SoundWaveManager>
 
     }
     #endregion
+
 }
