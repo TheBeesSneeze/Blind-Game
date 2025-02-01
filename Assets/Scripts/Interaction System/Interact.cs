@@ -87,19 +87,31 @@ public class Interact : MonoBehaviour
                 if (_targetGameObj.TryGetComponent(out IInteractable interactable))
                 {
                     _interactable = _targetGameObj.GetComponent<IInteractable>();
-                    _interactable.DisplayInteractUI();
+                    CanvasInteractionBehavior.ShowInteractUI?.Invoke();
+
+                    //if each object needs their own prompt use this
+                    //_interactable.DisplayInteractUI();
                 }
                 else if (_interactable != null)
                 {
-                    _interactable.HideInteractUI();
-                   _interactable = null;
+                    CanvasInteractionBehavior.HideInteractUI?.Invoke();
+
+                    //if each object needs their own prompt use this
+                    //_interactable.HideInteractUI();
+
+                    _interactable = null;
                 }
             }
             //resets the variables if the player backs away from interactable
             else if (_interactable != null)
             {
                 _targetGameObj = null;
-                _interactable.HideInteractUI();
+
+                CanvasInteractionBehavior.HideInteractUI?.Invoke();
+
+                //if each object needs their own prompt use this
+                //_interactable.HideInteractUI();
+
                 _interactable = null;
             }
             yield return null;
