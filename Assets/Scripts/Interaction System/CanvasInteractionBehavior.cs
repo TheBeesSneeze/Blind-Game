@@ -16,11 +16,18 @@ public class CanvasInteractionBehavior : MonoBehaviour
         HideInteractUI += DisableInteractUI;
     }
 
+    /// <summary>
+    /// General method to show the interactable prompt
+    /// </summary>
     private void EnableInteractUI()
     {
         interactPrompt.SetActive(true);
     }
 
+    /// <summary>
+    /// <summary>
+    /// General method to hide the interactable prompt
+    /// </summary>
     private void DisableInteractUI()
     {
         interactPrompt.SetActive(false);

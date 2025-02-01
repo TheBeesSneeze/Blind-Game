@@ -29,7 +29,7 @@ public interface IInteractable
     void CancelInteract() { }
 
 
-    //use these methods if a object needs their own prompt, or ask marissa :)
+    //use these methods below if a object needs their own prompt, or ask marissa :)
 
     /// <summary>
     /// Called when interaction with an interactable becomes avaliable. Can be

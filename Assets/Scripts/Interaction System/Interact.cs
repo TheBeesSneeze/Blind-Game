@@ -23,6 +23,10 @@ public class Interact : MonoBehaviour
     private IInteractable _interactable;
     private bool _canInteract;
 
+    [SerializeField] private GameObject _pickupAnchor;
+    private GameObject _inHandObject;
+    private bool _isHolding;
+
     //raycast variables
     private RaycastHit _colliderHit;
     [SerializeField] private float _maxInteractDistance;
@@ -30,6 +34,8 @@ public class Interact : MonoBehaviour
 
     private void Awake()
     {
+        //listen for inputs
+        InputEvents.LeftClickStarted.AddListener(ThrowObj);
         InputEvents.InteractStarted.AddListener(InteractPressed);
         InputEvents.InteractCanceled.AddListener(InteractReleased);
 
@@ -44,6 +50,11 @@ public class Interact : MonoBehaviour
     /// </summary>
     private void InteractPressed()
     {
+        //if holding something
+        if(_isHolding)
+        {
+            DropObj();
+        }
         if(_interactable != null)
         {
             _interactable.Interact(gameObject);
@@ -130,4 +141,61 @@ public class Interact : MonoBehaviour
             _interactable.CancelInteract();
         }
     }
+
+    /// <summary>
+    /// Picks up the object passed in the parameter. if the player is already holding
+    /// something, drop it first
+    /// </summary>
+    /// <param name="pickup"></param>
+    public void PickUpObj(GameObject pickup)
+    {
+        _isHolding = true;
+        _inHandObject = pickup;
+
+        //sets the picked up iten to the anchor
+        pickup.transform.position = _pickupAnchor.transform.position;
+        pickup.transform.rotation = _pickupAnchor.transform.rotation;
+        pickup.transform.parent = _pickupAnchor.transform;
+
+    }
+
+    /// <summary>
+    /// Drops the object in the player's hand from the player anchor
+    /// </summary>
+    public void DropObj()
+    {
+        if (_isHolding)
+        {
+            _isHolding = false;
+
+            _inHandObject.transform.parent = null;
+            _inHandObject.GetComponent<PickupInteractable>().EnableRB();
+            _inHandObject = null;
+        }
+    }
+
+    /// <summary>
+    /// throws the object the player is holding
+    /// </summary>
+    public void ThrowObj()
+    {
+        if(_isHolding)
+        {
+            if (_isHolding)
+            {
+                _isHolding = false;
+
+                //"drops" object
+                _inHandObject.transform.parent = null;
+                _inHandObject.GetComponent<PickupInteractable>().EnableRB();
+
+                //ADD THROW FORCE RAHHHHH 
+                Ray r = _camera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
+                _inHandObject.GetComponent<PickupInteractable>().ThrowObj(r.direction);
+
+                _inHandObject = null;
+            }
+        }
+    }
+
 }
