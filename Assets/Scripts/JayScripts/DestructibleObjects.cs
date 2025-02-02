@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestructableObjects : MonoBehaviour
+public class DestructibleObjects : MonoBehaviour
 {
 
     //put this on all breakable objects in the scene!!! gives them stats
 
     [Header("Stats")]
+
 
     [Tooltip("How loud is the object?")]
     [SerializeField] float sound;
@@ -16,7 +17,7 @@ public class DestructableObjects : MonoBehaviour
     [SerializeField] int points;
 
     [Tooltip("How fast does this item need to be going to break?")]
-    [SerializeField] int minVelocity;
+    [SerializeField] Vector3 minVelocity;
 
     [Tooltip("Insert the floor and wall layers here!")]
     [SerializeField] LayerMask surfaces;
@@ -27,7 +28,14 @@ public class DestructableObjects : MonoBehaviour
         if (collision.gameObject.layer == surfaces)
         {
 
-            
+            Rigidbody rb = this.gameObject.GetComponent<Rigidbody>();
+
+            if(rb.velocity == minVelocity)
+            {
+
+                Destroy(this.gameObject);
+
+            }
 
         }
 
