@@ -38,9 +38,11 @@ public class SoundWaveManager : Singleton<SoundWaveManager>
     /// <summary>
     /// Instantiates a new sound wave at specified position and destroys it after lifetime elapses
     /// </summary>
-    public void CreateSoundWaveAtPosition(Vector3 position, SoundWaveProperties wave)
+    public void CreateSoundWaveAtPosition(Vector3 position, SoundWaveProperties wave, float volume=1)
     {
         CreateSoundWaveAtPosition(position, wave.ColorOverLifetime, wave.MaxRadius, wave.Lifetime);
+        if(wave.sound != null)
+            AudioSource.PlayClipAtPoint(wave.sound, position, volume);
     }
 
     /// <summary>
