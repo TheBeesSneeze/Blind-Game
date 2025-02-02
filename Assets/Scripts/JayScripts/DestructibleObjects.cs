@@ -13,6 +13,7 @@ public class DestructibleObjects : MonoBehaviour
     [Tooltip("How loud is the object?")]
     [SerializeField] float sound;
 
+    //comment this one out if we end up not adding in the points system
     [Tooltip("How many points does breaking this object subtract?")]
     [SerializeField] int points;
 
