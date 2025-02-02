@@ -17,11 +17,12 @@ public class DestructibleObjects : MonoBehaviour
     [SerializeField] int points;
 
     [Tooltip("How fast does this item need to be going to break?")]
-    [SerializeField] Vector3 minimumVelocity;
+    [SerializeField] float minimumVelocity;
 
     [Tooltip("Add whatever layers that this object should collide with here!")]
     [SerializeField] LayerMask surfaces;
 
+    [Tooltip("Edit this object's soundwave here!")]
     [SerializeField] SoundWaveProperties waves;
 
     public void OnCollisionEnter(Collision collision)
@@ -34,7 +35,7 @@ public class DestructibleObjects : MonoBehaviour
 
             Rigidbody rb = this.gameObject.GetComponent<Rigidbody>();
 
-            if(rb.velocity == minimumVelocity)
+            if(rb.velocity.magnitude >= minimumVelocity)
             {
 
                 Destroy(this.gameObject);
