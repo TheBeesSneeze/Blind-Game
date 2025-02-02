@@ -1,16 +1,14 @@
 /*
  * Handles regular player movement (WASD)
  * 
- * - Clare Grady, Toby S, Tyler B, Sky B, Alec P
+ * Toby, Eli
  */
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float speed;
+    [SerializeField] private float acceleration;
     [SerializeField] private float maxSpeed;
 
     private Rigidbody rb;
@@ -33,10 +31,28 @@ public class PlayerMovement : MonoBehaviour
 
     private void DoMovement()
     {
-        movementDirection = InputEvents.Instance.InputDirection;
+        Vector2 inputDir = InputEvents.Instance.InputDirection2D;
+        Vector3 moveDirection = new Vector3(inputDir.x, 0, inputDir.y);
 
-        rb.AddForce(movementDirection.normalized * speed, ForceMode.Force);
+        //convert input to be relative to the player's forward direction
+        Vector3 forward = playerOrientationTracker.forward;
+        Vector3 right = playerOrientationTracker.right;
 
-        rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
+        //we have to flatten forward and right vectors to ignore vertical tilt, according to CHAT
+        forward.y = 0;
+        right.y = 0;
+        forward.Normalize();
+        right.Normalize();
+
+
+        //Actually making the movement
+        Vector3 movement = (right * moveDirection.x + forward * moveDirection.z).normalized;
+        rb.AddForce(movement * acceleration, ForceMode.Force);
+
+
+        //Clamping the velocity
+        Vector3 velocityXZ = new Vector3(rb.velocity.x, 0, rb.velocity.z); //ignoring Y component to clamp only y and z
+        velocityXZ = Vector3.ClampMagnitude(velocityXZ, maxSpeed);
+        rb.velocity = new Vector3(velocityXZ.x, rb.velocity.y, velocityXZ.z); //restore original Y component
     }
 }
