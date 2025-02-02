@@ -28,23 +28,25 @@ public class DestructibleObjects : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
-
-        if (collision.gameObject.layer == surfaces)
+        if (surfaces == (surfaces | (1 << collision.gameObject.layer)))
         {
-
             waves.PlayAtPosition(collision.gameObject.transform.position);
 
             Rigidbody rb = this.gameObject.GetComponent<Rigidbody>();
 
-            if(rb.velocity.magnitude >= minimumVelocity)
+            if (rb.velocity.magnitude >= minimumVelocity)
             {
 
                 Destroy(this.gameObject);
 
             }
 
+            //if not destroyed, disable outline
+            PickupInteractable pi = GetComponent<PickupInteractable>();
+            if (pi != null)
+            {
+                pi.DisableOutline();
+            }
         }
-
     }
-
 }

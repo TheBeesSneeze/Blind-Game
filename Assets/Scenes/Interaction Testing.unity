@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 868278727}
   - component: {fileID: 868278726}
   - component: {fileID: 868278725}
+  - component: {fileID: 868278731}
   m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Untagged
@@ -183,7 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2e1293c5ef149842bb92af99bccf3a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwForce: 5
+  throwForce: 10
 --- !u!65 &868278727
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -270,6 +271,58 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &868278731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 868278724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79894c8ae703434991e268a432d8c46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: 10
+  points: 10
+  minimumVelocity: 25
+  surfaces:
+    serializedVersion: 2
+    m_Bits: 1
+  waves:
+    MaxRadius: 1
+    Lifetime: 5
+    ColorOverLifetime:
+      serializedVersion: 2
+      key0: {r: 1, g: 1, b: 1, a: 1}
+      key1: {r: 1, g: 1, b: 1, a: 0}
+      key2: {r: 0, g: 0, b: 0, a: 0}
+      key3: {r: 0, g: 0, b: 0, a: 0}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
+      key6: {r: 0, g: 0, b: 0, a: 0}
+      key7: {r: 0, g: 0, b: 0, a: 0}
+      ctime0: 0
+      ctime1: 65535
+      ctime2: 0
+      ctime3: 0
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
+      ctime7: 0
+      atime0: 0
+      atime1: 65535
+      atime2: 0
+      atime3: 0
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 0
+      m_ColorSpace: -1
+      m_NumColorKeys: 2
+      m_NumAlphaKeys: 2
+    sound: {fileID: 0}
 --- !u!1 &1031062301
 GameObject:
   m_ObjectHideFlags: 0
@@ -512,6 +565,7 @@ GameObject:
   - component: {fileID: 1688356990}
   - component: {fileID: 1688356994}
   - component: {fileID: 1688356995}
+  - component: {fileID: 1688356996}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -617,7 +671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2e1293c5ef149842bb92af99bccf3a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwForce: 20
+  throwForce: 10
 --- !u!54 &1688356995
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -645,6 +699,58 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1688356996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1688356988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79894c8ae703434991e268a432d8c46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: 10
+  points: 10
+  minimumVelocity: 25
+  surfaces:
+    serializedVersion: 2
+    m_Bits: 1
+  waves:
+    MaxRadius: 1
+    Lifetime: 5
+    ColorOverLifetime:
+      serializedVersion: 2
+      key0: {r: 1, g: 1, b: 1, a: 1}
+      key1: {r: 1, g: 1, b: 1, a: 0}
+      key2: {r: 0, g: 0, b: 0, a: 0}
+      key3: {r: 0, g: 0, b: 0, a: 0}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
+      key6: {r: 0, g: 0, b: 0, a: 0}
+      key7: {r: 0, g: 0, b: 0, a: 0}
+      ctime0: 0
+      ctime1: 65535
+      ctime2: 0
+      ctime3: 0
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
+      ctime7: 0
+      atime0: 0
+      atime1: 65535
+      atime2: 0
+      atime3: 0
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 0
+      m_ColorSpace: -1
+      m_NumColorKeys: 2
+      m_NumAlphaKeys: 2
+    sound: {fileID: 0}
 --- !u!1 &1880207491
 GameObject:
   m_ObjectHideFlags: 0
@@ -660,6 +766,7 @@ GameObject:
   - component: {fileID: 1880207493}
   - component: {fileID: 1880207492}
   - component: {fileID: 1880207498}
+  - component: {fileID: 1880207499}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -811,6 +918,58 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!114 &1880207499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880207491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79894c8ae703434991e268a432d8c46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: 10
+  points: 10
+  minimumVelocity: 25
+  surfaces:
+    serializedVersion: 2
+    m_Bits: 1
+  waves:
+    MaxRadius: 1
+    Lifetime: 5
+    ColorOverLifetime:
+      serializedVersion: 2
+      key0: {r: 1, g: 1, b: 1, a: 1}
+      key1: {r: 1, g: 1, b: 1, a: 0}
+      key2: {r: 0, g: 0, b: 0, a: 0}
+      key3: {r: 0, g: 0, b: 0, a: 0}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
+      key6: {r: 0, g: 0, b: 0, a: 0}
+      key7: {r: 0, g: 0, b: 0, a: 0}
+      ctime0: 0
+      ctime1: 65535
+      ctime2: 0
+      ctime3: 0
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
+      ctime7: 0
+      atime0: 0
+      atime1: 65535
+      atime2: 0
+      atime3: 0
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 0
+      m_ColorSpace: -1
+      m_NumColorKeys: 2
+      m_NumAlphaKeys: 2
+    sound: {fileID: 0}
 --- !u!1 &2136213664
 GameObject:
   m_ObjectHideFlags: 0
