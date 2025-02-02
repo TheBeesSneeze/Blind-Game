@@ -6,10 +6,19 @@ public class PickupInteractable : MonoBehaviour, IInteractable
 {
     private Rigidbody rb;
     [SerializeField] private int throwForce;
+    private Outline outline;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+        //set up outline, add one if there is not already one
+        outline = GetComponent<Outline>();
+        if(outline == null)
+        {
+            outline = gameObject.AddComponent<Outline>();
+        }
+        outline.enabled = false;
     }
 
     /// <summary>
@@ -21,6 +30,7 @@ public class PickupInteractable : MonoBehaviour, IInteractable
         player.GetComponent<Interact>().PickUpObj(gameObject);
         rb.detectCollisions = false;
         rb.isKinematic = true;
+        outline.enabled = true;
     }
 
     /// <summary>
@@ -36,5 +46,10 @@ public class PickupInteractable : MonoBehaviour, IInteractable
     public void ThrowObj(Vector3 direction)
     {
         rb.AddForce(direction * 100 * throwForce);
+    }
+
+    public void DisableOutline()
+    {
+        outline.enabled = false;
     }
 }
