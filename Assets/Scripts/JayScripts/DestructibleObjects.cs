@@ -17,7 +17,7 @@ public class DestructibleObjects : MonoBehaviour
     [SerializeField] int points;
 
     [Tooltip("How fast does this item need to be going to break?")]
-    [SerializeField] Vector3 minVelocity;
+    [SerializeField] Vector3 minimumVelocity;
 
     [Tooltip("Add whatever layers that this object should collide with here!")]
     [SerializeField] LayerMask surfaces;
@@ -34,7 +34,7 @@ public class DestructibleObjects : MonoBehaviour
 
             Rigidbody rb = this.gameObject.GetComponent<Rigidbody>();
 
-            if(rb.velocity == minVelocity)
+            if(rb.velocity == minimumVelocity)
             {
 
                 Destroy(this.gameObject);
