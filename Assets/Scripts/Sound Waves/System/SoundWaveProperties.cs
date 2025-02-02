@@ -38,8 +38,12 @@ public class SoundWaveProperties
         }
     };
 
-    public void PlayAtPosition(Vector3 position)
+    [Tooltip("Plays nothing if null. Clip that plays when sound wave is created.")]
+    public AudioClip sound;
+
+    public void PlayAtPosition(Vector3 position, float volume = 1)
     {
-        SoundWaveManager.Instance.CreateSoundWaveAtPosition(position, this);
+        SoundWaveManager.Instance.CreateSoundWaveAtPosition(position, this, volume);
     }
+
 }
