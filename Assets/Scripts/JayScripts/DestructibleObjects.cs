@@ -5,7 +5,7 @@ using UnityEngine;
 public class DestructibleObjects : MonoBehaviour
 {
 
-    //put this on all breakable objects in the scene!!! gives them stats
+    //put this on all breakable objects in the scene!!!
 
     [Header("Stats")]
 
@@ -19,14 +19,18 @@ public class DestructibleObjects : MonoBehaviour
     [Tooltip("How fast does this item need to be going to break?")]
     [SerializeField] Vector3 minVelocity;
 
-    [Tooltip("Insert the floor and wall layers here!")]
+    [Tooltip("Add whatever layers that this object should collide with here!")]
     [SerializeField] LayerMask surfaces;
+
+    [SerializeField] SoundWaveProperties waves;
 
     public void OnCollisionEnter(Collision collision)
     {
 
         if (collision.gameObject.layer == surfaces)
         {
+
+            waves.PlayAtPosition(collision.gameObject.transform.position);
 
             Rigidbody rb = this.gameObject.GetComponent<Rigidbody>();
 
