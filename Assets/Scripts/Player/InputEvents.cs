@@ -41,18 +41,18 @@ public class InputEvents : Singleton<InputEvents>
 
     // Input values and flags
     public Vector2 LookDelta => Look.ReadValue<Vector2>() * _sensitivity;
-    public Vector3 InputDirection => movementOrigin.TransformDirection(new Vector3(InputDirection2D.x, 0f, InputDirection2D.y));
+    //public Vector3 InputDirection => movementOrigin.TransformDirection(new Vector3(InputDirection2D.x, 0f, InputDirection2D.y));
     public Vector2 InputDirection2D => Move.ReadValue<Vector2>();
     public static bool MovePressed, JumpPressed, LeftClickPressed, PausePressed, InteractPressed;
 
     private PlayerInput playerInput;
     private InputAction Move, LeftClick, Jump, Look, Pause, Interact;
 
-    private Transform movementOrigin;
+    //private Transform movementOrigin;
 
     private void Start()
     {
-        movementOrigin = transform;
+        //movementOrigin = transform;
         playerInput = GetComponent<PlayerInput>();
         InitializeActions();
     }
