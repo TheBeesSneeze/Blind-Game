@@ -85,6 +85,28 @@ public class SoundWaveManager : Singleton<SoundWaveManager>
         return particle;
 
     }
+
+    private ParticleSystem InstantiateSoundWave(Vector3 position, SoundWaveProperties waveProperties)
+    {
+        GameObject wave = Instantiate(SoundWavePrefab, position, Quaternion.identity);
+        ParticleSystem particle = wave.GetComponentInChildren<ParticleSystem>();
+
+        // guys particle systems are so annoying
+
+        ParticleSystem.ColorOverLifetimeModule particleColorOverLifetime = particle.colorOverLifetime; // you need to make new variables or else it doesnt work
+        particleColorOverLifetime.enabled = true;
+        particleColorOverLifetime.color = waveProperties.ColorOverLifetime;
+
+        var main = particle.main;
+        main.startSize = waveProperties.MaxRadius;
+        main.startLifetime = waveProperties.Lifetime;
+
+        var sizeOverLifetime = particle.sizeOverLifetime.size;
+        sizeOverLifetime.curve = waveProperties.sizeOverLifetime;
+
+        return particle;
+
+    }
     #endregion
 
 }
