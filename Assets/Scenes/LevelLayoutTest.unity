@@ -1013,6 +1013,10 @@ PrefabInstance:
       propertyPath: throwForce
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3037605767733772992, guid: c5849f2ebd8fec142a861a41bec96b6d, type: 3}
+      propertyPath: trailMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: c8ff10812fc546447a4ee64796e8bea5, type: 2}
     - target: {fileID: 4234451422934848298, guid: c5849f2ebd8fec142a861a41bec96b6d, type: 3}
       propertyPath: m_Name
       value: Pots (4)
@@ -1290,6 +1294,10 @@ PrefabInstance:
       propertyPath: throwForce
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3037605767733772992, guid: c5849f2ebd8fec142a861a41bec96b6d, type: 3}
+      propertyPath: trailMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: c8ff10812fc546447a4ee64796e8bea5, type: 2}
     - target: {fileID: 4234451422934848298, guid: c5849f2ebd8fec142a861a41bec96b6d, type: 3}
       propertyPath: m_Name
       value: Pots (9)
@@ -2632,6 +2640,10 @@ PrefabInstance:
       propertyPath: throwForce
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3037605767733772992, guid: c5849f2ebd8fec142a861a41bec96b6d, type: 3}
+      propertyPath: trailMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: c8ff10812fc546447a4ee64796e8bea5, type: 2}
     - target: {fileID: 4234451422934848298, guid: c5849f2ebd8fec142a861a41bec96b6d, type: 3}
       propertyPath: m_Name
       value: Pots (13)
@@ -2820,6 +2832,10 @@ PrefabInstance:
       propertyPath: throwForce
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3037605767733772992, guid: c5849f2ebd8fec142a861a41bec96b6d, type: 3}
+      propertyPath: trailMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: c8ff10812fc546447a4ee64796e8bea5, type: 2}
     - target: {fileID: 4234451422934848298, guid: c5849f2ebd8fec142a861a41bec96b6d, type: 3}
       propertyPath: m_Name
       value: Pots (10)
@@ -3025,6 +3041,10 @@ PrefabInstance:
       propertyPath: throwForce
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3037605767733772992, guid: c5849f2ebd8fec142a861a41bec96b6d, type: 3}
+      propertyPath: trailMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: c8ff10812fc546447a4ee64796e8bea5, type: 2}
     - target: {fileID: 4234451422934848298, guid: c5849f2ebd8fec142a861a41bec96b6d, type: 3}
       propertyPath: m_Name
       value: Pots (8)
@@ -4586,6 +4606,10 @@ PrefabInstance:
       propertyPath: throwForce
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3037605767733772992, guid: c5849f2ebd8fec142a861a41bec96b6d, type: 3}
+      propertyPath: trailMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: c8ff10812fc546447a4ee64796e8bea5, type: 2}
     - target: {fileID: 4234451422934848298, guid: c5849f2ebd8fec142a861a41bec96b6d, type: 3}
       propertyPath: m_Name
       value: Pots (7)
@@ -4939,6 +4963,10 @@ PrefabInstance:
       propertyPath: throwForce
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3037605767733772992, guid: c5849f2ebd8fec142a861a41bec96b6d, type: 3}
+      propertyPath: trailMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: c8ff10812fc546447a4ee64796e8bea5, type: 2}
     - target: {fileID: 4234451422934848298, guid: c5849f2ebd8fec142a861a41bec96b6d, type: 3}
       propertyPath: m_Name
       value: Pots (14)
@@ -5122,6 +5150,10 @@ PrefabInstance:
       propertyPath: throwForce
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3037605767733772992, guid: c5849f2ebd8fec142a861a41bec96b6d, type: 3}
+      propertyPath: trailMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: c8ff10812fc546447a4ee64796e8bea5, type: 2}
     - target: {fileID: 4234451422934848298, guid: c5849f2ebd8fec142a861a41bec96b6d, type: 3}
       propertyPath: m_Name
       value: Pots (15)
@@ -6344,6 +6376,10 @@ PrefabInstance:
       propertyPath: throwForce
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3037605767733772992, guid: c5849f2ebd8fec142a861a41bec96b6d, type: 3}
+      propertyPath: trailMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: c8ff10812fc546447a4ee64796e8bea5, type: 2}
     - target: {fileID: 4234451422934848298, guid: c5849f2ebd8fec142a861a41bec96b6d, type: 3}
       propertyPath: m_Name
       value: Pots (1)
@@ -7399,6 +7435,10 @@ PrefabInstance:
       propertyPath: throwForce
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3037605767733772992, guid: c5849f2ebd8fec142a861a41bec96b6d, type: 3}
+      propertyPath: trailMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: c8ff10812fc546447a4ee64796e8bea5, type: 2}
     - target: {fileID: 4234451422934848298, guid: c5849f2ebd8fec142a861a41bec96b6d, type: 3}
       propertyPath: m_Name
       value: Pots (11)
@@ -8303,6 +8343,10 @@ PrefabInstance:
       propertyPath: throwForce
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3037605767733772992, guid: c5849f2ebd8fec142a861a41bec96b6d, type: 3}
+      propertyPath: trailMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: c8ff10812fc546447a4ee64796e8bea5, type: 2}
     - target: {fileID: 4234451422934848298, guid: c5849f2ebd8fec142a861a41bec96b6d, type: 3}
       propertyPath: m_Name
       value: Pots (2)
@@ -8633,6 +8677,10 @@ PrefabInstance:
       propertyPath: throwForce
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3037605767733772992, guid: c5849f2ebd8fec142a861a41bec96b6d, type: 3}
+      propertyPath: trailMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: c8ff10812fc546447a4ee64796e8bea5, type: 2}
     - target: {fileID: 4234451422934848298, guid: c5849f2ebd8fec142a861a41bec96b6d, type: 3}
       propertyPath: m_Name
       value: Pots (12)
@@ -8867,6 +8915,10 @@ PrefabInstance:
       propertyPath: throwForce
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3037605767733772992, guid: c5849f2ebd8fec142a861a41bec96b6d, type: 3}
+      propertyPath: trailMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: c8ff10812fc546447a4ee64796e8bea5, type: 2}
     - target: {fileID: 4234451422934848298, guid: c5849f2ebd8fec142a861a41bec96b6d, type: 3}
       propertyPath: m_Name
       value: Pots (6)
@@ -9050,6 +9102,10 @@ PrefabInstance:
       propertyPath: throwForce
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3037605767733772992, guid: c5849f2ebd8fec142a861a41bec96b6d, type: 3}
+      propertyPath: trailMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: c8ff10812fc546447a4ee64796e8bea5, type: 2}
     - target: {fileID: 4234451422934848298, guid: c5849f2ebd8fec142a861a41bec96b6d, type: 3}
       propertyPath: m_Name
       value: Pots (5)
@@ -10786,6 +10842,10 @@ PrefabInstance:
       propertyPath: throwForce
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3037605767733772992, guid: c5849f2ebd8fec142a861a41bec96b6d, type: 3}
+      propertyPath: trailMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: c8ff10812fc546447a4ee64796e8bea5, type: 2}
     - target: {fileID: 4234451422934848298, guid: c5849f2ebd8fec142a861a41bec96b6d, type: 3}
       propertyPath: m_Name
       value: Pots (3)
@@ -10946,6 +11006,10 @@ PrefabInstance:
       propertyPath: throwForce
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3037605767733772992, guid: c5849f2ebd8fec142a861a41bec96b6d, type: 3}
+      propertyPath: trailMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: c8ff10812fc546447a4ee64796e8bea5, type: 2}
     - target: {fileID: 4234451422934848298, guid: c5849f2ebd8fec142a861a41bec96b6d, type: 3}
       propertyPath: m_Name
       value: Pots
