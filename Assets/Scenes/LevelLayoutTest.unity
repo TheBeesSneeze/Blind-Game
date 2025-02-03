@@ -7367,6 +7367,22 @@ PrefabInstance:
       propertyPath: acceleration
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 4715284892727923050, guid: 64ab6dd9acd8fc84d8b15a70ac450d78, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4715284892727923050, guid: 64ab6dd9acd8fc84d8b15a70ac450d78, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5405461524469543433, guid: 64ab6dd9acd8fc84d8b15a70ac450d78, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5405461524469543433, guid: 64ab6dd9acd8fc84d8b15a70ac450d78, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6525344632540396746, guid: 64ab6dd9acd8fc84d8b15a70ac450d78, type: 3}
       propertyPath: jumpPower
       value: 25
