@@ -47,7 +47,7 @@ Material:
     - _Cull: 0
     - _DistanceForOpacity: 0.1
     - _DstBlend: 10
-    - _Intersection_Depth: 1
+    - _Intersection_Depth: 0.4
     - _QueueControl: 0
     - _QueueOffset: 0
     - _SrcBlend: 5
