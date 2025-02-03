@@ -15,7 +15,9 @@ public class MainMenuOpacity : MonoBehaviour
 
     //calculation variables
     public float t;
+    public float t_whenClicked;
     public float opacity;
+    public float opacity_whenClicked;
     public float timeOfClick;
     float xSize;
     float ySize;
@@ -44,15 +46,17 @@ public class MainMenuOpacity : MonoBehaviour
 
     void OnClick()
     {
-        if (opacity <= 0)
+        if (group.alpha <= 0)
         {
-            foreach (var item in itemsToRandomize)
+            foreach (RectTransform item in itemsToRandomize)
             {
                 RandomizeItemLocation(item);
             }
         }
         timeOfClick = Time.time;
-        
+
+        t_whenClicked = t;
+        opacity_whenClicked = opacity;
 
     }
 
@@ -66,9 +70,18 @@ public class MainMenuOpacity : MonoBehaviour
     // who cares man
     private void Update()
     {
-        float _t = t;
         t = Time.time - timeOfClick;
         opacity = curve.Evaluate(t);
+
+        // prevent weird clipping when clicking fast
+        // sorry its weird and unreadable idk if im cooking readable code rn, all these lines are important tho
+        if(t < t_whenClicked)
+        {
+            opacity = Mathf.Max(opacity_whenClicked, opacity);
+        }
+
         group.alpha = opacity;
+
+
     }
 }
