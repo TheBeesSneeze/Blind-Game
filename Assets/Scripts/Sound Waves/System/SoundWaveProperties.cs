@@ -11,6 +11,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Threading.Tasks;
+using NaughtyAttributes;
 
 [System.Serializable]
 public class SoundWaveProperties
@@ -37,6 +38,9 @@ public class SoundWaveProperties
             new GradientAlphaKey(0, 1)
         }
     };
+
+    [CurveRange(0, 0, 1, 1, EColor.Red)]
+    public AnimationCurve sizeOverLifetime = new AnimationCurve();
 
     [Tooltip("Plays nothing if null. Clip that plays when sound wave is created.")]
     public AudioClip sound;

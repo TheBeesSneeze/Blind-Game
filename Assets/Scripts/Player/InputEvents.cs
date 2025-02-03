@@ -41,18 +41,18 @@ public class InputEvents : Singleton<InputEvents>
 
     // Input values and flags
     public Vector2 LookDelta => Look.ReadValue<Vector2>() * _sensitivity;
-    public Vector3 InputDirection => movementOrigin.TransformDirection(new Vector3(InputDirection2D.x, 0f, InputDirection2D.y));
+    //public Vector3 InputDirection => movementOrigin.TransformDirection(new Vector3(InputDirection2D.x, 0f, InputDirection2D.y));
     public Vector2 InputDirection2D => Move.ReadValue<Vector2>();
     public static bool MovePressed, JumpPressed, LeftClickPressed, PausePressed, InteractPressed;
 
     private PlayerInput playerInput;
     private InputAction Move, LeftClick, Jump, Look, Pause, Interact;
 
-    private Transform movementOrigin;
+    //private Transform movementOrigin;
 
     private void Start()
     {
-        movementOrigin = transform;
+        //movementOrigin = transform;
         playerInput = GetComponent<PlayerInput>();
         InitializeActions();
     }
@@ -104,11 +104,14 @@ public class InputEvents : Singleton<InputEvents>
         LeftClick.started -= ctx => ActionStarted(ref LeftClickPressed, LeftClickStarted);
         Interact.started -= ctx => { InteractPressed = true; InteractStarted.Invoke(); };
         Pause.started -= ctx => { PausePressed = true; PauseStarted.Invoke(); };
+        Interact.started -= ctx => ActionStarted(ref InteractPressed, InteractStarted);
 
         Move.canceled -= ctx => ActionCanceled(ref MovePressed, MoveCanceled);
         Jump.canceled -= ctx => ActionCanceled(ref JumpPressed, JumpCanceled);
         LeftClick.canceled -= ctx => ActionCanceled(ref LeftClickPressed, LeftClickCanceled);
         Interact.canceled -= ctx => { InteractPressed = false; InteractCanceled.Invoke(); };
         Pause.canceled -= ctx => { PausePressed = false; PauseCanceled.Invoke(); };
+        Interact.canceled -= ctx => ActionCanceled(ref InteractPressed, InteractCanceled);
+
     }
 }
