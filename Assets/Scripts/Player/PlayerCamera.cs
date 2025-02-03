@@ -5,6 +5,12 @@ public class PlayerCamera : MonoBehaviour
     float xMovement, yMovement;
     public float sensitivity;
 
+    [Tooltip("How far can the player look up? Make a negative value!")]
+    [SerializeField] float topClamp;
+
+    [Tooltip("How far can the player look down? Make a positive value!")]
+    [SerializeField] float bottomClamp;
+
     private void Start()
     {
         Cursor.visible = false;
@@ -27,7 +33,7 @@ public class PlayerCamera : MonoBehaviour
         Vector3 rot = transform.localRotation.eulerAngles;
         xMovement = rot.y + mouseX;
         yMovement -= mouseY;
-        yMovement = Mathf.Clamp(yMovement, -90f, 90f);
+        yMovement = Mathf.Clamp(yMovement, topClamp, bottomClamp);
         transform.localRotation = Quaternion.Euler(yMovement, xMovement, 0);
     }
 }
