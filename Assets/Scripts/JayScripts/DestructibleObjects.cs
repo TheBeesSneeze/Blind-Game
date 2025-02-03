@@ -30,7 +30,7 @@ public class DestructibleObjects : MonoBehaviour
     {
         if (surfaces == (surfaces | (1 << collision.gameObject.layer)))
         {
-            waves.PlayAtPosition(collision.gameObject.transform.position);
+            waves.PlayAtPosition(collision.contacts[0].point);
 
             Rigidbody rb = this.gameObject.GetComponent<Rigidbody>();
 
