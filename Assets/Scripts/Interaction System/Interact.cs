@@ -174,7 +174,7 @@ public class Interact : MonoBehaviour
 
             _inHandObject.transform.parent = null;
             _inHandObject.GetComponent<PickupInteractable>().EnableRB();
-            _inHandObject.GetComponent<PickupInteractable>().DisableOutline();
+            _inHandObject.GetComponent<PickupInteractable>().DisableLightComponets();
             _inHandObject = null;
         }
     }

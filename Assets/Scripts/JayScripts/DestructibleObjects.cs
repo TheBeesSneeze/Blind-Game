@@ -41,12 +41,15 @@ public class DestructibleObjects : MonoBehaviour
 
             }
 
-            //if not destroyed, disable outline
-            PickupInteractable pi = GetComponent<PickupInteractable>();
-            if (pi != null)
+            //when object stops moving, diable light components
+            if (rb.velocity.magnitude <= 5)
             {
-                pi.DisableOutline();
-            }
+                PickupInteractable pi = GetComponent<PickupInteractable>();
+                if (pi != null)
+                {
+                    pi.DisableLightComponets();
+                }
+            } 
         }
     }
 }

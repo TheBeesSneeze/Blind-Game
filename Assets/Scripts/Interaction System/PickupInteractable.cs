@@ -6,7 +6,10 @@ public class PickupInteractable : MonoBehaviour, IInteractable
 {
     private Rigidbody rb;
     [SerializeField] private int throwForce;
+
     private Outline outline;
+    private TrailRenderer trailRenderer;
+    [SerializeField] private Material trailMaterial;
 
     private void Start()
     {
@@ -19,6 +22,16 @@ public class PickupInteractable : MonoBehaviour, IInteractable
             outline = gameObject.AddComponent<Outline>();
         }
         outline.enabled = false;
+
+        //set up trail renderer, add one if there is not already one
+        trailRenderer = GetComponent<TrailRenderer>();
+        if (trailRenderer == null)
+        {
+            trailRenderer = gameObject.AddComponent<TrailRenderer>();
+            trailRenderer.endWidth = 0;
+            trailRenderer.material = trailMaterial;
+        }
+        trailRenderer.enabled = false;
     }
 
     /// <summary>
@@ -46,10 +59,15 @@ public class PickupInteractable : MonoBehaviour, IInteractable
     public void ThrowObj(Vector3 direction)
     {
         rb.AddForce(direction * 100 * throwForce);
+        trailRenderer.enabled = true;
     }
 
-    public void DisableOutline()
+    /// <summary>
+    /// Disables outline and light renderer on object
+    /// </summary>
+    public void DisableLightComponets()
     {
         outline.enabled = false;
+        trailRenderer.enabled = false;
     }
 }
