@@ -41,7 +41,6 @@ public class DestructibleObjects : MonoBehaviour
                 if (gameObject.GetComponent<MeshDestroy>() != null)
                 {
                     var md = gameObject.GetComponent<MeshDestroy>();
-                    print(rb.velocity.magnitude);
                     md.DestroyMesh();
                 }
                 else

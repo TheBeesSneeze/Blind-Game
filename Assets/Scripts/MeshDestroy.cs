@@ -15,11 +15,14 @@ public class MeshDestroy : MonoBehaviour
     private Vector3 edgeVertex = Vector3.zero;
     private Vector2 edgeUV = Vector2.zero;
     private Plane edgePlane = new Plane();
-    public int CutCascades = 1; //3 in inspector
-    public float ExplodeForce = 0; //1500 in inspector
+    [Range(0, 10)]
+    [Tooltip("# of generated pieces = this^2 -1 ")]public int CutCascades = 1;
+    [Range(0, 1500)]
+    public float ExplodeForce = 0; 
 
-    [Range(0, 1)]
+    [Range(0, 1f)]
     [Tooltip("How small pieces need to be to be marked for removal")] public float MinimumLivingPieceSize;
+    [Range(0, 5f)]
     [Tooltip("Median time a piece stays before it disappears")] public float DyingPieceLifetime;
 
     private void Update()
@@ -99,7 +102,7 @@ public class MeshDestroy : MonoBehaviour
             var volume = MeshVolumeCalculator.CalculateMeshVolume(mesh.sharedMesh, go.transform.localScale);
 
             go.GetComponent<Rigidbody>().mass *= Mathf.Clamp(volume, 0.01f, go.GetComponent<Rigidbody>().mass);
-            go.GetComponent<Rigidbody>().AddForceAtPosition(Vector3.up + parts[i].Bounds.center * ExplodeForce * Mathf.Max(volume, 0.1f), transform.position);
+            go.GetComponent<Rigidbody>().AddForceAtPosition(Vector3.up + parts[i].Bounds.center * ExplodeForce * Mathf.Max(volume, 0.01f), transform.position);
 
             if (volume < MinimumLivingPieceSize)
             {
