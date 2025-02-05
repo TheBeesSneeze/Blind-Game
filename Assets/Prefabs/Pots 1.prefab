@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 7682033470006636095}
   - component: {fileID: 608057598483673405}
   - component: {fileID: 4352925360018818287}
+  - component: {fileID: 8552608964501949309}
   m_Layer: 0
   m_Name: Pots 1
   m_TagString: Untagged
@@ -253,7 +254,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 929
+  m_VersionIndex: 932
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -496,6 +497,22 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!114 &8552608964501949309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4192105483508654052}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e631e94be4ea717458777c63fea0af1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CutCascades: 3
+  ExplodeForce: 965
+  MinimumLivingPieceSize: 0.25
+  DyingPieceLifetime: 1
 --- !u!1001 &8950419685186782379
 PrefabInstance:
   m_ObjectHideFlags: 0
