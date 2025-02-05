@@ -396,6 +396,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sound: 10
+  nameOfSfx: pottery breaking
   points: 10
   minimumVelocity: 1
   surfaces:
@@ -404,6 +405,9 @@ MonoBehaviour:
   waves:
     MaxRadius: 10
     Lifetime: 15
+    PlayMultipleWaves: 0
+    NumberOfWaves: 1
+    SecondsBetweenWaves: 0.25
     ColorOverLifetime:
       serializedVersion: 2
       key0: {r: 1, g: 1, b: 1, a: 1}
@@ -458,6 +462,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
+    IsPerpetualSound: 0
     sound: {fileID: 0}
 --- !u!114 &608057598483673405
 MonoBehaviour:
