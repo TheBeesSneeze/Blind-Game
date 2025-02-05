@@ -7,6 +7,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class SoundWaveManager : Singleton<SoundWaveManager>
 {
@@ -40,7 +41,15 @@ public class SoundWaveManager : Singleton<SoundWaveManager>
     /// </summary>
     public void CreateSoundWaveAtPosition(Vector3 position, SoundWaveProperties wave, float volume=1)
     {
-        CreateSoundWaveAtPosition(position, wave.ColorOverLifetime, wave.MaxRadius, wave.Lifetime);
+        if(wave.PlayMultipleWaves && wave.NumberOfWaves > 1)
+        {
+            CreateMultipleSoundWavesAtPositionFromProperties(position, wave);
+        }
+        else
+        {
+            CreateOneSoundWaveAtPositionFromProperties(position, wave);
+        }
+
         if(wave.sound != null)
             AudioSource.PlayClipAtPoint(wave.sound, position, volume);
     }
@@ -106,6 +115,34 @@ public class SoundWaveManager : Singleton<SoundWaveManager>
 
         return particle;
 
+    }
+
+    /// <summary>
+    /// Long ass function name but its pretty clear what its doing imo
+    /// </summary>
+    private void CreateOneSoundWaveAtPositionFromProperties(Vector3 position, SoundWaveProperties wave)
+    {
+        CreateSoundWaveAtPosition(position, wave.ColorOverLifetime, wave.MaxRadius, wave.Lifetime);
+    }
+
+    private void CreateMultipleSoundWavesAtPositionFromProperties(Vector3 position, SoundWaveProperties wave)
+    {
+        ParticleSystem ps = InstantiateSoundWave(position, wave);
+        var template = ps.emission.GetBurst(0);
+        float time=0;
+
+        ParticleSystem.Burst[] bursts = new ParticleSystem.Burst[wave.NumberOfWaves];
+        bursts[0] = template;
+        for (int i = 1; i < bursts.Length; i++)
+        {
+            time = (float)i * wave.SecondsBetweenWaves;
+            ParticleSystem.Burst temp = new ParticleSystem.Burst(time, template.count, template.cycleCount, template.repeatInterval);
+            bursts[i] = temp;
+        }
+        ps.emission.SetBursts(bursts);
+
+        // wave.Lifetime + time = (time each sound wave lasts for) + (time that last sound wave gets played)
+        Destroy(ps.gameObject, wave.Lifetime + time);
     }
     #endregion
 
