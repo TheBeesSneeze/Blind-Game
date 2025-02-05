@@ -142,8 +142,11 @@ public class SoundWaveManager : Singleton<SoundWaveManager>
         ps.emission.SetBursts(bursts);
 
         // wave.Lifetime + time = (time each sound wave lasts for) + (time that last sound wave gets played)
-        Destroy(ps.gameObject, wave.Lifetime + time);
-    }
-    #endregion
+        if(ps.gameObject.transform.parent != null) 
+            Destroy(ps.transform.parent.gameObject, wave.Lifetime + time);
+        else
+            Destroy(ps.gameObject, wave.Lifetime + time);
 
-}
+        #endregion
+
+    }
