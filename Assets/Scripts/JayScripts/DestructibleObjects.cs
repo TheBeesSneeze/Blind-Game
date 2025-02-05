@@ -13,6 +13,9 @@ public class DestructibleObjects : MonoBehaviour
     [Tooltip("How loud is the object?")]
     [SerializeField] float sound;
 
+    [Tooltip("Exact string from sfx manager")]
+    [SerializeField] string nameOfSfx;
+
     //comment this one out if we end up not adding in the points system
     [Tooltip("How many points does breaking this object subtract?")]
     [SerializeField] int points;
@@ -30,6 +33,8 @@ public class DestructibleObjects : MonoBehaviour
     {
         if (surfaces == (surfaces | (1 << collision.gameObject.layer)))
         {
+            SfxManager.Instance.PlaySFX(nameOfSfx);
+
             waves.PlayAtPosition(collision.contacts[0].point);
 
             Rigidbody rb = this.gameObject.GetComponent<Rigidbody>();
