@@ -27,7 +27,7 @@ public class SoundWaveManager : Singleton<SoundWaveManager>
     /// <summary>
     /// Instantiates a new sound wave at specified position and destroys it after lifetime elapses
     /// </summary>
-    public void CreateSoundWaveAtPosition(Vector3 position, Gradient colorOverLifetime, float maxRadius = 1, float lifetime = 5)
+    public void CreateSoundWaveAtPosition(Vector3 position, Gradient colorOverLifetime, float maxRadius = 1, float lifetime = 5, bool collision=false)
     {
         ParticleSystem particle = InstantiateSoundWave(position, colorOverLifetime, maxRadius, lifetime);
         particle.Play(false);
@@ -41,7 +41,7 @@ public class SoundWaveManager : Singleton<SoundWaveManager>
     /// <summary>
     /// Instantiates a new sound wave at specified position and destroys it after lifetime elapses
     /// </summary>
-    public void CreateSoundWaveAtPosition(Vector3 position, SoundWaveProperties wave, bool collision = false, float volume = 1)
+    public void CreateSoundWaveAtPosition(Vector3 position, SoundWaveProperties wave, float volume = 1)
     {
         if (wave.PlayMultipleWaves && wave.NumberOfWaves > 1)
         {
@@ -78,7 +78,7 @@ public class SoundWaveManager : Singleton<SoundWaveManager>
     }
 
     #region Private Methods
-    private ParticleSystem InstantiateSoundWave(Vector3 position, Gradient colorOverLifetime, float maxRadius, float lifetime)
+    private ParticleSystem InstantiateSoundWave(Vector3 position, Gradient colorOverLifetime, float maxRadius, float lifetime, bool collision=false)
     {
         GameObject wave = Instantiate(SoundWavePrefab, position, Quaternion.identity);
         ParticleSystem particle = wave.GetComponentInChildren<ParticleSystem>();
@@ -93,11 +93,14 @@ public class SoundWaveManager : Singleton<SoundWaveManager>
         main.startSize = maxRadius;
         main.startLifetime = lifetime;
 
+        var c = particle.collision;
+        c.enabled = collision;
+
         return particle;
 
     }
 
-    private ParticleSystem InstantiateSoundWave(Vector3 position, SoundWaveProperties waveProperties)
+    private ParticleSystem InstantiateSoundWave(Vector3 position, SoundWaveProperties waveProperties, bool collision = false)
     {
         GameObject wave = Instantiate(SoundWavePrefab, position, Quaternion.identity);
         ParticleSystem particle = wave.GetComponentInChildren<ParticleSystem>();
@@ -115,6 +118,9 @@ public class SoundWaveManager : Singleton<SoundWaveManager>
         var sizeOverLifetime = particle.sizeOverLifetime.size;
         sizeOverLifetime.curve = waveProperties.sizeOverLifetime;
 
+        var c = particle.collision;
+        c.enabled = collision;
+
         return particle;
 
     }
@@ -124,12 +130,12 @@ public class SoundWaveManager : Singleton<SoundWaveManager>
     /// </summary>
     private void CreateOneSoundWaveAtPositionFromProperties(Vector3 position, SoundWaveProperties wave)
     {
-        CreateSoundWaveAtPosition(position, wave.ColorOverLifetime, wave.MaxRadius, wave.Lifetime);
+        CreateSoundWaveAtPosition(position, wave.ColorOverLifetime, wave.MaxRadius, wave.Lifetime, wave.IsPerpetualSound);
     }
 
-    private void CreateMultipleSoundWavesAtPositionFromProperties(Vector3 position, SoundWaveProperties wave)
+    private void CreateMultipleSoundWavesAtPositionFromProperties(Vector3 position, SoundWaveProperties wave, bool collision = false)
     {
-        ParticleSystem ps = InstantiateSoundWave(position, wave);
+        ParticleSystem ps = InstantiateSoundWave(position, wave, wave.IsPerpetualSound);
         var template = ps.emission.GetBurst(0);
         float time = 0;
 
