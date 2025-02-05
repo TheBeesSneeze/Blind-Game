@@ -401,6 +401,9 @@ MonoBehaviour:
   waves:
     MaxRadius: 1
     Lifetime: 5
+    PlayMultipleWaves: 0
+    NumberOfWaves: 1
+    SecondsBetweenWaves: 0.25
     ColorOverLifetime:
       serializedVersion: 2
       key0: {r: 1, g: 1, b: 1, a: 1}
@@ -840,6 +843,9 @@ MonoBehaviour:
   waves:
     MaxRadius: 1
     Lifetime: 5
+    PlayMultipleWaves: 0
+    NumberOfWaves: 1
+    SecondsBetweenWaves: 0.25
     ColorOverLifetime:
       serializedVersion: 2
       key0: {r: 1, g: 1, b: 1, a: 1}
@@ -979,7 +985,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 7.4471453e+11, y: 1.7261859e+25, z: 6.350177e+28, w: 2.7261816e+20}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -1093,6 +1099,18 @@ PrefabInstance:
     - target: {fileID: 3377334609490815852, guid: 64ab6dd9acd8fc84d8b15a70ac450d78, type: 3}
       propertyPath: m_LocalPosition.z
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525344632540396746, guid: 64ab6dd9acd8fc84d8b15a70ac450d78, type: 3}
+      propertyPath: soundWave.NumberOfWaves
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525344632540396746, guid: 64ab6dd9acd8fc84d8b15a70ac450d78, type: 3}
+      propertyPath: soundWave.PlayMultipleWaves
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525344632540396746, guid: 64ab6dd9acd8fc84d8b15a70ac450d78, type: 3}
+      propertyPath: soundWave.SecondsBetweenWaves
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
