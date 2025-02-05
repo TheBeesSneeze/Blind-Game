@@ -52,6 +52,7 @@ public class SoundWaveProperties
     };
 
     [CurveRange(0, 0, 1, 1, EColor.Red)]
+    [Tooltip("Size of the particle sphere")]
     public AnimationCurve sizeOverLifetime = new AnimationCurve();
 
     [Tooltip("Plays nothing if null. Clip that plays when sound wave is created.")]
