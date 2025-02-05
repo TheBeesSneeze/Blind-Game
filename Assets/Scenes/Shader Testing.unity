@@ -2506,6 +2506,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Constant Audio Source
       objectReference: {fileID: 0}
+    - target: {fileID: 8722050396276327034, guid: 7b801853b2ddad64181586aca451fe77, type: 3}
+      propertyPath: wave.NumberOfWaves
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8722050396276327034, guid: 7b801853b2ddad64181586aca451fe77, type: 3}
+      propertyPath: wave.PlayMultipleWaves
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8722050396276327034, guid: 7b801853b2ddad64181586aca451fe77, type: 3}
+      propertyPath: wave.SecondsBetweenWaves
+      value: 0.25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
