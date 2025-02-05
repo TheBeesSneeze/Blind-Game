@@ -16,6 +16,8 @@ public class SoundWaveManager : Singleton<SoundWaveManager>
     [SerializeField] private Gradient DefaultGradient;
 
 
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,7 +41,7 @@ public class SoundWaveManager : Singleton<SoundWaveManager>
     /// <summary>
     /// Instantiates a new sound wave at specified position and destroys it after lifetime elapses
     /// </summary>
-    public void CreateSoundWaveAtPosition(Vector3 position, SoundWaveProperties wave, float volume = 1)
+    public void CreateSoundWaveAtPosition(Vector3 position, SoundWaveProperties wave, bool collision = false, float volume = 1)
     {
         if (wave.PlayMultipleWaves && wave.NumberOfWaves > 1)
         {
