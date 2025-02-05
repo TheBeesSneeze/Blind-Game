@@ -64,6 +64,6 @@ public class PlayerFootsteps : MonoBehaviour
             SoundWaveManager.Instance.CreateSoundWaveAtPosition(footstepOriginRight.position, soundWave);
             leftStep= true;
         }
-       
+        SfxManager.Instance.PlaySFX("walking");
     }
 }
