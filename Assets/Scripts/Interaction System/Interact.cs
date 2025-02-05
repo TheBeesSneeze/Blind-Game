@@ -157,6 +157,7 @@ public class Interact : MonoBehaviour
         //sets the picked up iten to the anchor
         pickup.transform.position = _pickupAnchor.transform.position;
         pickup.transform.rotation = _pickupAnchor.transform.rotation;
+        pickup.transform.localScale = _pickupAnchor.transform.localScale;
         pickup.transform.parent = _pickupAnchor.transform;
 
     }
