@@ -14,12 +14,12 @@ public class SoundWaveManager : Singleton<SoundWaveManager>
     [SerializeField] private GameObject SoundWavePrefab;
 
     [SerializeField] private Gradient DefaultGradient;
-    
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     /// <summary>
@@ -30,7 +30,7 @@ public class SoundWaveManager : Singleton<SoundWaveManager>
         ParticleSystem particle = InstantiateSoundWave(position, colorOverLifetime, maxRadius, lifetime);
         particle.Play(false);
 
-        if(particle.transform.parent != null)
+        if (particle.transform.parent != null)
             Destroy(particle.transform.parent.gameObject, lifetime);
         else
             Destroy(particle.gameObject);
@@ -39,9 +39,9 @@ public class SoundWaveManager : Singleton<SoundWaveManager>
     /// <summary>
     /// Instantiates a new sound wave at specified position and destroys it after lifetime elapses
     /// </summary>
-    public void CreateSoundWaveAtPosition(Vector3 position, SoundWaveProperties wave, float volume=1)
+    public void CreateSoundWaveAtPosition(Vector3 position, SoundWaveProperties wave, float volume = 1)
     {
-        if(wave.PlayMultipleWaves && wave.NumberOfWaves > 1)
+        if (wave.PlayMultipleWaves && wave.NumberOfWaves > 1)
         {
             CreateMultipleSoundWavesAtPositionFromProperties(position, wave);
         }
@@ -50,7 +50,7 @@ public class SoundWaveManager : Singleton<SoundWaveManager>
             CreateOneSoundWaveAtPositionFromProperties(position, wave);
         }
 
-        if(wave.sound != null)
+        if (wave.sound != null)
             AudioSource.PlayClipAtPoint(wave.sound, position, volume);
     }
 
@@ -72,7 +72,7 @@ public class SoundWaveManager : Singleton<SoundWaveManager>
         Gizmos.DrawWireSphere(position, wave.MaxRadius);
 
         // smaller inside sphere
-        float time = Time.time % wave.MaxRadius ;
+        float time = Time.time % wave.MaxRadius;
     }
 
     #region Private Methods
@@ -129,7 +129,7 @@ public class SoundWaveManager : Singleton<SoundWaveManager>
     {
         ParticleSystem ps = InstantiateSoundWave(position, wave);
         var template = ps.emission.GetBurst(0);
-        float time=0;
+        float time = 0;
 
         ParticleSystem.Burst[] bursts = new ParticleSystem.Burst[wave.NumberOfWaves];
         bursts[0] = template;
@@ -142,7 +142,7 @@ public class SoundWaveManager : Singleton<SoundWaveManager>
         ps.emission.SetBursts(bursts);
 
         // wave.Lifetime + time = (time each sound wave lasts for) + (time that last sound wave gets played)
-        if(ps.gameObject.transform.parent != null) 
+        if (ps.gameObject.transform.parent != null)
             Destroy(ps.transform.parent.gameObject, wave.Lifetime + time);
         else
             Destroy(ps.gameObject, wave.Lifetime + time);
@@ -150,3 +150,4 @@ public class SoundWaveManager : Singleton<SoundWaveManager>
         #endregion
 
     }
+}

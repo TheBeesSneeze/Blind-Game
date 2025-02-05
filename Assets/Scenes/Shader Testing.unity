@@ -354,6 +354,10 @@ PrefabInstance:
       value: Player (1)
       objectReference: {fileID: 0}
     - target: {fileID: 6525344632540396746, guid: 64ab6dd9acd8fc84d8b15a70ac450d78, type: 3}
+      propertyPath: soundWave.PlayMultipleWaves
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525344632540396746, guid: 64ab6dd9acd8fc84d8b15a70ac450d78, type: 3}
       propertyPath: soundWave.sizeOverLifetime.m_Curve.Array.size
       value: 2
       objectReference: {fileID: 0}
