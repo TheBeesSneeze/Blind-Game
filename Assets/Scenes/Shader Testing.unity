@@ -349,9 +349,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2260283959972883026, guid: 64ab6dd9acd8fc84d8b15a70ac450d78, type: 3}
+      propertyPath: topClamp
+      value: -88
+      objectReference: {fileID: 0}
+    - target: {fileID: 2260283959972883026, guid: 64ab6dd9acd8fc84d8b15a70ac450d78, type: 3}
+      propertyPath: bottomClamp
+      value: 88
+      objectReference: {fileID: 0}
     - target: {fileID: 2847209570032510864, guid: 64ab6dd9acd8fc84d8b15a70ac450d78, type: 3}
       propertyPath: m_Name
       value: Player (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525344632540396746, guid: 64ab6dd9acd8fc84d8b15a70ac450d78, type: 3}
+      propertyPath: soundWave.PlayMultipleWaves
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6525344632540396746, guid: 64ab6dd9acd8fc84d8b15a70ac450d78, type: 3}
       propertyPath: soundWave.sizeOverLifetime.m_Curve.Array.size
@@ -2285,6 +2297,67 @@ MonoBehaviour:
   lookKey: Look
   interactKey: Interact
   _sensitivity: 0.2
+--- !u!1001 &1880254468
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3759087485942772113, guid: 948d86ec7faf75e4c940a86b8789a3c8, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3759087485942772113, guid: 948d86ec7faf75e4c940a86b8789a3c8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 34.15969
+      objectReference: {fileID: 0}
+    - target: {fileID: 3759087485942772113, guid: 948d86ec7faf75e4c940a86b8789a3c8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.4279976
+      objectReference: {fileID: 0}
+    - target: {fileID: 3759087485942772113, guid: 948d86ec7faf75e4c940a86b8789a3c8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 28.427946
+      objectReference: {fileID: 0}
+    - target: {fileID: 3759087485942772113, guid: 948d86ec7faf75e4c940a86b8789a3c8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3759087485942772113, guid: 948d86ec7faf75e4c940a86b8789a3c8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3759087485942772113, guid: 948d86ec7faf75e4c940a86b8789a3c8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3759087485942772113, guid: 948d86ec7faf75e4c940a86b8789a3c8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3759087485942772113, guid: 948d86ec7faf75e4c940a86b8789a3c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3759087485942772113, guid: 948d86ec7faf75e4c940a86b8789a3c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3759087485942772113, guid: 948d86ec7faf75e4c940a86b8789a3c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7108176044994002224, guid: 948d86ec7faf75e4c940a86b8789a3c8, type: 3}
+      propertyPath: m_Name
+      value: Sound Wave
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 948d86ec7faf75e4c940a86b8789a3c8, type: 3}
 --- !u!1001 &6475776246446947194
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2505,6 +2578,18 @@ PrefabInstance:
     - target: {fileID: 3784395173287440337, guid: 7b801853b2ddad64181586aca451fe77, type: 3}
       propertyPath: m_Name
       value: Constant Audio Source
+      objectReference: {fileID: 0}
+    - target: {fileID: 8722050396276327034, guid: 7b801853b2ddad64181586aca451fe77, type: 3}
+      propertyPath: wave.NumberOfWaves
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8722050396276327034, guid: 7b801853b2ddad64181586aca451fe77, type: 3}
+      propertyPath: wave.PlayMultipleWaves
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8722050396276327034, guid: 7b801853b2ddad64181586aca451fe77, type: 3}
+      propertyPath: wave.SecondsBetweenWaves
+      value: 0.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

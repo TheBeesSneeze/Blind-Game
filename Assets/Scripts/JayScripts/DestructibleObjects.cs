@@ -38,7 +38,16 @@ public class DestructibleObjects : MonoBehaviour
             {
 
                 Destroy(this.gameObject);
-
+                //if (gameObject.GetComponent<MeshDestroy>() != null)
+                //{
+                //    var md = gameObject.GetComponent<MeshDestroy>();
+                //    md.DestroyMesh();
+                //}
+                //else
+                //{
+                //    Debug.LogError("Could not destroy " +  gameObject.name + " because there was no MeshDestroy script on it!");
+                //}
+                
             }
 
             //when object stops moving, diable light components
@@ -52,4 +61,5 @@ public class DestructibleObjects : MonoBehaviour
             } 
         }
     }
+
 }

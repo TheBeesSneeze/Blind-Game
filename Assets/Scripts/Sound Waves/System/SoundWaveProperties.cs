@@ -21,8 +21,20 @@ public class SoundWaveProperties
     public float MaxRadius = 1;
 
     [Min(0)]
-    [Tooltip("How long it takes the sound wave to reach the max radius")]
+    [Tooltip("How long it takes each sound wave to reach the max radius")]
     public float Lifetime = 5;
+
+    [Tooltip("If true, play sound waves multiple times")]
+    public bool PlayMultipleWaves=false;
+
+    [ShowIf("PlayMultipleWaves")]
+    [Tooltip("How many times sound wave will play")]
+    [AllowNesting]
+    public int NumberOfWaves=1;
+
+    [ShowIf("PlayMultipleWaves")]
+    [AllowNesting]
+    public float SecondsBetweenWaves=0.25f;
 
     public Gradient ColorOverLifetime = new Gradient()
     {
@@ -40,6 +52,7 @@ public class SoundWaveProperties
     };
 
     [CurveRange(0, 0, 1, 1, EColor.Red)]
+    [Tooltip("Size of the particle sphere")]
     public AnimationCurve sizeOverLifetime = new AnimationCurve();
 
     [Tooltip("Plays nothing if null. Clip that plays when sound wave is created.")]

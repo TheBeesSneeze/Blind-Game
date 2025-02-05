@@ -17,7 +17,7 @@ public class PlayerManager : MonoBehaviour
 
     private Collider collider;
     private Rigidbody rb;
-    public float playerHeight, playerWidth;
+    private float playerHeight, playerWidth;
     public float GravityForce;
 
     private void Start()
@@ -60,7 +60,7 @@ public class PlayerManager : MonoBehaviour
     {
         //bool hit = Physics.BoxCast(collider.bounds.center, Vector3.one * playerWidth, Vector3.down, Quaternion.identity, playerHeight * 1.1f, groundMask);
 
-        bool hit = Physics.Raycast(transform.position, Vector3.down, playerHeight/2, groundMask);
+        bool hit = Physics.Raycast(transform.position, Vector3.down, playerHeight/1.5f, groundMask);
         Debug.DrawRay(transform.position, Vector3.down * playerHeight/2, hit ? Color.green : Color.red);
 
         return hit;
