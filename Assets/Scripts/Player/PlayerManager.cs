@@ -17,7 +17,7 @@ public class PlayerManager : MonoBehaviour
 
     private Collider collider;
     private Rigidbody rb;
-    public float playerHeight, playerWidth;
+    private float playerHeight, playerWidth;
     public float GravityForce;
 
     private void Start()
