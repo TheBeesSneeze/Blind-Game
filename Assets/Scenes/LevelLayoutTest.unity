@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1.36
+  m_AmbientIntensity: 0
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
@@ -8449,6 +8449,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1557802846134222547, guid: 7343e51a4c4993f43a80f919b7f58779, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2293152326433697349, guid: 7343e51a4c4993f43a80f919b7f58779, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 2293152326433697349, guid: 7343e51a4c4993f43a80f919b7f58779, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2424303086417365197, guid: 7343e51a4c4993f43a80f919b7f58779, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -8559,7 +8571,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8696840307567006964, guid: 7343e51a4c4993f43a80f919b7f58779, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8696840307567006964, guid: 7343e51a4c4993f43a80f919b7f58779, type: 3}
       propertyPath: m_AnchorMin.x
@@ -8567,7 +8579,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8696840307567006964, guid: 7343e51a4c4993f43a80f919b7f58779, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8696840307567006964, guid: 7343e51a4c4993f43a80f919b7f58779, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8696840307567006964, guid: 7343e51a4c4993f43a80f919b7f58779, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.1972001
+      objectReference: {fileID: 0}
+    - target: {fileID: 8696840307567006964, guid: 7343e51a4c4993f43a80f919b7f58779, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.92
       objectReference: {fileID: 0}
     - target: {fileID: 8696840307567006964, guid: 7343e51a4c4993f43a80f919b7f58779, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -8575,7 +8599,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8696840307567006964, guid: 7343e51a4c4993f43a80f919b7f58779, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 100
+      value: -13.150024
+      objectReference: {fileID: 0}
+    - target: {fileID: 8696840307567006964, guid: 7343e51a4c4993f43a80f919b7f58779, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
