@@ -152,11 +152,12 @@ public class Interact : MonoBehaviour
         _isHolding = true;
         _inHandObject = pickup;
 
-        //TODO: add pick up sfx
+        SfxManager.Instance.PlaySFX("picking up");
 
         //sets the picked up iten to the anchor
         pickup.transform.position = _pickupAnchor.transform.position;
         pickup.transform.rotation = _pickupAnchor.transform.rotation;
+        pickup.transform.localScale = _pickupAnchor.transform.localScale;
         pickup.transform.parent = _pickupAnchor.transform;
 
     }
@@ -170,7 +171,7 @@ public class Interact : MonoBehaviour
         {
             _isHolding = false;
 
-            //TODO: add drop sfx
+            SfxManager.Instance.PlaySFX("picking up");
 
             _inHandObject.transform.parent = null;
             _inHandObject.GetComponent<PickupInteractable>().EnableRB();
@@ -190,7 +191,7 @@ public class Interact : MonoBehaviour
             {
                 _isHolding = false;
 
-                //TODO: add throw sfx
+                SfxManager.Instance.PlaySFX("throwing");
 
                 //"drops" object
                 _inHandObject.transform.parent = null;

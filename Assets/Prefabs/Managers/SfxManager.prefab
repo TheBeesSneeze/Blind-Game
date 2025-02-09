@@ -54,4 +54,87 @@ MonoBehaviour:
     pitch: 1
     doLoop: 0
     source: {fileID: 0}
+  - name: pottery breaking
+    clips:
+    - {fileID: 8300000, guid: 9af4584780830d54caa39ba06e504c73, type: 3}
+    - {fileID: 8300000, guid: 57210bf3025f94b43b1e12ea76c2274b, type: 3}
+    clip: {fileID: 0}
+    mixer: {fileID: 24300002, guid: f50f0c234c0d7fd4f82756c476dd3e4e, type: 2}
+    maxVolume: 1
+    pitch: 1
+    doLoop: 0
+    source: {fileID: 0}
+  - name: big pottery
+    clips:
+    - {fileID: 8300000, guid: 65693750f9c328c4b9ebcc08d1725314, type: 3}
+    clip: {fileID: 0}
+    mixer: {fileID: 24300002, guid: f50f0c234c0d7fd4f82756c476dd3e4e, type: 2}
+    maxVolume: 1
+    pitch: 1
+    doLoop: 0
+    source: {fileID: 0}
+  - name: rock crumbling
+    clips:
+    - {fileID: 8300000, guid: cb4fb4bb3a724d0428746ac01a4e91cf, type: 3}
+    clip: {fileID: 0}
+    mixer: {fileID: 24300002, guid: f50f0c234c0d7fd4f82756c476dd3e4e, type: 2}
+    maxVolume: 1
+    pitch: 1
+    doLoop: 0
+    source: {fileID: 0}
+  - name: table breaking
+    clips:
+    - {fileID: 8300000, guid: 48916257a8eec044fa91a395c9190de9, type: 3}
+    clip: {fileID: 0}
+    mixer: {fileID: 24300002, guid: f50f0c234c0d7fd4f82756c476dd3e4e, type: 2}
+    maxVolume: 1
+    pitch: 1
+    doLoop: 0
+    source: {fileID: 0}
+  - name: table
+    clips:
+    - {fileID: 8300000, guid: 964b780f3748df1449a83131255cbb6a, type: 3}
+    clip: {fileID: 0}
+    mixer: {fileID: 24300002, guid: f50f0c234c0d7fd4f82756c476dd3e4e, type: 2}
+    maxVolume: 1
+    pitch: 1
+    doLoop: 0
+    source: {fileID: 0}
+  - name: walking
+    clips:
+    - {fileID: 8300000, guid: 196bf4d9416cce740954a72efad14fff, type: 3}
+    clip: {fileID: 0}
+    mixer: {fileID: 24300002, guid: f50f0c234c0d7fd4f82756c476dd3e4e, type: 2}
+    maxVolume: 1
+    pitch: 1
+    doLoop: 0
+    source: {fileID: 0}
+  - name: tools breaking
+    clips:
+    - {fileID: 8300000, guid: 13a61da3baf3f7e468ad2e67bb0817f1, type: 3}
+    - {fileID: 8300000, guid: 71c4b3c373fa33446b993cf877a0d122, type: 3}
+    clip: {fileID: 0}
+    mixer: {fileID: 24300002, guid: f50f0c234c0d7fd4f82756c476dd3e4e, type: 2}
+    maxVolume: 1
+    pitch: 1
+    doLoop: 0
+    source: {fileID: 0}
+  - name: throwing
+    clips:
+    - {fileID: 8300000, guid: 4771e47096608f54f954077f7b917464, type: 3}
+    clip: {fileID: 0}
+    mixer: {fileID: 24300002, guid: f50f0c234c0d7fd4f82756c476dd3e4e, type: 2}
+    maxVolume: 1
+    pitch: 1
+    doLoop: 0
+    source: {fileID: 0}
+  - name: picking up
+    clips:
+    - {fileID: 8300000, guid: 5e8dedc119b4b3d43ae90ba11a602119, type: 3}
+    clip: {fileID: 0}
+    mixer: {fileID: 24300002, guid: f50f0c234c0d7fd4f82756c476dd3e4e, type: 2}
+    maxVolume: 0.269
+    pitch: 1
+    doLoop: 0
+    source: {fileID: 0}
   _masterMixer: {fileID: 24100000, guid: f50f0c234c0d7fd4f82756c476dd3e4e, type: 2}
