@@ -5,11 +5,11 @@ using UnityEngine;
 public class PickupInteractable : MonoBehaviour, IInteractable
 {
     private Rigidbody rb;
-    [SerializeField] private int throwForce;
+    public int throwForce;
 
     private Outline outline;
     private TrailRenderer trailRenderer;
-    [SerializeField] private Material trailMaterial;
+    public Material trailMaterial;
 
     private void Start()
     {

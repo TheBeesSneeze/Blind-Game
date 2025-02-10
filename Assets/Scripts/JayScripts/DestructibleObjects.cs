@@ -11,23 +11,26 @@ public class DestructibleObjects : MonoBehaviour
 
 
     [Tooltip("How loud is the object?")]
-    [SerializeField] float sound;
+    public float sound;
 
     [Tooltip("Exact string from sfx manager")]
-    [SerializeField] string nameOfSfx;
+    public string nameOfSfx;
 
     //comment this one out if we end up not adding in the points system
     [Tooltip("How many points does breaking this object subtract?")]
-    [SerializeField] int points;
+    public int points;
 
     [Tooltip("How fast does this item need to be going to break?")]
-    [SerializeField] float minimumVelocity;
+    public float minimumVelocity;
 
     [Tooltip("Add whatever layers that this object should collide with here!")]
-    [SerializeField] LayerMask surfaces;
+    public LayerMask surfaces;
 
     [Tooltip("Edit this object's soundwave here!")]
-    [SerializeField] SoundWaveProperties waves;
+    public SoundWaveProperties waves;
+
+    [Tooltip("Will the marble be able to destroy this object?")]
+    public bool canBeDestroyedByMarble;
 
     public void OnCollisionEnter(Collision collision)
     {
@@ -64,6 +67,28 @@ public class DestructibleObjects : MonoBehaviour
                     pi.DisableLightComponets();
                 }
             } 
+        }
+
+        if(collision.gameObject.GetComponent<Marble>() != null && canBeDestroyedByMarble)
+        {
+
+            SfxManager.Instance.PlaySFX(nameOfSfx);
+
+            waves.PlayAtPosition(collision.contacts[0].point);
+
+            Destroy(this.gameObject);
+
+            Rigidbody rb = this.gameObject.GetComponent<Rigidbody>();
+
+            if (rb.velocity.magnitude <= 5)
+            {
+                PickupInteractable pi = GetComponent<PickupInteractable>();
+                if (pi != null)
+                {
+                    pi.DisableLightComponets();
+                }
+            }
+
         }
     }
 

@@ -17,6 +17,12 @@ public class PermanentOutline : MonoBehaviour
 
         outline = GetComponent<Outline>();
 
+        if (outline == null)
+        {
+            outline = gameObject.AddComponent<Outline>();
+        }
+        outline.enabled = false;
+
     }
 
     public void OnParticleCollision(GameObject other)
