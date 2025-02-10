@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Sound Wave
+  m_Name: Constant Sound Wave
   m_Shader: {fileID: -6465566751694194690, guid: 1cda39d4692b4764d826ec872a46b4d4, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -47,7 +47,7 @@ Material:
     - _Cull: 0
     - _DistanceForOpacity: 0.1
     - _DstBlend: 10
-    - _Intersection_Depth: 0.4
+    - _Intersection_Depth: 0.6
     - _QueueControl: 0
     - _QueueOffset: 0
     - _SrcBlend: 5
@@ -56,8 +56,8 @@ Material:
     - _ZWrite: 0
     - _ZWriteControl: 0
     m_Colors:
-    - _Intersection_Color: {r: 6.4980206, g: 6.4980206, b: 6.4980206, a: 1}
-    - _PlayerPosition: {r: -2.706256, g: -0.97, b: -16.976686, a: 0}
+    - _Intersection_Color: {r: 6.4983425, g: 8.675369, b: 8.167955, a: 0.15686275}
+    - _PlayerPosition: {r: 1.1070316, g: -0.97, b: -19.050991, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &6316938708454076450
 MonoBehaviour:
