@@ -381,11 +381,6 @@ MonoBehaviour:
   - {fileID: 1287955806}
   - {fileID: 596775141}
   - {fileID: 366294473}
-  t: 0
-  t_whenClicked: 0
-  opacity: 0
-  opacity_whenClicked: 0
-  timeOfClick: 0
 --- !u!114 &351959563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1446,6 +1441,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06c113a07d27005408f957a7d33320e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: 0
+  sceneToLoad: 1
   startButton: {fileID: 596775142}
   quitButton: {fileID: 366294474}
