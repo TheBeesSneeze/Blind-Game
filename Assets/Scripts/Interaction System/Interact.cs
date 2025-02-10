@@ -204,6 +204,16 @@ public class Interact : MonoBehaviour
                 _inHandObject = null;
             }
         }
+
+        //hi!! jay here. if the player isn't already holding an interactable object, they will throw a marble instead
+        if(!_isHolding)
+        {
+
+            SfxManager.Instance.PlaySFX("throwing");
+
+            //instantiates the marble????
+
+        }
     }
 
 }
