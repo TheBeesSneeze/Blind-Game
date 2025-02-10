@@ -13,11 +13,11 @@ public class MainMenuOpacity : MonoBehaviour
     private RectTransform rectTransform;
 
     //calculation variables
-    public float t;
-    public float t_whenClicked;
-    public float opacity;
-    public float opacity_whenClicked;
-    public float timeOfClick;
+    private float t;
+    private float t_whenClicked;
+    private float opacity;
+    private float opacity_whenClicked;
+    private float timeOfClick;
     float xSize;
     float ySize;
 
@@ -34,6 +34,7 @@ public class MainMenuOpacity : MonoBehaviour
         float yMargin = rectTransform.rect.height / 10;
         xSize = rectTransform.rect.width - xMargin;
         ySize = rectTransform.rect.height - yMargin;
+ 
 
         foreach (var item in itemsToRandomize)
         {
@@ -61,6 +62,7 @@ public class MainMenuOpacity : MonoBehaviour
 
     void RandomizeItemLocation(RectTransform item)
     {
+        return;
         float x = Random.Range(-xSize/2, xSize/2 );
         float y = Random.Range(-ySize/2, ySize/2);
         item.anchoredPosition = new Vector2(x,y);
