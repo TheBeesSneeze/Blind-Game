@@ -7,34 +7,30 @@ public class MainMenuOpacity : MonoBehaviour
 {
     [SerializeField] AnimationCurve curve;
     [SerializeField] RectTransform[] itemsToRandomize;
+    [SerializeField] float minDistanceBetweenComponents;
+    [SerializeField] private CanvasGroup group;
 
-    private CanvasGroup group;
     private Button button;
     private RectTransform rectTransform;
 
     //calculation variables
+
+    private const float WIDTH = 1920;
+    private const float HEIGHT = 1080;
+
     private float t;
     private float t_whenClicked;
     private float opacity;
     private float opacity_whenClicked;
     private float timeOfClick;
-    float xSize;
-    float ySize;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        group = GetComponent<CanvasGroup>();
         button = GetComponent<Button>();
         button.onClick.AddListener(OnClick);
         rectTransform = GetComponent<RectTransform>();
-
-        float xMargin = rectTransform.rect.width / 10;
-        float yMargin = rectTransform.rect.height / 10;
-        xSize = rectTransform.rect.width - xMargin;
-        ySize = rectTransform.rect.height - yMargin;
- 
 
         foreach (var item in itemsToRandomize)
         {
@@ -52,6 +48,7 @@ public class MainMenuOpacity : MonoBehaviour
             {
                 RandomizeItemLocation(item);
             }
+            ValidateComponentDistances();
         }
         timeOfClick = Time.time;
 
@@ -62,10 +59,49 @@ public class MainMenuOpacity : MonoBehaviour
 
     void RandomizeItemLocation(RectTransform item)
     {
-        return;
-        float x = Random.Range(-xSize/2, xSize/2 );
-        float y = Random.Range(-ySize/2, ySize/2);
+        float x = Random.Range(-WIDTH/4, WIDTH/4);
+        float y = Random.Range(-HEIGHT/4, HEIGHT/4);
         item.anchoredPosition = new Vector2(x,y);
+    }
+
+    private void ValidateComponentDistances()
+    {
+        bool complete = true;
+        while (complete)
+        {
+            complete = true;
+            for (int i = 0; i < itemsToRandomize.Length; i++)
+            {
+                for (int j = 0; j < itemsToRandomize.Length; j++)
+                {
+                    if (i == j)
+                        continue;
+
+                    float distance = Vector3.Distance(itemsToRandomize[i].position, itemsToRandomize[j].position);
+
+                    // if two components are too close
+                    if (distance < minDistanceBetweenComponents)
+                    {
+                        complete = false;
+                        Debug.Log(distance);
+                        DriftComponentsAway(itemsToRandomize[i], itemsToRandomize[j]);
+                    }
+                        
+                }
+            }
+
+            if (complete)
+                return;
+        }
+        
+    }
+
+    private void DriftComponentsAway(RectTransform obj1, RectTransform obj2)
+    {
+        Vector3 direction = obj1.position - obj2.position;
+
+        obj1.position += direction;
+        obj2.position -= direction;
     }
 
     // who cares man
@@ -82,6 +118,9 @@ public class MainMenuOpacity : MonoBehaviour
         }
 
         group.alpha = opacity;
+
+        group.interactable = (group.alpha > 0);
+
 
 
     }
