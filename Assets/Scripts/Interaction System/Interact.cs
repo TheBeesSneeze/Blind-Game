@@ -214,7 +214,7 @@ public class Interact : MonoBehaviour
             SfxManager.Instance.PlaySFX("throwing");
 
             //instantiates the marble
-            GameObject newMarble = Instantiate(marble);
+            GameObject newMarble = Instantiate(marble, _pickupAnchor.transform.position, Quaternion.identity);
 
             //throw that bad boy
             //Ray r = _camera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
