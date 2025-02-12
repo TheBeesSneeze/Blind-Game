@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2514816890581236267}
   - component: {fileID: 4108581476962720482}
+  - component: {fileID: 3296650426830226506}
   m_Layer: 0
   m_Name: SoundWave Manager
   m_TagString: Untagged
@@ -75,3 +76,19 @@ MonoBehaviour:
     m_ColorSpace: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
+--- !u!114 &3296650426830226506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9179949463330598672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c639e481f3b0414da492a78fde5a485, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: b8b255f974321454e8638d7ca45be98e, type: 2}
+  propertyPath: _PlayerPosition
+  shader: {fileID: -6465566751694194690, guid: 67e02297c7a22c64fa65655df5d9f6c7, type: 3}
+  obj: {fileID: 0}
