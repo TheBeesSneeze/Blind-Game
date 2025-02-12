@@ -5743,6 +5743,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1741621684871853719, guid: 64ab6dd9acd8fc84d8b15a70ac450d78, type: 3}
+      propertyPath: marble
+      value: 
+      objectReference: {fileID: 5168859581904552303, guid: bd46f5f0b052b064aab3fcdf829c0fc9, type: 3}
     - target: {fileID: 2260283959972883026, guid: 64ab6dd9acd8fc84d8b15a70ac450d78, type: 3}
       propertyPath: topClamp
       value: -60
