@@ -6,7 +6,7 @@ public class ObjectPositionToShader : MonoBehaviour
 {
     [SerializeField] Material material;
     [SerializeField] string propertyPath;
-    [SerializeField] Shader shader;
+    //[SerializeField] Shader shader;
     [SerializeField] Transform obj;
 
     // Start is called before the first frame update
