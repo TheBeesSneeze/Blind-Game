@@ -15,9 +15,9 @@ public class MeshDestroy : MonoBehaviour
     private Vector3 edgeVertex = Vector3.zero;
     private Vector2 edgeUV = Vector2.zero;
     private Plane edgePlane = new Plane();
-    [Range(0, 10)]
-    [Tooltip("# of generated pieces = this^2 -1 ")]public int CutCascades = 1;
-    [Range(0, 1500)]
+    [Range(1, 10)]
+    [Tooltip("# of generated pieces = 2^this -1 ")]public int CutCascades = 1;
+    [Range(0, 100)]
     public float ExplodeForce = 0; 
 
     [Range(0, 1f)]
@@ -99,7 +99,7 @@ public class MeshDestroy : MonoBehaviour
             //ComponentUtility.CopyAllComponents(gameObject, go);
 
             MeshCollider mesh = go.GetComponent<MeshCollider>();
-            var volume = MeshVolumeCalculator.CalculateMeshVolume(mesh.sharedMesh, go.transform.localScale);
+            var volume = MeshVolumeCalculator.CalculateMeshVolume(mesh);//, go.transform.localScale);
 
             go.GetComponent<Rigidbody>().mass *= Mathf.Clamp(volume, 0.01f, go.GetComponent<Rigidbody>().mass);
             go.GetComponent<Rigidbody>().AddForceAtPosition(Vector3.up + parts[i].Bounds.center * ExplodeForce * Mathf.Max(volume, 0.01f), transform.position);
@@ -333,14 +333,30 @@ public class MeshDestroy : MonoBehaviour
             var meshDestroy = GameObject.AddComponent<MeshDestroy>();
 
 
-            meshDestroy.CutCascades = original.CutCascades;
-            meshDestroy.ExplodeForce = original.ExplodeForce;
-            meshDestroy.MinimumLivingPieceSize = original.MinimumLivingPieceSize;
+            meshDestroy.CutCascades = Mathf.Max(original.CutCascades / 2, 1);
+            meshDestroy.ExplodeForce = Mathf.Max(original.ExplodeForce / 2, 1);
+            meshDestroy.MinimumLivingPieceSize = original.MinimumLivingPieceSize * 2;
             meshDestroy.DyingPieceLifetime = original.DyingPieceLifetime;
 
 
-            //var destObj = GameObject.AddComponent<DestructibleObjects>();
-            //var dOriginal = original.GetComponent<DestructibleObjects>();
+            var destObj = GameObject.AddComponent<DestructibleObjects>();
+            var dOriginal = original.GetComponent<DestructibleObjects>();
+            
+            destObj.volume = dOriginal.volume / 2;
+            //destObj.nameOfSfx = dOriginal.nameOfSfx;
+            destObj.points = dOriginal.points / 2;
+            destObj.minimumVelocity = dOriginal.minimumVelocity;
+            destObj.surfaces = dOriginal.surfaces;
+            destObj.waves = dOriginal.waves;
+
+            var destRend = GameObject.AddComponent<PickupInteractable>();
+            var origRend = original.GetComponent<PickupInteractable>();
+
+            if(origRend != null)
+            {
+                destRend.throwForce = origRend.throwForce;
+                destRend.trailMaterial = origRend.trailMaterial;
+            }
         }
     }
 }
