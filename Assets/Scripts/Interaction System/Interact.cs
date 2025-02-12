@@ -32,6 +32,8 @@ public class Interact : MonoBehaviour
     [SerializeField] private float _maxInteractDistance;
     [SerializeField] LayerMask _layerToIgnore;
 
+    [SerializeField] GameObject marble;
+
     private void Awake()
     {
         //listen for inputs
@@ -211,7 +213,12 @@ public class Interact : MonoBehaviour
 
             SfxManager.Instance.PlaySFX("throwing");
 
-            //instantiates the marble????
+            //instantiates the marble
+            GameObject newMarble = Instantiate(marble);
+
+            //throw that bad boy
+            //Ray r = _camera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
+            //newMarble.GetComponent<Marble>().ThrowMarble(r.direction);
 
         }
     }
