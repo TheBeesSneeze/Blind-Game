@@ -4966,11 +4966,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eff400a558d3d349bcd545dc6e56f86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpPower: 15
+  jumpPower: 20
   maxJumpCharge: 1.5
   soundWave:
-    MaxRadius: 2
-    Lifetime: 0.5
+    MaxRadius: 15
+    Lifetime: 3
     PlayMultipleWaves: 1
     NumberOfWaves: 1
     SecondsBetweenWaves: 0.25
@@ -5067,8 +5067,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58aadd92731e86e4aab44d158f283686, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceleration: 20
-  maxSpeed: 10
+  acceleration: 25
+  maxSpeed: 35
 --- !u!114 &210587030655047148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5367,8 +5367,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sensitivity: 25
-  topClamp: -88
-  bottomClamp: 88
+  topClamp: -60
+  bottomClamp: 60
 --- !u!20 &1072995310751546998
 Camera:
   m_ObjectHideFlags: 0

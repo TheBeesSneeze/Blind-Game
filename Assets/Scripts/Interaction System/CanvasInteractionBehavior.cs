@@ -32,4 +32,10 @@ public class CanvasInteractionBehavior : MonoBehaviour
     {
         interactPrompt.SetActive(false);
     }
+
+    private void OnDisable()
+    {
+        ShowInteractUI -= EnableInteractUI;
+        HideInteractUI -= DisableInteractUI;
+    }
 }

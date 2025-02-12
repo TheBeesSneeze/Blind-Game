@@ -80,15 +80,6 @@ public class DestructibleObjects : MonoBehaviour
 
             Rigidbody rb = this.gameObject.GetComponent<Rigidbody>();
 
-            if (rb.velocity.magnitude <= 5)
-            {
-                PickupInteractable pi = GetComponent<PickupInteractable>();
-                if (pi != null)
-                {
-                    pi.DisableLightComponets();
-                }
-            }
-
         }
     }
 
