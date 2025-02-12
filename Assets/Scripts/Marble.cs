@@ -7,6 +7,7 @@ public class Marble : MonoBehaviour
 
     Rigidbody rb;
     Camera cam;
+    float timer = 0;
 
     [Header("Stats")]
 
@@ -59,8 +60,9 @@ public class Marble : MonoBehaviour
 
     public void Update()
     {
+        timer += Time.deltaTime;
 
-        if(rb.velocity.magnitude <= minimumVelocity)
+        if(rb.velocity.magnitude <= minimumVelocity && timer >= 3)
         {
 
             Destroy(this.gameObject);
