@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7780173623188496436}
   - component: {fileID: 2977056153901158443}
   - component: {fileID: -960366469351624119}
+  - component: {fileID: 2160707975731399697}
   m_Layer: 0
   m_Name: WM_Table2
   m_TagString: Untagged
@@ -218,3 +219,25 @@ MonoBehaviour:
   ExplodeForce: 0
   MinimumLivingPieceSize: 0
   DyingPieceLifetime: 0
+--- !u!64 &2160707975731399697
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824403423439184967}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8906563331131944060, guid: 4eadd36fea7cd344e96409e0f0e1f884, type: 3}

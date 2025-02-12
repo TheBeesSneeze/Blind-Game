@@ -140,6 +140,7 @@ GameObject:
   - component: {fileID: -6464513746663416598}
   - component: {fileID: 6868326348059109219}
   - component: {fileID: 234585657412235277}
+  - component: {fileID: -2698513235488436519}
   m_Layer: 0
   m_Name: WM_PaintingTan
   m_TagString: Untagged
@@ -294,6 +295,28 @@ MonoBehaviour:
   ExplodeForce: 0
   MinimumLivingPieceSize: 0
   DyingPieceLifetime: 0
+--- !u!64 &-2698513235488436519
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6773718542858101718}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &8298814300456758618
 GameObject:
   m_ObjectHideFlags: 0

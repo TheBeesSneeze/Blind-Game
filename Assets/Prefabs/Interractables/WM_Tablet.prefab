@@ -108,6 +108,7 @@ GameObject:
   - component: {fileID: -7803429909145623670}
   - component: {fileID: -4710924707356354922}
   - component: {fileID: 319551256870040940}
+  - component: {fileID: 1484242426974545200}
   m_Layer: 0
   m_Name: WM_Tablet
   m_TagString: Untagged
@@ -272,6 +273,28 @@ MonoBehaviour:
   ExplodeForce: 0
   MinimumLivingPieceSize: 0
   DyingPieceLifetime: 0
+--- !u!64 &1484242426974545200
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314760409680402437}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &558264397578585837
 GameObject:
   m_ObjectHideFlags: 0

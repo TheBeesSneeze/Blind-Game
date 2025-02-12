@@ -159,6 +159,7 @@ GameObject:
   - component: {fileID: -891222345364434397}
   - component: {fileID: -4157823270571948812}
   - component: {fileID: 5975610421328188999}
+  - component: {fileID: 1248382424907229649}
   m_Layer: 0
   m_Name: WM_Pyramid
   m_TagString: Untagged
@@ -314,6 +315,28 @@ MonoBehaviour:
   ExplodeForce: 0
   MinimumLivingPieceSize: 0
   DyingPieceLifetime: 0
+--- !u!64 &1248382424907229649
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3393131276837260788}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &4226596414679106522
 GameObject:
   m_ObjectHideFlags: 0

@@ -222,6 +222,7 @@ GameObject:
   - component: {fileID: 4941766069569576397}
   - component: {fileID: -833940163368688767}
   - component: {fileID: 4629528114627951040}
+  - component: {fileID: -1756758429654124094}
   m_Layer: 0
   m_Name: WM_DisplayPlatform
   m_TagString: Untagged
@@ -377,6 +378,28 @@ MonoBehaviour:
   ExplodeForce: 0
   MinimumLivingPieceSize: 0
   DyingPieceLifetime: 0
+--- !u!64 &-1756758429654124094
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6050096065034303750}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &7962953244784961741
 GameObject:
   m_ObjectHideFlags: 0
