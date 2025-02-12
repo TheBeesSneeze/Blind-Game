@@ -55,7 +55,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Circle_Density: 5
-    - _Distance_For_Opacity: 0
+    - _Distance_For_Opacity: 7
     - _Falloff_Threshold: 2.5
     - _Lit_Threshold: 1
     - _Opacity_Falloff: 0.1
@@ -67,4 +67,5 @@ Material:
     - _USE_SCREEN_SPACE: 0
     m_Colors:
     - _Base_Color: {r: 0.31719476, g: 0.8301887, b: 0.79636496, a: 1}
+    - _PlayerPosition: {r: -4.4564548, g: 2.5000002, b: -13.659382, a: 0}
   m_BuildTextureStacks: []
