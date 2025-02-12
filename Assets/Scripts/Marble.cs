@@ -6,6 +6,7 @@ public class Marble : MonoBehaviour
 {
 
     Rigidbody rb;
+    Camera cam;
 
     [Header("Stats")]
 
@@ -32,11 +33,13 @@ public class Marble : MonoBehaviour
     [Header("Throwing")]
 
     [SerializeField] int throwForce;
-    [SerializeField] TrailRenderer trailRenderer;
+    private TrailRenderer trailRenderer;
     public Material TrailMaterial;
 
     void Start()
     {
+
+        cam = Camera.main;
 
         rb = GetComponent<Rigidbody>();
 
@@ -48,6 +51,9 @@ public class Marble : MonoBehaviour
             trailRenderer.material = TrailMaterial;
         }
         trailRenderer.enabled = false;
+
+        Ray r = cam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
+        ThrowMarble(r.direction);
 
     }
 
