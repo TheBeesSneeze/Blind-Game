@@ -8645,7 +8645,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sound: 0
-  nameOfSfx: 
+  nameOfSfx: Marble
   minimumVelocity: 0.1
   surfaces:
     serializedVersion: 2

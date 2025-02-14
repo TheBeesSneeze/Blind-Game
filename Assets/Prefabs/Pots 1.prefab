@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 608057598483673405}
   - component: {fileID: 4352925360018818287}
   - component: {fileID: 8552608964501949309}
+  - component: {fileID: 5005877428001344908}
   m_Layer: 0
   m_Name: Pots 1
   m_TagString: Untagged
@@ -40,7 +41,7 @@ Transform:
   m_Children:
   - {fileID: 8916280866821743424}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8997098984157349108
 MonoBehaviour:
@@ -306,7 +307,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 5afebd26a4367a6499a07e39642f041a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -396,8 +397,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79894c8ae703434991e268a432d8c46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: 10
-  nameOfSfx: pottery breaking
+  volume: 0
   points: 10
   minimumVelocity: 1
   surfaces:
@@ -465,6 +465,7 @@ MonoBehaviour:
       m_RotationOrder: 4
     IsPerpetualSound: 0
     sound: {fileID: 0}
+  canBeDestroyedByMarble: 0
 --- !u!114 &608057598483673405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -513,6 +514,28 @@ MonoBehaviour:
   ExplodeForce: 965
   MinimumLivingPieceSize: 0.25
   DyingPieceLifetime: 1
+--- !u!64 &5005877428001344908
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4192105483508654052}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1001 &8950419685186782379
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -527,15 +550,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c22511055a1014e40850ebc1610d882b, type: 3}
       propertyPath: m_LocalScale.x
-      value: 29.999998
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c22511055a1014e40850ebc1610d882b, type: 3}
       propertyPath: m_LocalScale.y
-      value: 29.999998
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c22511055a1014e40850ebc1610d882b, type: 3}
       propertyPath: m_LocalScale.z
-      value: 29.999998
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c22511055a1014e40850ebc1610d882b, type: 3}
       propertyPath: m_LocalPosition.x
