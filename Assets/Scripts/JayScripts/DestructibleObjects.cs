@@ -82,13 +82,18 @@ public class DestructibleObjects : MonoBehaviour
 
         if(collision.gameObject.GetComponent<Marble>() != null && canBeDestroyedByMarble)
         {
+           
             //SfxManager.Instance.PlaySFX(nameOfSfx);
 
             waves.PlayAtPosition(collision.contacts[0].point, volume);
 
             //Destroy(this.gameObject);
-            Rigidbody rb = this.gameObject.GetComponent<Rigidbody>();
-
+            //Rigidbody rb = this.gameObject.GetComponent<Rigidbody>();
+            var md2 = gameObject.GetComponent<MeshDestroy>();
+            if (md2 != null)
+            {
+                md2.DestroyMesh();
+            }
         }
     }
 

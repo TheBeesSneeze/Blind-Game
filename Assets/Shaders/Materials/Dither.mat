@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-5833111941486550254
+--- !u!114 &-3770063561182377158
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Halftone
-  m_Shader: {fileID: -6465566751694194690, guid: 67e02297c7a22c64fa65655df5d9f6c7, type: 3}
+  m_Name: Dither
+  m_Shader: {fileID: -6465566751694194690, guid: a3fb8eca06d622044b5c40da00a53ddf, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -36,10 +36,6 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _Base_Texture:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -54,18 +50,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Circle_Density: 5
-    - _Distance_For_Opacity: 7
-    - _Falloff_Threshold: 2.5
-    - _Lit_Threshold: 1
-    - _Opacity_Falloff: 0.1
+    - _DitherPercent: 0.5
+    - _Dither_Size: 1
+    - _PixelSize: 0.75
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Rotation: 0
-    - _Shading_Multiplier: 0.1
-    - _Softness: 0
-    - _USE_SCREEN_SPACE: 0
     m_Colors:
-    - _Base_Color: {r: 0.31719476, g: 0.8301887, b: 0.79636496, a: 1}
-    - _PlayerPosition: {r: -26.300022, g: 13.648399, b: 6.2347436, a: 0}
+    - _Color_1: {r: 1, g: 1, b: 1, a: 1}
+    - _Color_2: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
