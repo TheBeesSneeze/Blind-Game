@@ -8613,7 +8613,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 132519762523675910}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 0.01
   m_Drag: 0
   m_AngularDrag: 0.5
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -8719,55 +8719,11 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    sizeOverLifetime2:
-      m_Mode: 1
-      m_CurveMultiplier: 1
-      m_CurveMin:
-        serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      m_CurveMax:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: -0.012500001
-          value: 0.9507541
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        - serializedVersion: 3
-          time: 0.068432614
-          value: 1.0473561
-          inSlope: 0.011175395
-          outSlope: 0.011175395
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.1928607
-        - serializedVersion: 3
-          time: 0.9666667
-          value: 1.0497173
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      m_ConstantMin: 0
-      m_ConstantMax: 0
     IsPerpetualSound: 0
     sound: {fileID: 0}
   WaveScalar: 1
   throwForce: 5
-  TrailMaterial: {fileID: 2100000, guid: c8ff10812fc546447a4ee64796e8bea5, type: 2}
+  TrailMaterial: {fileID: 2100000, guid: 9b19c8b90601cf8409d665532b4133a6, type: 2}
 --- !u!135 &892796910258950385
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8810,7 +8766,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 9b19c8b90601cf8409d665532b4133a6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8831,7 +8787,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 5
+  m_Time: 2.5
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
@@ -8848,6 +8804,15 @@ TrailRenderer:
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.91981983
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4

@@ -17,8 +17,8 @@ public class Marble : MonoBehaviour
     [Tooltip("Exact string from sfx manager")]
     public string nameOfSfx;
 
-    //[Tooltip("At what point will the marble disappear from the scene?")]
-    //public float minimumVelocity=0.1f;
+    [Tooltip("At what point will the marble disappear from the scene?")]
+    public float minimumVelocity=0.1f;
 
     [Tooltip("How many seconds of NO BOUNCING until it gets destroyed")]
     public float secondsToDestroy=3;
@@ -64,9 +64,20 @@ public class Marble : MonoBehaviour
     public void ThrowMarble(Vector3 direction)
     {
 
-        rb.AddForce(direction * 100 * throwForce);
+        rb.AddForce(direction * 100 * throwForce * rb.mass);
         trailRenderer.enabled = true;
 
+    }
+
+    private void LateUpdate()
+    {
+        if(rb.velocity.magnitude <= minimumVelocity && timer > 1)
+        {
+            if (transform.parent != null)
+                Destroy(transform.parent.gameObject);
+            else
+                Destroy(this.gameObject);
+        }
     }
 
     public void OnCollisionEnter(Collision collision)
