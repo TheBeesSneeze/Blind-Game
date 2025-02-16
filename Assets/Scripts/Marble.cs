@@ -17,8 +17,11 @@ public class Marble : MonoBehaviour
     [Tooltip("Exact string from sfx manager")]
     public string nameOfSfx;
 
-    [Tooltip("At what point will the marble disappear from the scene?")]
-    public float minimumVelocity;
+    //[Tooltip("At what point will the marble disappear from the scene?")]
+    //public float minimumVelocity=0.1f;
+
+    [Tooltip("How many seconds of NO BOUNCING until it gets destroyed")]
+    public float secondsToDestroy=3;
 
     [Tooltip("Add whatever layers that this object should collide with here!")]
     public LayerMask surfaces;
@@ -58,19 +61,6 @@ public class Marble : MonoBehaviour
 
     }
 
-    public void Update()
-    {
-        timer += Time.deltaTime;
-
-        if(rb.velocity.magnitude <= minimumVelocity && timer >= 3)
-        {
-
-            Destroy(this.gameObject);
-
-        }
-
-    }
-
     public void ThrowMarble(Vector3 direction)
     {
 
@@ -81,15 +71,43 @@ public class Marble : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
-
         if (surfaces == (surfaces | (1 << collision.gameObject.layer)))
         {
+            SfxManager.Instance.PlaySFX(nameOfSfx);
+            waves.MaxRadius = rb.velocity.magnitude * WaveScalar;
+            waves.PlayAtPosition(collision.contacts[0].point);
+        }
+    }
+    private void OnCollisionStay(Collision collision)
+    {
+        if (surfaces != (surfaces | (1 << collision.gameObject.layer)))
+        {
+            return;
+        }
+        timer += Time.deltaTime;
 
+        // Been rolling for too damn long
+        if(timer >= secondsToDestroy)
+        {
             SfxManager.Instance.PlaySFX(nameOfSfx);
             waves.MaxRadius = rb.velocity.magnitude * WaveScalar;
             waves.PlayAtPosition(collision.contacts[0].point);
 
+            if(transform.parent != null)
+                Destroy(transform.parent.gameObject);
+            else
+                Destroy(this.gameObject);
         }
 
+        
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (surfaces != (surfaces | (1 << collision.gameObject.layer)))
+        {
+            return;
+        }
+        timer = 0;
     }
 }

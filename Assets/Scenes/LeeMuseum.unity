@@ -24102,6 +24102,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 2069305587}
+    - target: {fileID: 4009387346675922074, guid: 74f95e6bb1cfe46488e1d88258a41edb, type: 3}
+      propertyPath: marble
+      value: 
+      objectReference: {fileID: 5168859581904552303, guid: bd46f5f0b052b064aab3fcdf829c0fc9, type: 3}
     - target: {fileID: 4081113290112755036, guid: 74f95e6bb1cfe46488e1d88258a41edb, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -24614,6 +24618,14 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 92385636}
+    - target: {fileID: 8431267795649789639, guid: 74f95e6bb1cfe46488e1d88258a41edb, type: 3}
+      propertyPath: soundWave.Lifetime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8431267795649789639, guid: 74f95e6bb1cfe46488e1d88258a41edb, type: 3}
+      propertyPath: soundWave.MaxRadius
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8496975185455517758, guid: 74f95e6bb1cfe46488e1d88258a41edb, type: 3}
       propertyPath: m_Mesh
       value: 
