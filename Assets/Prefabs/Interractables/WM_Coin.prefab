@@ -231,7 +231,7 @@ Transform:
   - {fileID: 3074988251883304703}
   - {fileID: 6549249767628272303}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &-5756334674087337844
 MonoBehaviour:
@@ -245,8 +245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79894c8ae703434991e268a432d8c46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: 10
-  nameOfSfx: coin
+  volume: 0
   points: 100
   minimumVelocity: 100
   surfaces:
@@ -431,8 +430,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.0154038295, y: 0.004885301, z: 0.016184576}
+  m_Center: {x: -0.00091269426, y: -0.00018964894, z: -0.000688754}
 --- !u!1 &7494636917563543629
 GameObject:
   m_ObjectHideFlags: 0
