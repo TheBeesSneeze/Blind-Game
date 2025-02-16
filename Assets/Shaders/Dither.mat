@@ -52,6 +52,7 @@ Material:
     m_Floats:
     - _DitherPercent: 0.5
     - _Dither_Size: 1
+    - _PixelSize: 0.75
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
