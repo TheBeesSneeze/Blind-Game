@@ -28,10 +28,12 @@ public class PickupInteractable : MonoBehaviour, IInteractable
         if (trailRenderer == null)
         {
             trailRenderer = gameObject.AddComponent<TrailRenderer>();
-            trailRenderer.endWidth = 0;
-            trailRenderer.material = trailMaterial;
         }
-        trailRenderer.enabled = false;
+        trailRenderer.startWidth = 0.5f;
+        trailRenderer.endWidth = 0;
+        trailRenderer.material = trailMaterial;
+        trailRenderer.time = 2;
+        trailRenderer.enabled = true; //= false;
     }
 
     /// <summary>
@@ -44,6 +46,7 @@ public class PickupInteractable : MonoBehaviour, IInteractable
         rb.detectCollisions = false;
         rb.isKinematic = true;
         outline.enabled = true;
+        trailRenderer.enabled= false;
     }
 
     /// <summary>
@@ -70,6 +73,6 @@ public class PickupInteractable : MonoBehaviour, IInteractable
     public void DisableLightComponets()
     {
         outline.enabled = false;
-        trailRenderer.enabled = false;
+        //trailRenderer.enabled = false;
     }
 }
