@@ -34,7 +34,7 @@ public class ConstantSoundInterval : MonoBehaviour
 
         active = true;
 
-        StartCoroutine(playSoundWaveOverInterval());
+        wave.PlayAtPosition(transform.position);
     }
 
     public void Deactivate()
