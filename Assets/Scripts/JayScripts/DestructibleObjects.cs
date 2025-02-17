@@ -15,8 +15,8 @@ public class DestructibleObjects : MonoBehaviour
     [Tooltip("How loud is the object?")]
     public float volume;
 
-    //[Tooltip("Exact string from sfx manager")]
-    //public string nameOfSfx;
+    [Tooltip("Exact string from sfx manager")]
+    public string nameOfSfx;
 
     //comment this one out if we end up not adding in the points system
     [Tooltip("How many points does breaking this object subtract?")]
@@ -73,7 +73,7 @@ public class DestructibleObjects : MonoBehaviour
         {
             MeshDestruct(gameObject, collision);
 
-
+            SfxManager.Instance.PlaySFX(nameOfSfx);
 
             //when object stops moving, disable light components
             //if (rb.velocity.magnitude <= 5)

@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4873348098225383500
 MonoBehaviour:
@@ -76,7 +76,7 @@ MonoBehaviour:
   - name: rock crumbling
     clips:
     - {fileID: 8300000, guid: cb4fb4bb3a724d0428746ac01a4e91cf, type: 3}
-    - {fileID: 8300000, guid: d3f054ae0d321604a8c38f76e466812c, type: 3}
+    - {fileID: 8300000, guid: 066e6c73cb0580847acfe0a30bb39ffa, type: 3}
     clip: {fileID: 0}
     mixer: {fileID: 24300002, guid: f50f0c234c0d7fd4f82756c476dd3e4e, type: 2}
     maxVolume: 1
@@ -144,6 +144,18 @@ MonoBehaviour:
   - name: Marble
     clips:
     - {fileID: 8300000, guid: 98fee60394276174aa731d8a5c87b534, type: 3}
+    - {fileID: 8300000, guid: 5d33bc005f57f0b4b99a3130a62263fd, type: 3}
+    clip: {fileID: 0}
+    mixer: {fileID: 24300002, guid: f50f0c234c0d7fd4f82756c476dd3e4e, type: 2}
+    maxVolume: 0.269
+    pitch: 1
+    doLoop: 0
+    source: {fileID: 0}
+  - name: Clock
+    clips:
+    - {fileID: 8300000, guid: d3d92744470f69146a235a3290d6b378, type: 3}
+    - {fileID: 8300000, guid: e39cdbdf78a7ac34498ab719b90d061d, type: 3}
+    - {fileID: 8300000, guid: 4d41198ebf77f1a49b90308c6c6f0d3f, type: 3}
     clip: {fileID: 0}
     mixer: {fileID: 24300002, guid: f50f0c234c0d7fd4f82756c476dd3e4e, type: 2}
     maxVolume: 0.269
