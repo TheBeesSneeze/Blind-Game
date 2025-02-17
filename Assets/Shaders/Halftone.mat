@@ -66,6 +66,6 @@ Material:
     - _Softness: 0
     - _USE_SCREEN_SPACE: 0
     m_Colors:
-    - _Base_Color: {r: 0.31719476, g: 0.8301887, b: 0.79636496, a: 1}
-    - _PlayerPosition: {r: 22.663042, g: 2.5, b: -0.17073298, a: 0}
+    - _Base_Color: {r: 1, g: 1, b: 1, a: 1}
+    - _PlayerPosition: {r: 2.784704, g: -3.6028752, b: -3.7389083, a: 0}
   m_BuildTextureStacks: []

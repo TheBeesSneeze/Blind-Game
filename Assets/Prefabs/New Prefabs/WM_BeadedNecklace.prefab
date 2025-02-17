@@ -106,9 +106,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CutCascades: 3
-  ExplodeForce: 26.9
-  MinimumLivingPieceSize: 0.216
-  DyingPieceLifetime: 1.08
+  ExplodeForce: 5
+  MinimumLivingPieceSize: 1
+  DyingPieceLifetime: 0.5
 --- !u!114 &1857701916041787959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,7 +126,7 @@ MonoBehaviour:
   minimumVelocity: 10
   surfaces:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   waves:
     MaxRadius: 1
     Lifetime: 5
@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2e1293c5ef149842bb92af99bccf3a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwForce: 25
+  throwForce: 15
   outline: {fileID: 0}
   trailMaterial: {fileID: 2100000, guid: 9b19c8b90601cf8409d665532b4133a6, type: 2}
 --- !u!54 &7678927143398973088
