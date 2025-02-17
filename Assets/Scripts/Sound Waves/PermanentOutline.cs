@@ -34,4 +34,11 @@ public class PermanentOutline : MonoBehaviour
 
     }
 
+    public void DisableOutline()
+    {
+
+        outline.enabled = false;
+
+    }
+
 }
