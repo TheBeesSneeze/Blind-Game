@@ -7,7 +7,7 @@ public class PickupInteractable : MonoBehaviour, IInteractable
     private Rigidbody rb;
     public int throwForce;
 
-    private Outline outline;
+    public Outline outline;
     private TrailRenderer trailRenderer;
     public Material trailMaterial;
 
@@ -60,6 +60,7 @@ public class PickupInteractable : MonoBehaviour, IInteractable
     {
         rb.AddForce(direction * 100 * throwForce);
         trailRenderer.enabled = true;
+        DisableLightComponets();
     }
 
     /// <summary>

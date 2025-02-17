@@ -46,6 +46,9 @@ public class DestructibleObjects : MonoBehaviour
             }
             if (rb != null && rb.velocity.magnitude >= minimumVelocity)
             {
+
+                GetComponent<PickupInteractable>().outline.enabled = false;
+
                 md.DestroyMesh();
                 //Destroy(this.gameObject);
 
