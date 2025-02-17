@@ -7,7 +7,7 @@ public class PickupInteractable : MonoBehaviour, IInteractable
     private Rigidbody rb;
     public int throwForce;
 
-    private Outline outline;
+    public Outline outline;
     private TrailRenderer trailRenderer;
     public Material trailMaterial;
 
