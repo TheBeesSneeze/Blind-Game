@@ -54,6 +54,12 @@ public class PickupInteractable : MonoBehaviour, IInteractable
     /// </summary>
     public void EnableRB()
     {
+        if(rb== null)
+        {
+            Debug.LogWarning(gameObject.name + " has no rigidbody");
+            return;
+        }
+
         rb.detectCollisions = true;
         rb.isKinematic = false;
         rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
