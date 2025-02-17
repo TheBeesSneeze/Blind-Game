@@ -9,6 +9,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
 using System;
+using System.Linq;
+using System.IO;
 
 public class ConstantSoundInterval : MonoBehaviour
 {
@@ -17,6 +19,8 @@ public class ConstantSoundInterval : MonoBehaviour
     [SerializeField] private SoundWaveProperties wave;
 
     [ReadOnly] private bool active = false;
+
+    private List<PermanentOutline> outlines = new List<PermanentOutline>();
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +38,7 @@ public class ConstantSoundInterval : MonoBehaviour
 
         active = true;
 
-        StartCoroutine(playSoundWaveOverInterval());
+        wave.PlayAtPosition(transform.position);
     }
 
     public void Deactivate()
@@ -44,6 +48,16 @@ public class ConstantSoundInterval : MonoBehaviour
 
         // this stops the coroutine
         active = false;
+
+        outlines = GameObject.FindObjectsOfType<PermanentOutline>().ToList();
+
+        for(int i = 0; i < outlines.Count; i++)
+        {
+
+            GetComponent<PermanentOutline>().DisableOutline();
+
+        }
+
     }
 
     public void Toggle()
