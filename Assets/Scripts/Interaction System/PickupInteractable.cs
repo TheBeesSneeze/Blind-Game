@@ -60,6 +60,7 @@ public class PickupInteractable : MonoBehaviour, IInteractable
     {
         rb.AddForce(direction * 100 * throwForce);
         trailRenderer.enabled = true;
+        DisableLightComponets();
     }
 
     /// <summary>
