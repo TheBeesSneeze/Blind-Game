@@ -158,9 +158,20 @@ public class Interact : MonoBehaviour
 
         //sets the picked up iten to the anchor
         pickup.transform.position = _pickupAnchor.transform.position;
-        pickup.transform.rotation = _pickupAnchor.transform.rotation;
-        pickup.transform.localScale = _pickupAnchor.transform.localScale;
         pickup.transform.parent = _pickupAnchor.transform;
+
+        PickupInteractable pi = pickup.GetComponent<PickupInteractable>();
+        if (pi != null)
+        {
+            pickup.transform.localScale = _pickupAnchor.transform.localScale * pi.heldScaleMultiplier;
+            pi.transform.rotation = pi.defaultRotation;
+        }
+        else
+        {
+            pickup.transform.rotation = _pickupAnchor.transform.rotation;
+            pickup.transform.localScale = _pickupAnchor.transform.localScale;
+        }
+
 
     }
 
@@ -232,4 +243,17 @@ public class Interact : MonoBehaviour
         }
     }
 
+    // called in PickupInteractable OnDrawGizmosSelected
+    public void DrawItemSizeGizmo(PickupInteractable pickup)
+    {
+        if (pickup.GetComponent<MeshFilter>() == null)
+        {
+            //Debug.LogWarning("No mesh filter on " + gameObject.name);
+            return;
+        }
+
+        Gizmos.color = Color.yellow;
+        Vector3 scale = _pickupAnchor.transform.localScale * pickup.heldScaleMultiplier;
+        Gizmos.DrawWireMesh(pickup.GetComponent<MeshFilter>().mesh, _pickupAnchor.transform.position, pickup.transform.rotation, scale);
+    }
 }

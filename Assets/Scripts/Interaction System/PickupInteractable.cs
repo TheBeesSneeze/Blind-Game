@@ -5,14 +5,23 @@ using UnityEngine;
 public class PickupInteractable : MonoBehaviour, IInteractable
 {
     private Rigidbody rb;
-    public int throwForce;
+    public int throwForce; // why is this an integer??? -toby
 
     public Outline outline;
     private TrailRenderer trailRenderer;
     public Material trailMaterial;
 
+    [Tooltip("The scale of the gameobject is multiplied by the scale of the held point AND this number")]
+    public float heldScaleMultiplier = 1f;
+
+    private Vector3 defaultScale;
+    [HideInInspector] public Quaternion defaultRotation;
+
     private void Start()
     {
+        defaultScale = transform.lossyScale;
+        defaultRotation = transform.rotation;
+
         rb = GetComponent<Rigidbody>();
 
         //set up outline, add one if there is not already one
@@ -54,7 +63,9 @@ public class PickupInteractable : MonoBehaviour, IInteractable
     /// </summary>
     public void EnableRB()
     {
-        if(rb== null)
+        transform.localScale = defaultScale;
+
+        if (rb== null)
         {
             Debug.LogWarning(gameObject.name + " has no rigidbody");
             return;
@@ -68,7 +79,7 @@ public class PickupInteractable : MonoBehaviour, IInteractable
     //Adds force to pickupable object
     public void ThrowObj(Vector3 direction)
     {
-        rb.AddForce(direction * 100 * throwForce);
+        rb.AddForce(direction * 100 * (float)throwForce);
         trailRenderer.enabled = true;
         DisableLightComponets();
     }
@@ -81,4 +92,15 @@ public class PickupInteractable : MonoBehaviour, IInteractable
         outline.enabled = false;
         //trailRenderer.enabled = false;
     }
+
+    #region debug
+    private static Interact _interact;
+    private void OnDrawGizmosSelected()
+    {
+        if(_interact == null)
+            _interact = FindObjectOfType<Interact>();
+
+        _interact.DrawItemSizeGizmo(this);
+    }
+    #endregion
 }
