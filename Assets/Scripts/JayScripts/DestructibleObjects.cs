@@ -40,12 +40,15 @@ public class DestructibleObjects : MonoBehaviour
         if(md != null)
         {
             Rigidbody rb = obj.GetComponent<Rigidbody>();
+
             if(MeshVolumeCalculator.CalculateMeshVolume(obj.GetComponent<MeshCollider>()) > md.MinimumLivingPieceSize / 2)
             {
                 waves.PlayAtPosition(collision.GetContact(0).point, volume);
             }
+
             if (rb != null && rb.velocity.magnitude >= minimumVelocity)
             {
+                rb.collisionDetectionMode = CollisionDetectionMode.Discrete;
 
                 GetComponent<PickupInteractable>().outline.enabled = false;
 
@@ -70,7 +73,7 @@ public class DestructibleObjects : MonoBehaviour
         {
             MeshDestruct(gameObject, collision);
 
-
+            
 
             //when object stops moving, disable light components
             //if (rb.velocity.magnitude <= 5)

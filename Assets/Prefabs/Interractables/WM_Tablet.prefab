@@ -141,7 +141,7 @@ Transform:
   - {fileID: 5836558808421923192}
   - {fileID: 2874811176849930907}
   m_Father: {fileID: 0}
-  m_RootOrder: 30
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &-2485419899460789862
 MonoBehaviour:
@@ -155,8 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79894c8ae703434991e268a432d8c46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: 10
-  nameOfSfx: rock crumbling
+  volume: 0
   points: 250
   minimumVelocity: 100
   surfaces:
@@ -251,7 +250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineMode: 0
+  outlineMode: 1
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 2
   precomputeOutline: 0
