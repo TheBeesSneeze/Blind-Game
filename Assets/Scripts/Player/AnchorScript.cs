@@ -10,6 +10,13 @@ public class AnchorScript : MonoBehaviour
 {
     [SerializeField] private Transform AnchorToRotate;
     [SerializeField] private GameObject CameraAnchor;
+
+    private void Start()
+    {
+        if (CameraAnchor == null)
+            CameraAnchor = Camera.main.gameObject;
+    }
+
     void Update()
     {
         Quaternion newRotation = CameraAnchor.transform.rotation;

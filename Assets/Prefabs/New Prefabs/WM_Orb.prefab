@@ -36,7 +36,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1933449475728493481
 MeshFilter:
@@ -45,7 +45,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4086493575930085725}
-  m_Mesh: {fileID: 4711208715938537054, guid: bcfea7d80dee77346a01c6acaa1b7abd, type: 3}
+  m_Mesh: {fileID: 0}
 --- !u!23 &6547716443359194413
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -206,6 +206,7 @@ MonoBehaviour:
   throwForce: 25
   outline: {fileID: 0}
   trailMaterial: {fileID: 2100000, guid: 9b19c8b90601cf8409d665532b4133a6, type: 2}
+  heldScaleMultiplier: 0.09
 --- !u!54 &6741340609156919711
 Rigidbody:
   m_ObjectHideFlags: 0
