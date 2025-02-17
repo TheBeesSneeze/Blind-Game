@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -5860436930542738596}
   - component: {fileID: -6428344005683008936}
   - component: {fileID: -5029334537568965831}
+  - component: {fileID: 318141433669915772}
   m_Layer: 0
   m_Name: WM_Sphinx
   m_TagString: Untagged
@@ -217,3 +218,25 @@ MonoBehaviour:
   ExplodeForce: 0
   MinimumLivingPieceSize: 0
   DyingPieceLifetime: 0
+--- !u!64 &318141433669915772
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7163801169123621275}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -832606143848720121, guid: a77c7fef8ae80bc448bd4759e1d7a142, type: 3}
