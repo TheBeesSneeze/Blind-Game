@@ -15,10 +15,12 @@ public class PickupInteractable : MonoBehaviour, IInteractable
     public float heldScaleMultiplier = 1f;
 
     private Vector3 defaultScale;
+    [HideInInspector] public Quaternion defaultRotation;
 
     private void Start()
     {
         defaultScale = transform.lossyScale;
+        defaultRotation = transform.rotation;
 
         rb = GetComponent<Rigidbody>();
 
