@@ -205,6 +205,9 @@ public class Interact : MonoBehaviour
 
                 _inHandObject = null;
             }
+
+            return;
+
         }
 
         //hi!! jay here. if the player isn't already holding an interactable object, they will throw a marble instead
