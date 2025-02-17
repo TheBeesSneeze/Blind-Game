@@ -23,6 +23,8 @@ public class PermanentOutline : MonoBehaviour
         }
         outline.enabled = false;
 
+        outline.OutlineMode = Outline.Mode.OutlineVisible;
+
     }
 
     public void OnParticleCollision(GameObject other)
