@@ -53,6 +53,7 @@ public class PickupInteractable : MonoBehaviour, IInteractable
     {
         rb.detectCollisions = true;
         rb.isKinematic = false;
+        rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
     }
 
     //Adds force to pickupable object

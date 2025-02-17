@@ -40,10 +40,13 @@ public class DestructibleObjects : MonoBehaviour
         if(md != null)
         {
             Rigidbody rb = obj.GetComponent<Rigidbody>();
+            rb.collisionDetectionMode = CollisionDetectionMode.Discrete;
+
             if(MeshVolumeCalculator.CalculateMeshVolume(obj.GetComponent<MeshCollider>()) > md.MinimumLivingPieceSize / 2)
             {
                 waves.PlayAtPosition(collision.GetContact(0).point, volume);
             }
+
             if (rb != null && rb.velocity.magnitude >= minimumVelocity)
             {
 
