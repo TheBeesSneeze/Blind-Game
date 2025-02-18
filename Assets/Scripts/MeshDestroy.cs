@@ -18,16 +18,13 @@ public class MeshDestroy : MonoBehaviour
     [Range(1, 10)]
     [Tooltip("# of generated pieces = 2^this -1 ")]public int CutCascades = 1;
     [Range(0, 100)]
-    public float ExplodeForce = 0; 
+    public float ExplodeForce = 0;
+    public bool Exploded = false;
 
     [Range(0, 1f)]
     [Tooltip("How small pieces need to be to be marked for removal")] public float MinimumLivingPieceSize;
     [Range(0, 5f)]
     [Tooltip("Median time a piece stays before it disappears")] public float DyingPieceLifetime;
-
-    private void Update()
-    {
-    }
 
     /// <summary>
     /// Starts the coroutine to destroy this piece
@@ -337,6 +334,7 @@ public class MeshDestroy : MonoBehaviour
             meshDestroy.ExplodeForce = Mathf.Max(original.ExplodeForce / 2, 1);
             meshDestroy.MinimumLivingPieceSize = original.MinimumLivingPieceSize * 2;
             meshDestroy.DyingPieceLifetime = original.DyingPieceLifetime;
+            meshDestroy.Exploded = true;
 
 
             var destObj = GameObject.AddComponent<DestructibleObjects>();

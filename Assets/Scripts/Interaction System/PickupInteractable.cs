@@ -5,14 +5,23 @@ using UnityEngine;
 public class PickupInteractable : MonoBehaviour, IInteractable
 {
     private Rigidbody rb;
-    public int throwForce;
+    public int throwForce; // why is this an integer??? -toby
 
     public Outline outline;
     private TrailRenderer trailRenderer;
     public Material trailMaterial;
 
+    [Tooltip("The scale of the gameobject is multiplied by the scale of the held point AND this number")]
+    public float heldScaleMultiplier = 1f;
+
+    private Vector3 defaultScale;
+    [HideInInspector] public Quaternion defaultRotation;
+
     private void Start()
     {
+        defaultScale = transform.lossyScale;
+        defaultRotation = transform.rotation;
+
         rb = GetComponent<Rigidbody>();
 
         //set up outline, add one if there is not already one
@@ -28,10 +37,12 @@ public class PickupInteractable : MonoBehaviour, IInteractable
         if (trailRenderer == null)
         {
             trailRenderer = gameObject.AddComponent<TrailRenderer>();
-            trailRenderer.endWidth = 0;
-            trailRenderer.material = trailMaterial;
         }
-        trailRenderer.enabled = false;
+        trailRenderer.startWidth = 0.5f;
+        trailRenderer.endWidth = 0;
+        trailRenderer.material = trailMaterial;
+        trailRenderer.time = 2;
+        trailRenderer.enabled = true; //= false;
     }
 
     /// <summary>
@@ -44,6 +55,7 @@ public class PickupInteractable : MonoBehaviour, IInteractable
         rb.detectCollisions = false;
         rb.isKinematic = true;
         outline.enabled = true;
+        trailRenderer.enabled= false;
     }
 
     /// <summary>
@@ -51,6 +63,14 @@ public class PickupInteractable : MonoBehaviour, IInteractable
     /// </summary>
     public void EnableRB()
     {
+        transform.localScale = defaultScale;
+
+        if (rb== null)
+        {
+            Debug.LogWarning(gameObject.name + " has no rigidbody");
+            return;
+        }
+
         rb.detectCollisions = true;
         rb.isKinematic = false;
         rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
@@ -59,7 +79,7 @@ public class PickupInteractable : MonoBehaviour, IInteractable
     //Adds force to pickupable object
     public void ThrowObj(Vector3 direction)
     {
-        rb.AddForce(direction * 100 * throwForce);
+        rb.AddForce(direction * 100 * (float)throwForce);
         trailRenderer.enabled = true;
         DisableLightComponets();
     }
@@ -70,6 +90,17 @@ public class PickupInteractable : MonoBehaviour, IInteractable
     public void DisableLightComponets()
     {
         outline.enabled = false;
-        trailRenderer.enabled = false;
+        //trailRenderer.enabled = false;
     }
+
+    #region debug
+    private static Interact _interact;
+    private void OnDrawGizmosSelected()
+    {
+        if(_interact == null)
+            _interact = FindObjectOfType<Interact>();
+
+        _interact.DrawItemSizeGizmo(this);
+    }
+    #endregion
 }
