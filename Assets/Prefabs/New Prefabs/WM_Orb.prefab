@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CutCascades: 3
   ExplodeForce: 5
+  Exploded: 0
   MinimumLivingPieceSize: 1
   DyingPieceLifetime: 0.5
 --- !u!114 &3731531169840355076
@@ -141,6 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volume: 1
+  nameOfSfx: tools breaking
   points: 1
   minimumVelocity: 10
   surfaces:
@@ -207,6 +209,7 @@ MonoBehaviour:
   outline: {fileID: 0}
   trailMaterial: {fileID: 2100000, guid: 9b19c8b90601cf8409d665532b4133a6, type: 2}
   heldScaleMultiplier: 0.09
+  defaultRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!54 &6741340609156919711
 Rigidbody:
   m_ObjectHideFlags: 0
