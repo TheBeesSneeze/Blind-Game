@@ -52,8 +52,15 @@ public class DestructibleObjects : MonoBehaviour
 
                 GetComponent<PickupInteractable>().outline.enabled = false;
 
-                md.DestroyMesh();
-                //Destroy(this.gameObject);
+                if(md.Exploded)
+                {
+                    Destroy(obj);
+                }
+                else
+                {
+                    md.DestroyMesh();
+                }
+                
 
                 var md2 = collision.gameObject.GetComponent<MeshDestroy>();
                 if(md2 != null)
