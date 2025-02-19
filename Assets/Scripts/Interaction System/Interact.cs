@@ -254,6 +254,6 @@ public class Interact : MonoBehaviour
 
         Gizmos.color = Color.yellow;
         Vector3 scale = _pickupAnchor.transform.localScale * pickup.heldScaleMultiplier;
-        Gizmos.DrawWireMesh(pickup.GetComponent<MeshFilter>().mesh, _pickupAnchor.transform.position, pickup.transform.rotation, scale);
+        Gizmos.DrawWireMesh(pickup.GetComponent<MeshFilter>().sharedMesh, _pickupAnchor.transform.position, pickup.transform.rotation, scale);
     }
 }
