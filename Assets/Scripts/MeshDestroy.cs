@@ -341,7 +341,7 @@ public class MeshDestroy : MonoBehaviour
             var dOriginal = original.GetComponent<DestructibleObjects>();
             
             destObj.volume = dOriginal.volume / 2;
-            //destObj.nameOfSfx = dOriginal.nameOfSfx;
+            destObj.nameOfSfx = dOriginal.nameOfSfx;
             destObj.points = dOriginal.points / 2;
             destObj.minimumVelocity = dOriginal.minimumVelocity;
             destObj.surfaces = dOriginal.surfaces;
