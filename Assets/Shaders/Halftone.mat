@@ -67,6 +67,6 @@ Material:
     - _USE_SCREEN_SPACE: 0
     m_Colors:
     - _Base_Color: {r: 0.31719476, g: 0.8301887, b: 0.79636496, a: 1}
-    - _PlayerPosition: {r: 58.929108, g: 3.207313, b: 15.661892, a: 0}
+    - _PlayerPosition: {r: -19.587742, g: 5.706313, b: 8.710749, a: 0}
     - _Shaded_Color: {r: 0.25105017, g: 0.7735849, b: 0.740513, a: 1}
   m_BuildTextureStacks: []
