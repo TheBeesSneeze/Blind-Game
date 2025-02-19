@@ -274,7 +274,7 @@ MonoBehaviour:
   minimumVelocity: 10
   surfaces:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 983
   waves:
     MaxRadius: 1
     Lifetime: 5
