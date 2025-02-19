@@ -40,6 +40,9 @@ public class Marble : MonoBehaviour
     private TrailRenderer trailRenderer;
     public Material TrailMaterial;
 
+    //tobys special magic number
+    private float defaultTrailWidth;
+
     private GradientAlphaKey alphaKey;
     void Start()
     {
@@ -52,10 +55,11 @@ public class Marble : MonoBehaviour
         if (trailRenderer == null)
         {
             trailRenderer = gameObject.AddComponent<TrailRenderer>();
-            trailRenderer.endWidth = 0;
-            trailRenderer.material = TrailMaterial;
         }
         trailRenderer.enabled = false;
+        trailRenderer.endWidth = 0;
+        trailRenderer.material = TrailMaterial;
+        defaultTrailWidth = trailRenderer.startWidth;
 
         Ray r = cam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
         ThrowMarble(r.direction);
@@ -79,6 +83,7 @@ public class Marble : MonoBehaviour
             else
                 Destroy(this.gameObject);
         }
+        trailRenderer.startWidth = Mathf.Lerp(0,defaultTrailWidth, rb.velocity.magnitude/3);
     }
 
     public void OnCollisionEnter(Collision collision)
@@ -89,7 +94,11 @@ public class Marble : MonoBehaviour
             waves.MaxRadius = rb.velocity.magnitude * WaveScalar;
 
             var keys = waves.ColorOverLifetime.alphaKeys;
-            keys[0].alpha = rb.velocity.magnitude / WaveScalar;
+            for(int i=0; i<keys.Length; i++)
+            {
+                keys[i].alpha *= rb.velocity.magnitude / 10;
+            }
+            
             waves.ColorOverLifetime.alphaKeys = keys;
 
             waves.PlayAtPosition(collision.contacts[0].point);

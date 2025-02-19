@@ -42,7 +42,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Circle_Density: 5
-    - _Distance_For_Opacity: 7
+    - _Distance_For_Opacity: 3
     - _Falloff_Threshold: 2.5
     - _Lit_Threshold: 1
     - _Opacity_Falloff: 1
@@ -54,9 +54,9 @@ Material:
     - _USE_SCREEN_SPACE: 0
     - _Waveyness: 0.5
     m_Colors:
-    - _Base_Color: {r: 0.61367035, g: 0.6314201, b: 0.6415094, a: 1}
+    - _Base_Color: {r: 0.24403705, g: 0.2684007, b: 0.2830189, a: 1}
     - _PlayerPosition: {r: 0, g: 0, b: 0, a: 0}
-    - _Shaded_Color: {r: 0.31162336, g: 0.33744484, b: 0.38679248, a: 1}
+    - _Shaded_Color: {r: 0.16334994, g: 0.17551708, b: 0.1981132, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &260684817888122058
 MonoBehaviour:
