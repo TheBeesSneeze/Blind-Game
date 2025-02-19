@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class ObjectPositionToShader : MonoBehaviour
@@ -34,4 +35,5 @@ public class ObjectPositionToShader : MonoBehaviour
             if (material != null)
                 material.SetVector(propertyPath, Vector3.zero);
     }
+
 }

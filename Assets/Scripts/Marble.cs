@@ -40,6 +40,7 @@ public class Marble : MonoBehaviour
     private TrailRenderer trailRenderer;
     public Material TrailMaterial;
 
+    private GradientAlphaKey alphaKey;
     void Start()
     {
 
@@ -86,6 +87,11 @@ public class Marble : MonoBehaviour
         {
             SfxManager.Instance.PlaySFX(nameOfSfx);
             waves.MaxRadius = rb.velocity.magnitude * WaveScalar;
+
+            var keys = waves.ColorOverLifetime.alphaKeys;
+            keys[0].alpha = rb.velocity.magnitude / WaveScalar;
+            waves.ColorOverLifetime.alphaKeys = keys;
+
             waves.PlayAtPosition(collision.contacts[0].point);
         }
     }

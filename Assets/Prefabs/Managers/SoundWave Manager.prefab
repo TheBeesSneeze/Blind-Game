@@ -90,7 +90,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   materials:
   - {fileID: 2100000, guid: b8b255f974321454e8638d7ca45be98e, type: 2}
-  - {fileID: -876546973899608171, guid: a3297655d2374a842b3c9f9a94d504b9, type: 3}
   - {fileID: 2100000, guid: a8dd1ec8cf9884843afb5c6871fdb7c0, type: 2}
+  - {fileID: 2100000, guid: ee28d9be54fedb2498036ccd30712dac, type: 2}
+  - {fileID: 2100000, guid: 9b3057a380b58fd498364f2186609db9, type: 2}
   propertyPath: _PlayerPosition
   obj: {fileID: 0}
