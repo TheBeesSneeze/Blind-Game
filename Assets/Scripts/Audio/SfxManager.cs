@@ -51,9 +51,10 @@ public class SfxManager : Singleton<SfxManager>
     /// <param name="name"></param>
     public void PlaySFX(string name)
     {
-        if(!_SFXs.Exists(i => i.name == name))
+        Debug.Log(name);
+        if(name=="")
         {
-            Debug.LogError("No soundeffect exists with name: " + name);
+            Debug.LogError("No sound effect name given");
             return;
         }
         SFX sfx = _SFXs[_SFXs.FindIndex(i => i.name == name)];
