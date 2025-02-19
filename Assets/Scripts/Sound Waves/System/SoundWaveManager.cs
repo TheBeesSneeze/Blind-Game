@@ -17,13 +17,6 @@ public class SoundWaveManager : Singleton<SoundWaveManager>
 
 
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     /// <summary>
     /// Instantiates a new sound wave at specified position and destroys it after lifetime elapses
     /// </summary>

@@ -55,7 +55,7 @@ public class ConstantSoundInterval : MonoBehaviour
 
         }
 
-        //outlines = GameObject.FindObjectsOfType<PermanentOutline>().ToList();
+        //outlines = newGameObject.FindObjectsOfType<PermanentOutline>().ToList();
 
         //for (int i = 0; i < outlines.Count; i++)
         //{
