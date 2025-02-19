@@ -29896,6 +29896,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4873348098225383500, guid: 83aae8a7060f06c478cf8542ea390d25, type: 3}
+      propertyPath: SfxDelayFadeIn
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4873348098225383500, guid: 83aae8a7060f06c478cf8542ea390d25, type: 3}
+      propertyPath: SfxDelayOnAwake
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5323583095523853322, guid: 83aae8a7060f06c478cf8542ea390d25, type: 3}
       propertyPath: m_Name
       value: SfxManager
