@@ -48,6 +48,11 @@ public class SfxManager : Singleton<SfxManager>
     /// <param name="name"></param>
     public void PlaySFX(string name)
     {
+        if(!_SFXs.Exists(i => i.name == name))
+        {
+            Debug.LogError("No soundeffect exists with name: " + name);
+            return;
+        }
         SFX sfx = _SFXs[_SFXs.FindIndex(i => i.name == name)];
         sfx.source.clip = sfx.clips[UnityEngine.Random.Range(0, sfx.clips.Length)];
         sfx.source.volume = sfx.maxVolume;

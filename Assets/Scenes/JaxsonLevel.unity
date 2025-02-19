@@ -7348,6 +7348,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 41700431}
+    - target: {fileID: 308315682602455610, guid: 74f95e6bb1cfe46488e1d88258a41edb, type: 3}
+      propertyPath: canBeDestroyedByMarble
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 440755962751726646, guid: 74f95e6bb1cfe46488e1d88258a41edb, type: 3}
       propertyPath: m_Mesh
       value: 
