@@ -15,8 +15,8 @@ public class DestructibleObjects : MonoBehaviour
     [Tooltip("How loud is the object?")]
     public float volume;
 
-    //[Tooltip("Exact string from sfx manager")]
-    //public string nameOfSfx;
+    [Tooltip("Exact string from sfx manager")]
+    public string nameOfSfx;
 
     //comment this one out if we end up not adding in the points system
     [Tooltip("How many points does breaking this object subtract?")]
@@ -40,6 +40,7 @@ public class DestructibleObjects : MonoBehaviour
         if(md != null)
         {
             Rigidbody rb = obj.GetComponent<Rigidbody>();
+            rb.collisionDetectionMode = CollisionDetectionMode.Discrete;
 
             if(MeshVolumeCalculator.CalculateMeshVolume(obj.GetComponent<MeshCollider>()) > md.MinimumLivingPieceSize / 2)
             {
@@ -48,19 +49,11 @@ public class DestructibleObjects : MonoBehaviour
 
             if (rb != null && rb.velocity.magnitude >= minimumVelocity)
             {
-                rb.collisionDetectionMode = CollisionDetectionMode.Discrete;
 
                 GetComponent<PickupInteractable>().outline.enabled = false;
 
-                if(md.Exploded)
-                {
-                    Destroy(obj);
-                }
-                else
-                {
-                    md.DestroyMesh();
-                }
-                
+                md.DestroyMesh();
+                //Destroy(this.gameObject);
 
                 var md2 = collision.gameObject.GetComponent<MeshDestroy>();
                 if(md2 != null)
@@ -80,7 +73,7 @@ public class DestructibleObjects : MonoBehaviour
         {
             MeshDestruct(gameObject, collision);
 
-            
+            SfxManager.Instance.PlaySFX(nameOfSfx);
 
             //when object stops moving, disable light components
             //if (rb.velocity.magnitude <= 5)
