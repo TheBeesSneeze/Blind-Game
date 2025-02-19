@@ -40,14 +40,14 @@ public class ConstantSoundInterval : MonoBehaviour
 
         wave.PlayAtPosition(transform.position);
 
-        outlines = GameObject.FindObjectsOfType<PermanentOutline>().ToList();
+        //outlines = GameObject.FindObjectsOfType<PermanentOutline>().ToList();
 
-        for (int i = 0; i < outlines.Count; i++)
-        {
+        //for (int i = 0; i < outlines.Count; i++)
+        //{
 
-            GetComponent<PermanentOutline>().EnableOutline();
+        //    GetComponent<PermanentOutline>().EnableOutline();
 
-        }
+        //}
     }
 
     public void Deactivate()

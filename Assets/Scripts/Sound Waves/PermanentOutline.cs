@@ -27,19 +27,19 @@ public class PermanentOutline : MonoBehaviour
 
     }
 
-    //public void OnParticleCollision(GameObject other)
-    //{
-
-    //    outline.enabled = true;
-
-    //}
-
-    public void EnableOutline()
+    public void OnParticleCollision(GameObject other)
     {
 
         outline.enabled = true;
 
     }
+
+    //public void EnableOutline()
+    //{
+
+    //    outline.enabled = true;
+
+    //}
 
     public void DisableOutline()
     {
