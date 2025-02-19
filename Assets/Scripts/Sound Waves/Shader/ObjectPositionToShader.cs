@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ObjectPositionToShader : MonoBehaviour
 {
-    [SerializeField] Material material;
+    [SerializeField] Material[] materials;
     [SerializeField] string propertyPath;
     //[SerializeField] Shader shader;
     [SerializeField] Transform obj;
@@ -23,6 +23,8 @@ public class ObjectPositionToShader : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        material.SetVector(propertyPath, obj.position);
+        foreach(Material material in materials) 
+            if(material != null)
+                material.SetVector(propertyPath, obj.position);
     }
 }

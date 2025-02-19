@@ -7,25 +7,26 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Constant Sound Wave
-  m_Shader: {fileID: -6465566751694194690, guid: 1cda39d4692b4764d826ec872a46b4d4, type: 3}
+  m_Name: Pickup Halftone
+  m_Shader: {fileID: -6465566751694194690, guid: 67e02297c7a22c64fa65655df5d9f6c7, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
-  - _SURFACE_TYPE_TRANSPARENT
+  m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
-  stringTagMap:
-    RenderType: Transparent
-  disabledShaderPasses:
-  - DepthOnly
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _Base_Texture:
+        m_Texture: {fileID: 10309, guid: 0000000000000000f000000000000000, type: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -40,26 +41,24 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AlphaClip: 0
-    - _AlphaToMask: 0
-    - _Blend: 0
-    - _CastShadows: 1
-    - _Cull: 0
-    - _DistanceForOpacity: 0.1
-    - _DstBlend: 10
-    - _Intersection_Depth: 0.6
+    - _Circle_Density: 5
+    - _Distance_For_Opacity: 7
+    - _Falloff_Threshold: 2.5
+    - _Lit_Threshold: 1
+    - _Opacity_Falloff: 0.01
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _SrcBlend: 5
-    - _Surface: 1
-    - _ZTest: 4
-    - _ZWrite: 0
-    - _ZWriteControl: 0
+    - _Rotation: 0
+    - _Shading_Multiplier: 0.1
+    - _Softness: 0
+    - _USE_SCREEN_SPACE: 0
+    - _Waveyness: 0.5
     m_Colors:
-    - _Intersection_Color: {r: 6.4983425, g: 8.675369, b: 8.167955, a: 0.039215688}
-    - _PlayerPosition: {r: 1.1070316, g: -0.97, b: -19.050991, a: 0}
+    - _Base_Color: {r: 0.23538621, g: 0.6078484, b: 0.8207547, a: 1}
+    - _PlayerPosition: {r: -20.579554, g: -2.8955622, b: -9.344419, a: 0}
+    - _Shaded_Color: {r: 0.23780702, g: 0.41658798, b: 0.754717, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &6316938708454076450
+--- !u!114 &260684817888122058
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
