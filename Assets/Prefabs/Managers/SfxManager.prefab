@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4873348098225383500
 MonoBehaviour:
@@ -113,16 +113,6 @@ MonoBehaviour:
     pitch: 1
     doLoop: 0
     source: {fileID: 0}
-  - name: tools breaking
-    clips:
-    - {fileID: 8300000, guid: 13a61da3baf3f7e468ad2e67bb0817f1, type: 3}
-    - {fileID: 8300000, guid: 71c4b3c373fa33446b993cf877a0d122, type: 3}
-    clip: {fileID: 0}
-    mixer: {fileID: 6545752117479707641, guid: f50f0c234c0d7fd4f82756c476dd3e4e, type: 2}
-    maxVolume: 1
-    pitch: 1
-    doLoop: 0
-    source: {fileID: 0}
   - name: throwing
     clips:
     - {fileID: 8300000, guid: daf2233b6a033554895daf08b9b991fb, type: 3}
@@ -162,6 +152,26 @@ MonoBehaviour:
     pitch: 1
     doLoop: 0
     source: {fileID: 0}
+  - name: tools breaking
+    clips:
+    - {fileID: 8300000, guid: 13a61da3baf3f7e468ad2e67bb0817f1, type: 3}
+    - {fileID: 8300000, guid: 71c4b3c373fa33446b993cf877a0d122, type: 3}
+    clip: {fileID: 0}
+    mixer: {fileID: 6545752117479707641, guid: f50f0c234c0d7fd4f82756c476dd3e4e, type: 2}
+    maxVolume: 1
+    pitch: 1
+    doLoop: 0
+    source: {fileID: 0}
+  - name: breaking tools
+    clips:
+    - {fileID: 8300000, guid: 13a61da3baf3f7e468ad2e67bb0817f1, type: 3}
+    - {fileID: 8300000, guid: 71c4b3c373fa33446b993cf877a0d122, type: 3}
+    clip: {fileID: 0}
+    mixer: {fileID: 6545752117479707641, guid: f50f0c234c0d7fd4f82756c476dd3e4e, type: 2}
+    maxVolume: 1
+    pitch: 1
+    doLoop: 0
+    source: {fileID: 0}
   _masterMixer: {fileID: 24100000, guid: f50f0c234c0d7fd4f82756c476dd3e4e, type: 2}
-  SfxDelayOnAwake: 2
-  SfxDelayFadeIn: 2
+  SfxDelayOnAwake: 3
+  SfxDelayFadeIn: 7
