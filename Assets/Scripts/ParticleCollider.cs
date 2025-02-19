@@ -5,6 +5,8 @@ using UnityEngine;
 public class ParticleCollider : MonoBehaviour
 {
     // Start is called before the first frame update
+
+    //we can probably delete this lmao
     void Start()
     {
         
@@ -23,28 +25,28 @@ public class ParticleCollider : MonoBehaviour
 
     //}
 
-    public void OnParticleCollision(GameObject other)
-    {
+    //public void OnParticleCollision(GameObject other)
+    //{
 
-        if(other.GetComponent<PermanentOutline>() != null)
-        {
+    //    if(other.GetComponent<PermanentOutline>() != null)
+    //    {
 
-            if(other.GetComponent<Outline>().enabled == false)
-            {
+    //        if(other.GetComponent<Outline>().enabled == false)
+    //        {
 
-                other.GetComponent<PermanentOutline>().EnabledOutline();
+    //            other.GetComponent<PermanentOutline>().EnabledOutline();
 
-            }
-            if (other.GetComponent<Outline>().enabled == true)
-            {
+    //        }
+    //        if (other.GetComponent<Outline>().enabled == true)
+    //        {
 
-                other.GetComponent<PermanentOutline>().DisableOutline();
+    //            other.GetComponent<PermanentOutline>().DisableOutline();
 
-            }
+    //        }
 
-        }
+    //    }
 
 
-    }
+    //}
 
 }
