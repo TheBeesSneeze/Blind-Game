@@ -49,6 +49,7 @@ public class DestructibleObjects : MonoBehaviour
 
             if (rb != null && rb.velocity.magnitude >= minimumVelocity)
             {
+                SfxManager.Instance.PlaySFX(nameOfSfx);
 
                 GetComponent<PickupInteractable>().outline.enabled = false;
 
@@ -67,13 +68,29 @@ public class DestructibleObjects : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.GetComponent<Marble>() != null && canBeDestroyedByMarble)
+        {
+
+            //SfxManager.Instance.PlaySFX(nameOfSfx);
+
+            waves.PlayAtPosition(collision.contacts[0].point, volume);
+
+            //Destroy(this.gameObject);
+            //Rigidbody rb = this.gameObject.GetComponent<Rigidbody>();
+            var md2 = gameObject.GetComponent<MeshDestroy>();
+            if (md2 != null)
+            {
+                md2.DestroyMesh();
+            }
+            return;
+        }
+
         /*If surfaces already includes that layer, the OR operation does nothing, meaning the result stays the same as surfaces.
         If the layer is not in surfaces, the OR operation would modify surfaces, making the comparison false.*/
         if (surfaces == (surfaces | (1 << collision.gameObject.layer)))
         {
             MeshDestruct(gameObject, collision);
 
-            SfxManager.Instance.PlaySFX(nameOfSfx);
 
             //when object stops moving, disable light components
             //if (rb.velocity.magnitude <= 5)
@@ -86,21 +103,7 @@ public class DestructibleObjects : MonoBehaviour
             //} 
         }
 
-        if(collision.gameObject.GetComponent<Marble>() != null && canBeDestroyedByMarble)
-        {
-           
-            //SfxManager.Instance.PlaySFX(nameOfSfx);
-
-            waves.PlayAtPosition(collision.contacts[0].point, volume);
-
-            //Destroy(this.gameObject);
-            //Rigidbody rb = this.gameObject.GetComponent<Rigidbody>();
-            var md2 = gameObject.GetComponent<MeshDestroy>();
-            if (md2 != null)
-            {
-                md2.DestroyMesh();
-            }
-        }
+        
     }
 
 }

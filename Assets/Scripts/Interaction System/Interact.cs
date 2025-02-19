@@ -200,22 +200,23 @@ public class Interact : MonoBehaviour
     {
         if(_isHolding)
         {
-            if (_isHolding)
-            {
-                _isHolding = false;
+            _isHolding = false;
 
-                SfxManager.Instance.PlaySFX("throwing");
+            if (_inHandObject == null)
+                return;
 
-                //"drops" object
-                _inHandObject.transform.parent = null;
-                _inHandObject.GetComponent<PickupInteractable>().EnableRB();
+            SfxManager.Instance.PlaySFX("throwing");
 
-                //ADD THROW FORCE RAHHHHH 
-                Ray r = _camera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
-                _inHandObject.GetComponent<PickupInteractable>().ThrowObj(r.direction);
+            //"drops" object
+            _inHandObject.transform.parent = null;
+            _inHandObject.GetComponent<PickupInteractable>().EnableRB();
 
-                _inHandObject = null;
-            }
+            //ADD THROW FORCE RAHHHHH 
+            Ray r = _camera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
+            _inHandObject.GetComponent<PickupInteractable>().ThrowObj(r.direction);
+
+            _inHandObject = null;
+            
 
             return;
 
