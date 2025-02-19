@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class ObjectPositionToShader : MonoBehaviour
+public class ObjectPositionToShader : Singleton<ObjectPositionToShader>
 {
     [SerializeField] Material[] materials;
     [SerializeField] string propertyPath;
     //[SerializeField] Shader shader;
     [SerializeField] Transform obj;
+
+
+    public Material PickupHalftone =>materials[0]; // hard coded to be at first index :p
 
     // Start is called before the first frame update
     void Start()
@@ -17,8 +20,6 @@ public class ObjectPositionToShader : MonoBehaviour
         {
             obj = FindObjectOfType<PlayerManager>().transform;
         }
-
-
     }
 
     // Update is called once per frame

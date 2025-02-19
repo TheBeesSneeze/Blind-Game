@@ -51,7 +51,6 @@ public class SfxManager : Singleton<SfxManager>
     /// <param name="name"></param>
     public void PlaySFX(string name)
     {
-        Debug.Log(name);
         if(name=="")
         {
             Debug.LogError("No sound effect name given");

@@ -91,7 +91,7 @@ public class MeshDestroy : MonoBehaviour
         for (var i = 0; i < parts.Count; i++)
         {
             parts[i].MakeGameobject(this);
-            var go = parts[i].GameObject;
+            var go = parts[i].newGameObject;
             go.name = i.ToString();
             //ComponentUtility.CopyAllComponents(gameObject, go);
 
@@ -256,7 +256,7 @@ public class MeshDestroy : MonoBehaviour
         public Vector3[] Normals;
         public int[][] Triangles;
         public Vector2[] UV;
-        public GameObject GameObject;
+        public GameObject newGameObject;
         public Bounds Bounds = new Bounds();
 
         public PartMesh()
@@ -302,10 +302,12 @@ public class MeshDestroy : MonoBehaviour
 
         public void MakeGameobject(MeshDestroy original)
         {
-            GameObject = new GameObject(original.name);
-            GameObject.transform.position = original.transform.position;
-            GameObject.transform.rotation = original.transform.rotation;
-            GameObject.transform.localScale = original.transform.localScale;
+            newGameObject = new GameObject(original.name);
+            //newGameObject = Instantiate(original.gameObject);
+
+            newGameObject.transform.position = original.transform.position;
+            newGameObject.transform.rotation = original.transform.rotation;
+            newGameObject.transform.localScale = original.transform.localScale;
 
             var mesh = new Mesh();
             mesh.name = original.GetComponent<MeshFilter>().mesh.name;
@@ -317,17 +319,19 @@ public class MeshDestroy : MonoBehaviour
                 mesh.SetTriangles(Triangles[i], i, true);
             Bounds = mesh.bounds;
 
-            var renderer = GameObject.AddComponent<MeshRenderer>();
-            renderer.materials = original.GetComponent<MeshRenderer>().materials;
+            var renderer = newGameObject.AddComponent<MeshRenderer>();
+            //renderer.materials = original.GetComponent<MeshRenderer>().materials;
+            renderer.sharedMaterials = original.GetComponent<MeshRenderer>().sharedMaterials;
 
-            var filter = GameObject.AddComponent<MeshFilter>();
+
+            var filter = newGameObject.AddComponent<MeshFilter>();
             filter.mesh = mesh;
 
-            var collider = GameObject.AddComponent<MeshCollider>();
+            var collider = newGameObject.AddComponent<MeshCollider>();
             collider.convex = true;
 
-            var rigidbody = GameObject.AddComponent<Rigidbody>();
-            var meshDestroy = GameObject.AddComponent<MeshDestroy>();
+            var rigidbody = newGameObject.AddComponent<Rigidbody>();
+            var meshDestroy = newGameObject.AddComponent<MeshDestroy>();
 
 
             meshDestroy.CutCascades = Mathf.Max(original.CutCascades / 2, 1);
@@ -337,7 +341,7 @@ public class MeshDestroy : MonoBehaviour
             meshDestroy.Exploded = true;
 
 
-            var destObj = GameObject.AddComponent<DestructibleObjects>();
+            var destObj = newGameObject.AddComponent<DestructibleObjects>();
             var dOriginal = original.GetComponent<DestructibleObjects>();
             
             destObj.volume = dOriginal.volume / 2;
@@ -347,7 +351,7 @@ public class MeshDestroy : MonoBehaviour
             destObj.surfaces = dOriginal.surfaces;
             destObj.waves = dOriginal.waves;
 
-            var destRend = GameObject.AddComponent<PickupInteractable>();
+            var destRend = newGameObject.AddComponent<PickupInteractable>();
             var origRend = original.GetComponent<PickupInteractable>();
 
             if(origRend != null)

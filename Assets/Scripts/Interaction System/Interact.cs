@@ -225,11 +225,12 @@ public class Interact : MonoBehaviour
         if(!_isHolding)
         {
 
-            SfxManager.Instance.PlaySFX("throwing");
+            
 
             //instantiates the marble
             if (marble != null)
             {
+                SfxManager.Instance.PlaySFX("throwing");
                 GameObject newMarble = Instantiate(marble, _pickupAnchor.transform.position, Quaternion.identity);
             }
             else
