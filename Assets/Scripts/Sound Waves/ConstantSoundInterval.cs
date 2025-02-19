@@ -77,8 +77,15 @@ public class ConstantSoundInterval : MonoBehaviour
 
         for(int i = 0; i < outlines.Count; i++)
         {
-
-            GetComponent<PermanentOutline>().DisableOutline();
+            if(TryGetComponent<PermanentOutline>(out PermanentOutline outline))
+            {
+                outline.DisableOutline();
+            }
+            else
+            {
+                Debug.LogWarning("Theres no outline");
+            }
+            
 
         }
 
