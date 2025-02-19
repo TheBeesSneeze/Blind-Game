@@ -88,7 +88,8 @@ public class MeshDestroy : MonoBehaviour
             subParts.Clear();
         }
 
-        for (var i = 0; i < parts.Count; i++)
+        // toby here, putting in a hardcap
+        for (var i = 0; i < parts.Count && i<=3; i++)
         {
             parts[i].MakeGameobject(this);
             var go = parts[i].newGameObject;

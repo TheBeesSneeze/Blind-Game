@@ -142,7 +142,7 @@ MonoBehaviour:
   volume: 1
   nameOfSfx: pottery breaking
   points: 1
-  minimumVelocity: 10
+  minimumVelocity: 7
   surfaces:
     serializedVersion: 2
     m_Bits: 983

@@ -37,8 +37,15 @@ public class DestructibleObjects : MonoBehaviour
     public void TryMeshDestruct(GameObject obj, Collision collision)
     {
         Rigidbody rb = obj.GetComponent<Rigidbody>();
-        if (rb == null || rb.velocity.magnitude < minimumVelocity)
+        if (rb == null)
             return;
+
+        Rigidbody otherrb = collision.gameObject.GetComponent<Rigidbody>();
+        // if neither object goin fast enough
+        if (rb.velocity.magnitude < minimumVelocity || (otherrb != null && otherrb.velocity.magnitude < minimumVelocity))
+        {
+            return;
+        }
 
         var md = obj.GetComponent<MeshDestroy>();
         if (md == null)
@@ -53,16 +60,13 @@ public class DestructibleObjects : MonoBehaviour
 
     private void MeshDestruct(GameObject obj, Collision collision, Rigidbody rb, MeshDestroy md)
     {
-
         SfxManager.Instance.PlaySFX(nameOfSfx);
         rb.collisionDetectionMode = CollisionDetectionMode.Discrete;
 
         float meshVolume = MeshVolumeCalculator.CalculateMeshVolume(obj.GetComponent<MeshCollider>());
-        Debug.Log(meshVolume);
-        Debug.Log(md.MinimumLivingPieceSize / 3);
         if (meshVolume < md.MinimumLivingPieceSize / 3)
         {
-            Debug.Log(gameObject.name + " too small to destroy");
+            Debug.Log(gameObject.name + " too small to destroy ("+meshVolume+")");
             Destroy(gameObject);
             return;
         }
@@ -95,6 +99,7 @@ public class DestructibleObjects : MonoBehaviour
 
             if(canBeDestroyedByMarble)
             {
+                SfxManager.Instance.PlaySFX(nameOfSfx);
                 var md2 = gameObject.GetComponent<MeshDestroy>();
                 if (md2 != null)
                 {
