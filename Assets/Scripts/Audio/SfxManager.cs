@@ -20,6 +20,9 @@ public class SfxManager : Singleton<SfxManager>
     {
         base.Awake();
 
+        _masterMixer.SetFloat("MarbleVolume", -80);
+
+
         //create audio components and set fields
         for (int i = 0; i < _SFXs.Count; i++)
         {
@@ -143,7 +146,7 @@ public class SfxManager : Singleton<SfxManager>
         {
             currentTime += Time.deltaTime;
             float newVol = Mathf.Lerp(0, 1, currentTime / SfxDelayFadeIn);
-            _masterMixer.SetFloat("MasterVolume", Mathf.Log(newVol) * 20);
+            _masterMixer.SetFloat("MarbleVolume", Mathf.Log(newVol) * 20);
             yield return null;
         }
     }
