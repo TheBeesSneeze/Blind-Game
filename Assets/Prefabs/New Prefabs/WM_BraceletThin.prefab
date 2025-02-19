@@ -957,7 +957,7 @@ Transform:
   - {fileID: 6881001882784622745}
   - {fileID: 7747427562841099959}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &5266918714880278560
 MeshCollider:
@@ -995,6 +995,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CutCascades: 3
   ExplodeForce: 5
+  Exploded: 0
   MinimumLivingPieceSize: 1
   DyingPieceLifetime: 0.5
 --- !u!114 &7382771852976278815
@@ -1010,11 +1011,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volume: 1
+  nameOfSfx: coin
   points: 1
   minimumVelocity: 10
   surfaces:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 983
   waves:
     MaxRadius: 1
     Lifetime: 5
@@ -1075,6 +1077,8 @@ MonoBehaviour:
   throwForce: 15
   outline: {fileID: 0}
   trailMaterial: {fileID: 2100000, guid: 9b19c8b90601cf8409d665532b4133a6, type: 2}
+  heldScaleMultiplier: 1
+  defaultRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!54 &3475898126005042299
 Rigidbody:
   m_ObjectHideFlags: 0

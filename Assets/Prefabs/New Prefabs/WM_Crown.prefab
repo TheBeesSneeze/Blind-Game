@@ -36,7 +36,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4352431144968720892
 MeshFilter:
@@ -45,7 +45,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7990081672787572522}
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: -3033727062268340128, guid: e173cc15f9f36d74485aa2b4fb57cd71, type: 3}
 --- !u!23 &5675499557777213897
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -125,6 +125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CutCascades: 3
   ExplodeForce: 5
+  Exploded: 0
   MinimumLivingPieceSize: 1
   DyingPieceLifetime: 0.5
 --- !u!114 &455019764675142340
@@ -140,11 +141,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volume: 1
+  nameOfSfx: tools breaking
   points: 1
   minimumVelocity: 10
   surfaces:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 983
   waves:
     MaxRadius: 1
     Lifetime: 5
@@ -206,6 +208,7 @@ MonoBehaviour:
   outline: {fileID: 0}
   trailMaterial: {fileID: 2100000, guid: 9b19c8b90601cf8409d665532b4133a6, type: 2}
   heldScaleMultiplier: 0.15
+  defaultRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!54 &8051621704318977339
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -260,7 +260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79894c8ae703434991e268a432d8c46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: 10
+  volume: 0
   nameOfSfx: pottery breaking
   points: 10
   minimumVelocity: 1
@@ -343,7 +343,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   throwForce: 10
+  outline: {fileID: 0}
   trailMaterial: {fileID: 2100000, guid: c8ff10812fc546447a4ee64796e8bea5, type: 2}
+  heldScaleMultiplier: 1
+  defaultRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &-833940163368688767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -376,6 +379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CutCascades: 1
   ExplodeForce: 0
+  Exploded: 0
   MinimumLivingPieceSize: 0
   DyingPieceLifetime: 0
 --- !u!64 &-1756758429654124094
@@ -385,7 +389,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6050096065034303750}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 66849e18278d9ee4ba7fd7a9ccf40e74, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
