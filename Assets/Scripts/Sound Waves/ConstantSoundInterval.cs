@@ -25,6 +25,7 @@ public class ConstantSoundInterval : MonoBehaviour
     [Tooltip("Will activating this end the game?")]
     public bool FinalActivation;
 
+    [ShowIf("FinalActivation")]
     [Tooltip("Put the game's ending here! Or something. I don't know.")]
     public GameObject Ending;
 
@@ -50,8 +51,11 @@ public class ConstantSoundInterval : MonoBehaviour
         {
 
             //end the game here
-            Ending.SetActive(true);
-            Time.timeScale = 0;
+            if(Ending != null)
+                Ending.SetActive(true);
+            else
+                Debug.LogError("Ending canvas not in "+gameObject.name);
+            //Time.timeScale = 0;
 
         }
 
