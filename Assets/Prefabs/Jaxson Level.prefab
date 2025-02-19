@@ -19547,25 +19547,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: WM_WidePot
       objectReference: {fileID: 0}
-    - target: {fileID: 5121549837890305667, guid: a4bca77dfdc3fe44ca7aad67a91bb1e8, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 5532188354437853001, guid: a4bca77dfdc3fe44ca7aad67a91bb1e8, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: b8b255f974321454e8638d7ca45be98e, type: 2}
+      objectReference: {fileID: 2100000, guid: a8dd1ec8cf9884843afb5c6871fdb7c0, type: 2}
     - target: {fileID: 6512554810007101723, guid: a4bca77dfdc3fe44ca7aad67a91bb1e8, type: 3}
       propertyPath: m_RootOrder
       value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6512554810007101723, guid: a4bca77dfdc3fe44ca7aad67a91bb1e8, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.3853562
-      objectReference: {fileID: 0}
-    - target: {fileID: 6512554810007101723, guid: a4bca77dfdc3fe44ca7aad67a91bb1e8, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.3853562
       objectReference: {fileID: 0}
     - target: {fileID: 6512554810007101723, guid: a4bca77dfdc3fe44ca7aad67a91bb1e8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19610,28 +19598,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1337634265749205647, guid: a4bca77dfdc3fe44ca7aad67a91bb1e8, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2514514416475077126}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4bca77dfdc3fe44ca7aad67a91bb1e8, type: 3}
---- !u!1 &2827992748153335897 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1337634265749205647, guid: a4bca77dfdc3fe44ca7aad67a91bb1e8, type: 3}
-  m_PrefabInstance: {fileID: 3868371270748881622}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2514514416475077126
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2827992748153335897}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66d8824f153d364468d577f268a3ed04, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &8056386906162488269 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6512554810007101723, guid: a4bca77dfdc3fe44ca7aad67a91bb1e8, type: 3}
