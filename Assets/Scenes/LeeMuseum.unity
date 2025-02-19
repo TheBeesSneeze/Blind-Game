@@ -20144,6 +20144,14 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 447462096}
+    - target: {fileID: 3151531959649516630, guid: 7cb4c9c604ddf5f40acc40d798fcb1cf, type: 3}
+      propertyPath: m_Size.y
+      value: 4.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3151531959649516630, guid: 7cb4c9c604ddf5f40acc40d798fcb1cf, type: 3}
+      propertyPath: m_Center.y
+      value: 1.625
+      objectReference: {fileID: 0}
     - target: {fileID: 3245718017936659873, guid: 7cb4c9c604ddf5f40acc40d798fcb1cf, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -20288,6 +20296,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1984053333}
+    - target: {fileID: 7113255686856280659, guid: 7cb4c9c604ddf5f40acc40d798fcb1cf, type: 3}
+      propertyPath: wave.IsPerpetualSound
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7318796554473856629, guid: 7cb4c9c604ddf5f40acc40d798fcb1cf, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -37271,6 +37283,10 @@ PrefabInstance:
       propertyPath: m_VersionIndex
       value: 2581
       objectReference: {fileID: 0}
+    - target: {fileID: 2173914041142247498, guid: 74f95e6bb1cfe46488e1d88258a41edb, type: 3}
+      propertyPath: wave.IsPerpetualSound
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2205548210043572436, guid: 74f95e6bb1cfe46488e1d88258a41edb, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -39019,6 +39035,10 @@ PrefabInstance:
       propertyPath: m_SelectedVertices.Array.data[3]
       value: 19
       objectReference: {fileID: 0}
+    - target: {fileID: 8581930710227472630, guid: 74f95e6bb1cfe46488e1d88258a41edb, type: 3}
+      propertyPath: wave.IsPerpetualSound
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8596792472526160475, guid: 74f95e6bb1cfe46488e1d88258a41edb, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -39618,6 +39638,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1376382300}
+    - target: {fileID: 3543908529184698020, guid: 0be93f76a93d8bd40887b4e5dae449da, type: 3}
+      propertyPath: wave.IsPerpetualSound
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3586789015692777817, guid: 0be93f76a93d8bd40887b4e5dae449da, type: 3}
       propertyPath: m_Name
       value: Jacob Level
@@ -39662,6 +39686,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1403272849}
+    - target: {fileID: 3906148394146334165, guid: 0be93f76a93d8bd40887b4e5dae449da, type: 3}
+      propertyPath: wave.IsPerpetualSound
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3922665529029755716, guid: 0be93f76a93d8bd40887b4e5dae449da, type: 3}
       propertyPath: m_Mesh
       value: 

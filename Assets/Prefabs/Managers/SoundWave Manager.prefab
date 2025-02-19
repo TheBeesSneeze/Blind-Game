@@ -31,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4108581476962720482
 MonoBehaviour:
@@ -88,7 +88,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c639e481f3b0414da492a78fde5a485, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: b8b255f974321454e8638d7ca45be98e, type: 2}
+  materials:
+  - {fileID: 2100000, guid: b8b255f974321454e8638d7ca45be98e, type: 2}
+  - {fileID: -876546973899608171, guid: a3297655d2374a842b3c9f9a94d504b9, type: 3}
+  - {fileID: 2100000, guid: a8dd1ec8cf9884843afb5c6871fdb7c0, type: 2}
   propertyPath: _PlayerPosition
-  shader: {fileID: -6465566751694194690, guid: 67e02297c7a22c64fa65655df5d9f6c7, type: 3}
   obj: {fileID: 0}
