@@ -21,7 +21,7 @@ public class MeshDestroy : MonoBehaviour
     public float ExplodeForce = 0;
     public bool Exploded = false;
 
-    [Range(0, 2f)]
+    [Range(0, 1f)]
     [Tooltip("How small pieces need to be to be marked for removal")] public float MinimumLivingPieceSize;
     [Range(0, 5f)]
     [Tooltip("Median time a piece stays before it disappears")] public float DyingPieceLifetime;

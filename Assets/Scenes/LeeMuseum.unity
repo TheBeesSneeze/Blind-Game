@@ -42798,6 +42798,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1758830200}
+    - target: {fileID: 5870463433327511123, guid: 0be93f76a93d8bd40887b4e5dae449da, type: 3}
+      propertyPath: MinimumLivingPieceSize
+      value: 0.456
+      objectReference: {fileID: 0}
     - target: {fileID: 5942885102346641102, guid: 0be93f76a93d8bd40887b4e5dae449da, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
