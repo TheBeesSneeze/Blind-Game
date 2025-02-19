@@ -34,43 +34,51 @@ public class DestructibleObjects : MonoBehaviour
     [Tooltip("Will the marble be able to destroy this object?")]
     public bool canBeDestroyedByMarble;
 
-    public void MeshDestruct(GameObject obj, Collision collision)
+    public void TryMeshDestruct(GameObject obj, Collision collision)
     {
+        Rigidbody rb = obj.GetComponent<Rigidbody>();
+        if (rb == null || rb.velocity.magnitude < minimumVelocity)
+            return;
+
         var md = obj.GetComponent<MeshDestroy>();
-        if(md != null)
+        if (md == null)
         {
-            Rigidbody rb = obj.GetComponent<Rigidbody>();
-            rb.collisionDetectionMode = CollisionDetectionMode.Discrete;
+            Debug.LogWarning("Could not destroy " + obj.name + " because there was no MeshDestroy script on it!");
 
-            SfxManager.Instance.PlaySFX(nameOfSfx);
-
-            float meshVolume = MeshVolumeCalculator.CalculateMeshVolume(obj.GetComponent<MeshCollider>());
-            if (meshVolume < md.MinimumLivingPieceSize / 2)
-            {
-                Debug.Log(gameObject.name + " too small to destroy");
-                Destroy(gameObject);
-                return;
-            }
-
-            if (rb != null && rb.velocity.magnitude >= minimumVelocity)
-            {
-                SfxManager.Instance.PlaySFX(nameOfSfx);
-
-                GetComponent<PickupInteractable>().outline.enabled = false;
-
-                md.DestroyMesh();
-                //Destroy(this.gameObject);
-
-                /*
-                var md2 = collision.gameObject.GetComponent<MeshDestroy>();
-                if(md2 != null)
-                {
-                    md2.DestroyMesh();
-                }
-                */
-            }
+            return;
         }
-        //Debug.LogWarning("Could not destroy " + obj.name + " because there was no MeshDestroy script on it!");
+
+        MeshDestruct(obj, collision, rb, md);
+    }
+
+    private void MeshDestruct(GameObject obj, Collision collision, Rigidbody rb, MeshDestroy md)
+    {
+
+        SfxManager.Instance.PlaySFX(nameOfSfx);
+        rb.collisionDetectionMode = CollisionDetectionMode.Discrete;
+
+        float meshVolume = MeshVolumeCalculator.CalculateMeshVolume(obj.GetComponent<MeshCollider>());
+        Debug.Log(meshVolume);
+        Debug.Log(md.MinimumLivingPieceSize / 3);
+        if (meshVolume < md.MinimumLivingPieceSize / 3)
+        {
+            Debug.Log(gameObject.name + " too small to destroy");
+            Destroy(gameObject);
+            return;
+        }
+
+        GetComponent<PickupInteractable>().outline.enabled = false;
+
+        md.DestroyMesh();
+        //Destroy(this.gameObject);
+
+        /*
+        var md2 = collision.gameObject.GetComponent<MeshDestroy>();
+        if(md2 != null)
+        {
+            md2.DestroyMesh();
+        }
+        */
     }
 
     public void OnCollisionEnter(Collision collision)
@@ -101,7 +109,7 @@ public class DestructibleObjects : MonoBehaviour
         If the layer is not in surfaces, the OR operation would modify surfaces, making the comparison false.*/
         if (surfaces == (surfaces | (1 << collision.gameObject.layer)))
         {
-            MeshDestruct(gameObject, collision);
+            TryMeshDestruct(gameObject, collision);
 
 
             //when object stops moving, disable light components
