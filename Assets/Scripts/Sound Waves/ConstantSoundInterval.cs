@@ -73,6 +73,8 @@ public class ConstantSoundInterval : MonoBehaviour
         // this stops the coroutine
         active = false;
 
+        wave.PlayAtPosition(transform.position);
+
         //outlines = GameObject.FindObjectsOfType<PermanentOutline>().ToList();
 
         //for(int i = 0; i < outlines.Count; i++)
@@ -85,7 +87,7 @@ public class ConstantSoundInterval : MonoBehaviour
         //    {
         //        Debug.LogWarning("Theres no outline");
         //    }
-            
+
 
         //}
 

@@ -29,8 +29,18 @@ public class ParticleCollider : MonoBehaviour
         if(other.GetComponent<PermanentOutline>() != null)
         {
 
-            Debug.Log("PROGRESS");
-            other.GetComponent<PermanentOutline>().EnabledOutline();
+            if(other.GetComponent<Outline>().enabled == false)
+            {
+
+                other.GetComponent<PermanentOutline>().EnabledOutline();
+
+            }
+            if (other.GetComponent<Outline>().enabled == true)
+            {
+
+                other.GetComponent<PermanentOutline>().DisableOutline();
+
+            }
 
         }
 
