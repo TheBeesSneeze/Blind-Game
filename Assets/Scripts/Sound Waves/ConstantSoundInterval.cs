@@ -73,21 +73,23 @@ public class ConstantSoundInterval : MonoBehaviour
         // this stops the coroutine
         active = false;
 
-        outlines = GameObject.FindObjectsOfType<PermanentOutline>().ToList();
+        wave.PlayAtPosition(transform.position);
 
-        for(int i = 0; i < outlines.Count; i++)
-        {
-            if(TryGetComponent<PermanentOutline>(out PermanentOutline outline))
-            {
-                outline.DisableOutline();
-            }
-            else
-            {
-                Debug.LogWarning("Theres no outline");
-            }
-            
+        //outlines = GameObject.FindObjectsOfType<PermanentOutline>().ToList();
 
-        }
+        //for(int i = 0; i < outlines.Count; i++)
+        //{
+        //    if(TryGetComponent<PermanentOutline>(out PermanentOutline outline))
+        //    {
+        //        outline.DisableOutline();
+        //    }
+        //    else
+        //    {
+        //        Debug.LogWarning("Theres no outline");
+        //    }
+
+
+        //}
 
     }
 

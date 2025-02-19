@@ -10,7 +10,7 @@ public class PermanentOutline : MonoBehaviour
 
     Rigidbody rb;
 
-    Outline outline;
+    public Outline outline;
 
     private void Start()
     {
@@ -27,7 +27,7 @@ public class PermanentOutline : MonoBehaviour
 
     }
 
-    public void OnParticleCollision(GameObject other)
+    public void EnabledOutline()
     {
 
         outline.enabled = true;
