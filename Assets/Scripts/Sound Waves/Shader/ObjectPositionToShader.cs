@@ -27,4 +27,11 @@ public class ObjectPositionToShader : MonoBehaviour
             if(material != null)
                 material.SetVector(propertyPath, obj.position);
     }
+
+    private void OnDisable()
+    {
+        foreach (Material material in materials)
+            if (material != null)
+                material.SetVector(propertyPath, Vector3.zero);
+    }
 }

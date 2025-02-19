@@ -40,5 +40,5 @@ Material:
     m_Floats: []
     m_Colors:
     - _Base_Color: {r: 0.31719476, g: 0.8301887, b: 0.79636496, a: 1}
-    - _PlayerPosition: {r: -20.579554, g: -2.8955622, b: -9.344419, a: 0}
+    - _PlayerPosition: {r: -11.480884, g: -2.8955624, b: -3.7438772, a: 0}
   m_BuildTextureStacks: []

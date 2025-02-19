@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Pickup Halftone
+  m_Name: Constant Sound Halftone
   m_Shader: {fileID: -6465566751694194690, guid: 67e02297c7a22c64fa65655df5d9f6c7, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -54,9 +54,9 @@ Material:
     - _USE_SCREEN_SPACE: 0
     - _Waveyness: 0.5
     m_Colors:
-    - _Base_Color: {r: 0.23538621, g: 0.6078484, b: 0.8207547, a: 1}
+    - _Base_Color: {r: 0.81960785, g: 0.6943571, b: 0.23529409, a: 1}
     - _PlayerPosition: {r: 0, g: 0, b: 0, a: 0}
-    - _Shaded_Color: {r: 0.23780702, g: 0.41658798, b: 0.754717, a: 1}
+    - _Shaded_Color: {r: 0.8679245, g: 0.5576839, b: 0.22435024, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &260684817888122058
 MonoBehaviour:
