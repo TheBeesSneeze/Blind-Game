@@ -36,7 +36,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8673689089234061521
 MeshFilter:
@@ -124,6 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CutCascades: 1
   ExplodeForce: 0
+  Exploded: 0
   MinimumLivingPieceSize: 0
   DyingPieceLifetime: 0
 --- !u!114 &-6785032116734111963
@@ -138,15 +139,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79894c8ae703434991e268a432d8c46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: 10
+  volume: 0
+  nameOfSfx: 
   points: 10
-  minimumVelocity: 1
+  minimumVelocity: 0.7
   surfaces:
     serializedVersion: 2
     m_Bits: 192
   waves:
     MaxRadius: 10
     Lifetime: 15
+    PlayMultipleWaves: 0
+    NumberOfWaves: 1
+    SecondsBetweenWaves: 0.25
     ColorOverLifetime:
       serializedVersion: 2
       key0: {r: 1, g: 1, b: 1, a: 1}
@@ -201,7 +206,9 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
+    IsPerpetualSound: 0
     sound: {fileID: 0}
+  canBeDestroyedByMarble: 0
 --- !u!114 &351348663048506111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,7 +222,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   throwForce: 10
+  outline: {fileID: 0}
   trailMaterial: {fileID: 2100000, guid: c8ff10812fc546447a4ee64796e8bea5, type: 2}
+  heldScaleMultiplier: 1
+  defaultRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &7020718060809236112
 MonoBehaviour:
   m_ObjectHideFlags: 0
