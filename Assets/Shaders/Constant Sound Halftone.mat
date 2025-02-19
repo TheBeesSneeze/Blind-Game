@@ -42,13 +42,13 @@ Material:
     m_Ints: []
     m_Floats:
     - _Circle_Density: 5
-    - _Distance_For_Opacity: 7
+    - _Distance_For_Opacity: 6.5
     - _Falloff_Threshold: 2.5
     - _Lit_Threshold: 1
     - _Opacity_Falloff: 1
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Rotation: 0
+    - _Rotation: 31.94
     - _Shading_Multiplier: 0.1
     - _Softness: 0
     - _USE_SCREEN_SPACE: 0
