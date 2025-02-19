@@ -143,7 +143,7 @@ MonoBehaviour:
   volume: 1
   nameOfSfx: big pottery
   points: 1
-  minimumVelocity: 10
+  minimumVelocity: 7
   surfaces:
     serializedVersion: 2
     m_Bits: 983
@@ -248,3 +248,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66d8824f153d364468d577f268a3ed04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outline: {fileID: 0}
