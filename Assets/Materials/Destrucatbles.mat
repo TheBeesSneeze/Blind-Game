@@ -8,8 +8,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Destrucatbles
-  m_Shader: {fileID: -6465566751694194690, guid: 67e02297c7a22c64fa65655df5d9f6c7, type: 3}
-  m_Parent: {fileID: 2100000, guid: b8b255f974321454e8638d7ca45be98e, type: 2}
+  m_Shader: {fileID: -6465566751694194690, guid: a3297655d2374a842b3c9f9a94d504b9, type: 3}
+  m_Parent: {fileID: 2100000, guid: abe971ab3d772f247802becb69762754, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []

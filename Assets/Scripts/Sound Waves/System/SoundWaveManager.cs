@@ -27,9 +27,9 @@ public class SoundWaveManager : Singleton<SoundWaveManager>
     /// <summary>
     /// Instantiates a new sound wave at specified position and destroys it after lifetime elapses
     /// </summary>
-    public void CreateSoundWaveAtPosition(Vector3 position, Gradient colorOverLifetime, float maxRadius = 1, float lifetime = 5, bool collision=false)
+    public void CreateSoundWaveAtPosition(Vector3 position, Gradient colorOverLifetime, float maxRadius, float lifetime, bool collision)
     {
-        ParticleSystem particle = InstantiateSoundWave(position, colorOverLifetime, maxRadius, lifetime);
+        ParticleSystem particle = InstantiateSoundWave(position, colorOverLifetime, maxRadius, lifetime, collision);
         particle.Play(false);
 
         if (particle.transform.parent != null)
@@ -59,9 +59,9 @@ public class SoundWaveManager : Singleton<SoundWaveManager>
     /// <summary>
     /// Instantiates a new sound wave at specified position and destroys it after lifetime elapses
     /// </summary>
-    public void CreateSoundWaveAtPosition(Vector3 position, float maxRadius = 1, float lifetime = 5)
+    public void CreateSoundWaveAtPosition(Vector3 position, float maxRadius, float lifetime, bool collision)
     {
-        CreateSoundWaveAtPosition(position, DefaultGradient, maxRadius, lifetime);
+        CreateSoundWaveAtPosition(position, DefaultGradient, maxRadius, lifetime, collision);
     }
 
     public static void DrawSoundWaveGizmos(Vector3 position, SoundWaveProperties wave)

@@ -13,10 +13,15 @@ public class SfxManager : Singleton<SfxManager>
 {
     [SerializeField] private List<SFX> _SFXs = new List<SFX>();
     [SerializeField] private AudioMixer _masterMixer;
+    [SerializeField] private float SfxDelayOnAwake;
+    [SerializeField] private float SfxDelayFadeIn;
 
     protected override void Awake()
     {
         base.Awake();
+
+        _masterMixer.SetFloat("MarbleVolume", -80);
+
 
         //create audio components and set fields
         for (int i = 0; i < _SFXs.Count; i++)
@@ -33,6 +38,9 @@ public class SfxManager : Singleton<SfxManager>
             _SFXs[i].source.clip = _SFXs[i].clips[0];
 
         }
+
+        //make master mixer volume fade in
+        StartCoroutine(FadeInMaster());
     }
 
     #region playing sfx functions
@@ -43,6 +51,11 @@ public class SfxManager : Singleton<SfxManager>
     /// <param name="name"></param>
     public void PlaySFX(string name)
     {
+        if(!_SFXs.Exists(i => i.name == name))
+        {
+            Debug.LogError("No soundeffect exists with name: " + name);
+            return;
+        }
         SFX sfx = _SFXs[_SFXs.FindIndex(i => i.name == name)];
         sfx.source.clip = sfx.clips[UnityEngine.Random.Range(0, sfx.clips.Length)];
         sfx.source.volume = sfx.maxVolume;
@@ -118,6 +131,24 @@ public class SfxManager : Singleton<SfxManager>
     public void SetMixerVolume(float volume, string mixerName)
     {
         _masterMixer.SetFloat(mixerName,  Mathf.Log(volume) * 20);
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
+    private IEnumerator FadeInMaster()
+    {
+        yield return new WaitForSeconds(SfxDelayOnAwake);
+
+        float currentTime = 0;
+        while (currentTime < SfxDelayFadeIn)
+        {
+            currentTime += Time.deltaTime;
+            float newVol = Mathf.Lerp(0, 1, currentTime / SfxDelayFadeIn);
+            _masterMixer.SetFloat("MarbleVolume", Mathf.Log(newVol) * 20);
+            yield return null;
+        }
     }
 
     #endregion

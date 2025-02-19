@@ -36,7 +36,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3491580896559189009
 MeshFilter:
@@ -66,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5758955834144789715, guid: 50ecbf37ee64434419a2dd8ab3af4684, type: 3}
+  - {fileID: 2100000, guid: a8dd1ec8cf9884843afb5c6871fdb7c0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -123,9 +123,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CutCascades: 3
-  ExplodeForce: 26.9
-  MinimumLivingPieceSize: 0.216
-  DyingPieceLifetime: 1.08
+  ExplodeForce: 5
+  Exploded: 0
+  MinimumLivingPieceSize: 1
+  DyingPieceLifetime: 0.5
 --- !u!114 &4305745124662013289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,11 +140,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volume: 1
+  nameOfSfx: tools breaking
   points: 1
   minimumVelocity: 10
   surfaces:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 983
   waves:
     MaxRadius: 1
     Lifetime: 5
@@ -201,8 +203,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2e1293c5ef149842bb92af99bccf3a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwForce: 25
-  trailMaterial: {fileID: 2100000, guid: c8ff10812fc546447a4ee64796e8bea5, type: 2}
+  throwForce: 15
+  outline: {fileID: 0}
+  trailMaterial: {fileID: 2100000, guid: 9b19c8b90601cf8409d665532b4133a6, type: 2}
+  heldScaleMultiplier: 1
+  defaultRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!54 &5118441131830286692
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -17,6 +17,8 @@ public class PauseMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GetComponent<CanvasGroup>().alpha = 1.0f;
+
         InputEvents.PauseCanceled.AddListener(TogglePaused);
         InputEvents.PauseStarted.AddListener(OnEscPressed);
 

@@ -40,7 +40,16 @@ public class MainMenuOpacity : MonoBehaviour
         timeOfClick = -10000;
     }
 
-    void OnClick()
+    /// <summary>
+    /// Called when main menu -> credits / htp
+    /// </summary>
+    public void HideAll()
+    {
+        group.alpha = 0;
+        timeOfClick = -10000;
+    }
+
+    public void OnClick()
     {
         if (group.alpha <= 0)
         {
@@ -59,25 +68,34 @@ public class MainMenuOpacity : MonoBehaviour
 
     void RandomizeItemLocation(RectTransform item)
     {
-        float x = Random.Range(-WIDTH/4, WIDTH/4);
-        float y = Random.Range(-HEIGHT/4, HEIGHT/4);
+        float x = Random.Range(-WIDTH/5, WIDTH/5);
+        float y = Random.Range(-HEIGHT/5, HEIGHT/5);
         item.anchoredPosition = new Vector2(x,y);
     }
 
+    /// <summary>
+    /// Awesome O(n^3+) algorithm that can potentially run forever i think
+    /// </summary>
     private void ValidateComponentDistances()
     {
         bool complete = true;
+        float distance;
         while (complete)
         {
             complete = true;
+
+
+
             for (int i = 0; i < itemsToRandomize.Length; i++)
             {
+                // Title is seperate from buttons
+
                 for (int j = 0; j < itemsToRandomize.Length; j++)
                 {
                     if (i == j)
                         continue;
 
-                    float distance = Vector3.Distance(itemsToRandomize[i].position, itemsToRandomize[j].position);
+                    distance = Vector3.Distance(itemsToRandomize[i].position, itemsToRandomize[j].position);
 
                     // if two components are too close
                     if (distance < minDistanceBetweenComponents)

@@ -22,6 +22,12 @@ public class ConstantSoundInterval : MonoBehaviour
 
     private List<PermanentOutline> outlines = new List<PermanentOutline>();
 
+    [Tooltip("Will activating this end the game?")]
+    public bool FinalActivation;
+
+    [Tooltip("Put the game's ending here! Or something. I don't know.")]
+    public GameObject Ending;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +45,24 @@ public class ConstantSoundInterval : MonoBehaviour
         active = true;
 
         wave.PlayAtPosition(transform.position);
+
+        if(FinalActivation)
+        {
+
+            //end the game here
+            Ending.SetActive(true);
+            Time.timeScale = 0;
+
+        }
+
+        //outlines = GameObject.FindObjectsOfType<PermanentOutline>().ToList();
+
+        //for (int i = 0; i < outlines.Count; i++)
+        //{
+
+        //    GetComponent<PermanentOutline>().EnableOutline();
+
+        //}
     }
 
     public void Deactivate()
@@ -53,8 +77,15 @@ public class ConstantSoundInterval : MonoBehaviour
 
         for(int i = 0; i < outlines.Count; i++)
         {
-
-            GetComponent<PermanentOutline>().DisableOutline();
+            if(TryGetComponent<PermanentOutline>(out PermanentOutline outline))
+            {
+                outline.DisableOutline();
+            }
+            else
+            {
+                Debug.LogWarning("Theres no outline");
+            }
+            
 
         }
 

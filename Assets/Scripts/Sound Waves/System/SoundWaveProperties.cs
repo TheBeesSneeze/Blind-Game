@@ -55,7 +55,7 @@ public class SoundWaveProperties
     [Tooltip("Size of the particle sphere")]
     public AnimationCurve sizeOverLifetime = new AnimationCurve();
 
-    public bool IsPerpetualSound=false;
+    public bool IsPerpetualSound;
 
     [Tooltip("Plays nothing if null. Clip that plays when sound wave is created.")]
     public AudioClip sound;

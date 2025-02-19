@@ -56,7 +56,7 @@ Material:
     - _ZWrite: 0
     - _ZWriteControl: 0
     m_Colors:
-    - _Intersection_Color: {r: 6.4983425, g: 8.675369, b: 8.167955, a: 0.15686275}
+    - _Intersection_Color: {r: 6.4983425, g: 8.675369, b: 8.167955, a: 0.039215688}
     - _PlayerPosition: {r: 1.1070316, g: -0.97, b: -19.050991, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &6316938708454076450
