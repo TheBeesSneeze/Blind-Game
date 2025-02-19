@@ -11,7 +11,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: d1c3109bdb54ad54c8a2b2838528e640
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/LevelLayoutTest.unity
     guid: 1ff2e560b5bf4cc4dbc1f16681ba8e2e
+  - enabled: 1
+    path: Assets/Scenes/LeeMuseum.unity
+    guid: d96862f7e227bcd41a8f6596758be933
   m_configObjects: {}
