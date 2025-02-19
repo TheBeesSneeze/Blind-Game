@@ -39701,7 +39701,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2173914041142247498, guid: 74f95e6bb1cfe46488e1d88258a41edb, type: 3}
       propertyPath: wave.IsPerpetualSound
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2195606709728433057, guid: 74f95e6bb1cfe46488e1d88258a41edb, type: 3}
       propertyPath: m_Materials.Array.data[0]
