@@ -29647,12 +29647,56 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4873348098225383500, guid: 83aae8a7060f06c478cf8542ea390d25, type: 3}
-      propertyPath: SfxDelayFadeIn
-      value: 7
+      propertyPath: _SFXs.Array.data[0].source
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4873348098225383500, guid: 83aae8a7060f06c478cf8542ea390d25, type: 3}
-      propertyPath: SfxDelayOnAwake
-      value: 3
+      propertyPath: _SFXs.Array.data[1].source
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4873348098225383500, guid: 83aae8a7060f06c478cf8542ea390d25, type: 3}
+      propertyPath: _SFXs.Array.data[2].source
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4873348098225383500, guid: 83aae8a7060f06c478cf8542ea390d25, type: 3}
+      propertyPath: _SFXs.Array.data[3].source
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4873348098225383500, guid: 83aae8a7060f06c478cf8542ea390d25, type: 3}
+      propertyPath: _SFXs.Array.data[4].source
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4873348098225383500, guid: 83aae8a7060f06c478cf8542ea390d25, type: 3}
+      propertyPath: _SFXs.Array.data[5].source
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4873348098225383500, guid: 83aae8a7060f06c478cf8542ea390d25, type: 3}
+      propertyPath: _SFXs.Array.data[6].source
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4873348098225383500, guid: 83aae8a7060f06c478cf8542ea390d25, type: 3}
+      propertyPath: _SFXs.Array.data[7].source
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4873348098225383500, guid: 83aae8a7060f06c478cf8542ea390d25, type: 3}
+      propertyPath: _SFXs.Array.data[8].source
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4873348098225383500, guid: 83aae8a7060f06c478cf8542ea390d25, type: 3}
+      propertyPath: _SFXs.Array.data[9].source
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4873348098225383500, guid: 83aae8a7060f06c478cf8542ea390d25, type: 3}
+      propertyPath: _SFXs.Array.data[10].source
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4873348098225383500, guid: 83aae8a7060f06c478cf8542ea390d25, type: 3}
+      propertyPath: _SFXs.Array.data[11].source
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4873348098225383500, guid: 83aae8a7060f06c478cf8542ea390d25, type: 3}
+      propertyPath: _SFXs.Array.data[12].source
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5323583095523853322, guid: 83aae8a7060f06c478cf8542ea390d25, type: 3}
       propertyPath: m_Name
