@@ -13,6 +13,8 @@ public class SfxManager : Singleton<SfxManager>
 {
     [SerializeField] private List<SFX> _SFXs = new List<SFX>();
     [SerializeField] private AudioMixer _masterMixer;
+    [SerializeField] private float SfxDelayOnAwake;
+    [SerializeField] private float SfxDelayFadeIn;
 
     protected override void Awake()
     {
@@ -33,6 +35,9 @@ public class SfxManager : Singleton<SfxManager>
             _SFXs[i].source.clip = _SFXs[i].clips[0];
 
         }
+
+        //make master mixer volume fade in
+        StartCoroutine(FadeInMaster());
     }
 
     #region playing sfx functions
@@ -118,6 +123,24 @@ public class SfxManager : Singleton<SfxManager>
     public void SetMixerVolume(float volume, string mixerName)
     {
         _masterMixer.SetFloat(mixerName,  Mathf.Log(volume) * 20);
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
+    private IEnumerator FadeInMaster()
+    {
+        yield return new WaitForSeconds(SfxDelayOnAwake);
+
+        float currentTime = 0;
+        while (currentTime < SfxDelayFadeIn)
+        {
+            currentTime += Time.deltaTime;
+            float newVol = Mathf.Lerp(0, 1, currentTime / SfxDelayFadeIn);
+            _masterMixer.SetFloat("MasterVolume", Mathf.Log(newVol) * 20);
+            yield return null;
+        }
     }
 
     #endregion

@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4873348098225383500
 MonoBehaviour:
@@ -163,3 +163,5 @@ MonoBehaviour:
     doLoop: 0
     source: {fileID: 0}
   _masterMixer: {fileID: 24100000, guid: f50f0c234c0d7fd4f82756c476dd3e4e, type: 2}
+  SfxDelayOnAwake: 2
+  SfxDelayFadeIn: 2
