@@ -42,9 +42,14 @@ public class DestructibleObjects : MonoBehaviour
             Rigidbody rb = obj.GetComponent<Rigidbody>();
             rb.collisionDetectionMode = CollisionDetectionMode.Discrete;
 
-            if(MeshVolumeCalculator.CalculateMeshVolume(obj.GetComponent<MeshCollider>()) > md.MinimumLivingPieceSize / 2)
+            SfxManager.Instance.PlaySFX(nameOfSfx);
+
+            float meshVolume = MeshVolumeCalculator.CalculateMeshVolume(obj.GetComponent<MeshCollider>());
+            if (meshVolume < md.MinimumLivingPieceSize / 2)
             {
-                waves.PlayAtPosition(collision.GetContact(0).point, volume);
+                Debug.Log(gameObject.name + " too small to destroy");
+                Destroy(gameObject);
+                return;
             }
 
             if (rb != null && rb.velocity.magnitude >= minimumVelocity)
@@ -56,11 +61,13 @@ public class DestructibleObjects : MonoBehaviour
                 md.DestroyMesh();
                 //Destroy(this.gameObject);
 
+                /*
                 var md2 = collision.gameObject.GetComponent<MeshDestroy>();
                 if(md2 != null)
                 {
                     md2.DestroyMesh();
                 }
+                */
             }
         }
         //Debug.LogWarning("Could not destroy " + obj.name + " because there was no MeshDestroy script on it!");
@@ -68,7 +75,7 @@ public class DestructibleObjects : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.GetComponent<Marble>() != null && canBeDestroyedByMarble)
+        if (collision.gameObject.GetComponent<Marble>() != null)
         {
 
             //SfxManager.Instance.PlaySFX(nameOfSfx);
@@ -77,11 +84,16 @@ public class DestructibleObjects : MonoBehaviour
 
             //Destroy(this.gameObject);
             //Rigidbody rb = this.gameObject.GetComponent<Rigidbody>();
-            var md2 = gameObject.GetComponent<MeshDestroy>();
-            if (md2 != null)
+
+            if(canBeDestroyedByMarble)
             {
-                md2.DestroyMesh();
+                var md2 = gameObject.GetComponent<MeshDestroy>();
+                if (md2 != null)
+                {
+                    md2.DestroyMesh();
+                }
             }
+            
             return;
         }
 
