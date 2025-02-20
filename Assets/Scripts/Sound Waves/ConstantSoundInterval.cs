@@ -39,6 +39,23 @@ public class ConstantSoundInterval : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+
+        if (active && FinalActivation)
+        {
+
+            //end the game here
+            if (Ending != null)
+                Ending.SetActive(true);
+            else
+                Debug.LogError("Ending canvas not in " + gameObject.name);
+            //Time.timeScale = 0;
+
+        }
+
+    }
+
     public void Activate()
     {
         if (active)
@@ -46,7 +63,7 @@ public class ConstantSoundInterval : MonoBehaviour
 
         active = true;
 
-        StartCoroutine(playSoundWaveOverInterval());
+        //StartCoroutine(playSoundWaveOverInterval());
 
         wave.PlayAtPosition(transform.position);
 
@@ -73,26 +90,6 @@ public class ConstantSoundInterval : MonoBehaviour
         
         }
 
-        if(FinalActivation)
-        {
-
-            //end the game here
-            if(Ending != null)
-                Ending.SetActive(true);
-            else
-                Debug.LogError("Ending canvas not in "+gameObject.name);
-            //Time.timeScale = 0;
-
-        }
-
-        //outlines = newGameObject.FindObjectsOfType<PermanentOutline>().ToList();
-
-        //for (int i = 0; i < outlines.Count; i++)
-        //{
-
-        //    GetComponent<PermanentOutline>().EnableOutline();
-
-        //}
     }
 
     public void Deactivate()

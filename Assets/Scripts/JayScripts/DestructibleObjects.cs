@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(MeshCollider))]
-[RequireComponent(typeof(MeshDestroy))]
 public class DestructibleObjects : MonoBehaviour
 {
 
@@ -36,6 +35,9 @@ public class DestructibleObjects : MonoBehaviour
 
     public void TryMeshDestruct(GameObject obj, Collision collision)
     {
+        waves.PlayAtPosition(collision.contacts[0].point, volume);
+        SfxManager.Instance.PlaySFX(nameOfSfx);
+
         Rigidbody rb = obj.GetComponent<Rigidbody>();
         if (rb == null)
             return;
@@ -74,39 +76,14 @@ public class DestructibleObjects : MonoBehaviour
         GetComponent<PickupInteractable>().outline.enabled = false;
 
         md.DestroyMesh();
-        //Destroy(this.gameObject);
-
-        /*
-        var md2 = collision.gameObject.GetComponent<MeshDestroy>();
-        if(md2 != null)
-        {
-            md2.DestroyMesh();
-        }
-        */
     }
 
     public void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.GetComponent<Marble>() != null)
+        //A marble is hitting something that can be destroyed
+        if (canBeDestroyedByMarble && collision.gameObject.GetComponent<Marble>() != null )
         {
-
-            //SfxManager.Instance.PlaySFX(nameOfSfx);
-
-            waves.PlayAtPosition(collision.contacts[0].point, volume);
-
-            //Destroy(this.gameObject);
-            //Rigidbody rb = this.gameObject.GetComponent<Rigidbody>();
-
-            if(canBeDestroyedByMarble)
-            {
-                SfxManager.Instance.PlaySFX(nameOfSfx);
-                var md2 = gameObject.GetComponent<MeshDestroy>();
-                if (md2 != null)
-                {
-                    md2.DestroyMesh();
-                }
-            }
-            
+            TryMeshDestruct(gameObject, collision);
             return;
         }
 
@@ -115,20 +92,6 @@ public class DestructibleObjects : MonoBehaviour
         if (surfaces == (surfaces | (1 << collision.gameObject.layer)))
         {
             TryMeshDestruct(gameObject, collision);
-
-
-            //when object stops moving, disable light components
-            //if (rb.velocity.magnitude <= 5)
-            //{
-            //    PickupInteractable pi = GetComponent<PickupInteractable>();
-            //    if (pi != null)
-            //    {
-            //        pi.DisableLightComponets();
-            //    }
-            //} 
-        }
-
-        
+        }  
     }
-
 }
