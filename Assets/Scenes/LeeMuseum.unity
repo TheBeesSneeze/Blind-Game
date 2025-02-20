@@ -41527,7 +41527,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2173914041142247498, guid: 74f95e6bb1cfe46488e1d88258a41edb, type: 3}
       propertyPath: ActiveAtStart
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2173914041142247498, guid: 74f95e6bb1cfe46488e1d88258a41edb, type: 3}
       propertyPath: wave.IsPerpetualSound
@@ -43137,6 +43137,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 299743096}
+    - target: {fileID: 6721178365189908884, guid: 74f95e6bb1cfe46488e1d88258a41edb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6798239205323838428, guid: 74f95e6bb1cfe46488e1d88258a41edb, type: 3}
       propertyPath: m_Mesh
       value: 
