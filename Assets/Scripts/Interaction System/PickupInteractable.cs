@@ -17,7 +17,7 @@ public class PickupInteractable : MonoBehaviour, IInteractable
     private Vector3 defaultScale;
     [HideInInspector] public Quaternion defaultRotation;
 
-    [SerializeField] SoundWaveProperties CollisionSoundWave;
+    [SerializeField] SoundWaveProperties CollisionSoundWave = new SoundWaveProperties();
 
     private void Start()
     {
@@ -99,7 +99,8 @@ public class PickupInteractable : MonoBehaviour, IInteractable
     {
         foreach (ContactPoint contact in collision.contacts)
         {
-            CollisionSoundWave.PlayAtPosition(contact.point);
+            if(CollisionSoundWave!= null)
+                CollisionSoundWave.PlayAtPosition(contact.point);
         }
 
         

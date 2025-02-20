@@ -46,12 +46,17 @@ public class ConstantSoundInterval : MonoBehaviour
 
         active = true;
 
+        StartCoroutine(playSoundWaveOverInterval());
+
         wave.PlayAtPosition(transform.position);
 
         for(int i = 0; i < outlinedObjects.Count; i++)
         {
-
-            outlinedObjects[i].GetComponent<PermanentOutline>().EnabledOutline();
+            if (outlinedObjects[i].GetComponent<PermanentOutline>() != null)
+            {
+                outlinedObjects[i].GetComponent<PermanentOutline>().EnabledOutline();
+                outlinedObjects[i].GetComponent<Outline>().OutlineColor = Color.yellow;
+            }
 
         }
 
@@ -89,8 +94,8 @@ public class ConstantSoundInterval : MonoBehaviour
 
         for (int i = 0; i < outlinedObjects.Count; i++)
         {
-
-            outlinedObjects[i].GetComponent<PermanentOutline>().DisableOutline();
+            if(outlinedObjects[i].GetComponent<PermanentOutline>() != null)
+                outlinedObjects[i].GetComponent<PermanentOutline>().DisableOutline();
 
         }
 

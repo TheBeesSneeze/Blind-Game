@@ -42,7 +42,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Circle_Density: 5
-    - _Distance_For_Opacity: 6.5
+    - _Distance_For_Opacity: 11
     - _Falloff_Threshold: 2.5
     - _Lit_Threshold: 1
     - _Opacity_Falloff: 1

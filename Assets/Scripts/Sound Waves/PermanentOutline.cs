@@ -29,8 +29,8 @@ public class PermanentOutline : MonoBehaviour
 
     public void EnabledOutline()
     {
-
-        outline.enabled = true;
+        if(outline != null) 
+            outline.enabled = true;
 
     }
 

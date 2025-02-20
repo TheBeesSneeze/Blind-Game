@@ -54,7 +54,7 @@ Material:
     - _USE_SCREEN_SPACE: 0
     - _Waveyness: 0.5
     m_Colors:
-    - _Base_Color: {r: 0.24403705, g: 0.2684007, b: 0.2830189, a: 1}
+    - _Base_Color: {r: 0.24403697, g: 0.26840064, b: 0.28301883, a: 1}
     - _PlayerPosition: {r: 0, g: 0, b: 0, a: 0}
     - _Shaded_Color: {r: 0.16334994, g: 0.17551708, b: 0.1981132, a: 1}
   m_BuildTextureStacks: []
