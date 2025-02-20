@@ -43571,7 +43571,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8581930710227472630, guid: 74f95e6bb1cfe46488e1d88258a41edb, type: 3}
       propertyPath: wave.MaxRadius
-      value: 50
+      value: 23.2
       objectReference: {fileID: 0}
     - target: {fileID: 8581930710227472630, guid: 74f95e6bb1cfe46488e1d88258a41edb, type: 3}
       propertyPath: FinalActivation
