@@ -4850,9 +4850,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1685244819898480948, guid: ee128d26a7f78e64893843e72a170883, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1685244819898480948, guid: ee128d26a7f78e64893843e72a170883, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: -876546973899608171, guid: 67e02297c7a22c64fa65655df5d9f6c7, type: 3}
+      objectReference: {fileID: 2100000, guid: a8dd1ec8cf9884843afb5c6871fdb7c0, type: 2}
     - target: {fileID: 3288236944185581248, guid: ee128d26a7f78e64893843e72a170883, type: 3}
       propertyPath: m_Name
       value: WM_PitcherPot (5)
@@ -19197,9 +19201,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1685244819898480948, guid: ee128d26a7f78e64893843e72a170883, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1685244819898480948, guid: ee128d26a7f78e64893843e72a170883, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: -876546973899608171, guid: 67e02297c7a22c64fa65655df5d9f6c7, type: 3}
+      objectReference: {fileID: 2100000, guid: a8dd1ec8cf9884843afb5c6871fdb7c0, type: 2}
     - target: {fileID: 3288236944185581248, guid: ee128d26a7f78e64893843e72a170883, type: 3}
       propertyPath: m_Name
       value: WM_PitcherPot (6)
@@ -20131,7 +20139,15 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1685244819898480948, guid: ee128d26a7f78e64893843e72a170883, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1685244819898480948, guid: ee128d26a7f78e64893843e72a170883, type: 3}
       propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a8dd1ec8cf9884843afb5c6871fdb7c0, type: 2}
+    - target: {fileID: 1685244819898480948, guid: ee128d26a7f78e64893843e72a170883, type: 3}
+      propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: -876546973899608171, guid: 67e02297c7a22c64fa65655df5d9f6c7, type: 3}
     - target: {fileID: 3288236944185581248, guid: ee128d26a7f78e64893843e72a170883, type: 3}
@@ -34996,9 +35012,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1685244819898480948, guid: ee128d26a7f78e64893843e72a170883, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1685244819898480948, guid: ee128d26a7f78e64893843e72a170883, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: -876546973899608171, guid: 67e02297c7a22c64fa65655df5d9f6c7, type: 3}
+      objectReference: {fileID: 2100000, guid: a8dd1ec8cf9884843afb5c6871fdb7c0, type: 2}
     - target: {fileID: 3288236944185581248, guid: ee128d26a7f78e64893843e72a170883, type: 3}
       propertyPath: m_Name
       value: WM_PitcherPot (3)
@@ -36615,9 +36635,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1685244819898480948, guid: ee128d26a7f78e64893843e72a170883, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1685244819898480948, guid: ee128d26a7f78e64893843e72a170883, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: -876546973899608171, guid: 67e02297c7a22c64fa65655df5d9f6c7, type: 3}
+      objectReference: {fileID: 2100000, guid: a8dd1ec8cf9884843afb5c6871fdb7c0, type: 2}
     - target: {fileID: 3288236944185581248, guid: ee128d26a7f78e64893843e72a170883, type: 3}
       propertyPath: m_Name
       value: WM_PitcherPot (7)
