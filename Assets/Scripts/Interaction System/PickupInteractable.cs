@@ -17,6 +17,8 @@ public class PickupInteractable : MonoBehaviour, IInteractable
     private Vector3 defaultScale;
     [HideInInspector] public Quaternion defaultRotation;
 
+    [SerializeField] SoundWaveProperties CollisionSoundWave;
+
     private void Start()
     {
         defaultScale = transform.lossyScale;
@@ -91,6 +93,16 @@ public class PickupInteractable : MonoBehaviour, IInteractable
     {
         outline.enabled = false;
         //trailRenderer.enabled = false;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        foreach (ContactPoint contact in collision.contacts)
+        {
+            CollisionSoundWave.PlayAtPosition(contact.point);
+        }
+
+        
     }
 
     #region debug
