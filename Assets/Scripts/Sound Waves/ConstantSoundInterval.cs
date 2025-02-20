@@ -51,7 +51,7 @@ public class ConstantSoundInterval : MonoBehaviour
         for(int i = 0; i < outlinedObjects.Count; i++)
         {
 
-            outlinedObjects[i].GetComponent<PermanentOutline>().EnabledOutline();
+            outlinedObjects[i].GetComponent<Outline>().enabled = true;
 
         }
 
@@ -90,7 +90,7 @@ public class ConstantSoundInterval : MonoBehaviour
         for (int i = 0; i < outlinedObjects.Count; i++)
         {
 
-            outlinedObjects[i].GetComponent<PermanentOutline>().DisableOutline();
+            outlinedObjects[i].GetComponent<Outline>().enabled = false;
 
         }
 
