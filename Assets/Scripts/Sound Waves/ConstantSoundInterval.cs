@@ -52,17 +52,25 @@ public class ConstantSoundInterval : MonoBehaviour
 
         for(int i = 0; i < outlinedObjects.Count; i++)
         {
-            if (outlinedObjects[i].GetComponent<PermanentOutline>() != null)
+
+            if (outlinedObjects[i] != null)
             {
-                outlinedObjects[i].GetComponent<PermanentOutline>().EnabledOutline();
-            }
+
+                if (outlinedObjects[i].GetComponent<PermanentOutline>() != null)
+                {
+                    outlinedObjects[i].GetComponent<PermanentOutline>().EnabledOutline();
+                }
 
                 if (outlinedObjects[i].GetComponent<Outline>() != null)
-            {
-                                outlinedObjects[i].GetComponent<Outline>().OutlineColor = Color.yellow;
+                {
 
-            outlinedObjects[i].GetComponent<Outline>().enabled = true;
+                    outlinedObjects[i].GetComponent<Outline>().OutlineColor = Color.yellow;
+
+                    outlinedObjects[i].GetComponent<Outline>().enabled = true;
+                }
+
             }
+        
         }
 
         if(FinalActivation)
