@@ -6243,26 +6243,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3296650426830226506, guid: 774f3d8cc9528ef4c9b38caef8f2d8c0, type: 3}
-      propertyPath: materials.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3296650426830226506, guid: 774f3d8cc9528ef4c9b38caef8f2d8c0, type: 3}
-      propertyPath: materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a8dd1ec8cf9884843afb5c6871fdb7c0, type: 2}
-    - target: {fileID: 3296650426830226506, guid: 774f3d8cc9528ef4c9b38caef8f2d8c0, type: 3}
-      propertyPath: materials.Array.data[1]
-      value: 
-      objectReference: {fileID: 2100000, guid: ee28d9be54fedb2498036ccd30712dac, type: 2}
-    - target: {fileID: 3296650426830226506, guid: 774f3d8cc9528ef4c9b38caef8f2d8c0, type: 3}
-      propertyPath: materials.Array.data[2]
-      value: 
-      objectReference: {fileID: 2100000, guid: 9b3057a380b58fd498364f2186609db9, type: 2}
-    - target: {fileID: 3296650426830226506, guid: 774f3d8cc9528ef4c9b38caef8f2d8c0, type: 3}
-      propertyPath: materials.Array.data[3]
-      value: 
-      objectReference: {fileID: 2100000, guid: a8dd1ec8cf9884843afb5c6871fdb7c0, type: 2}
     - target: {fileID: 9179949463330598672, guid: 774f3d8cc9528ef4c9b38caef8f2d8c0, type: 3}
       propertyPath: m_Name
       value: SoundWave Manager

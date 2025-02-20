@@ -198,6 +198,11 @@ public class Interact : MonoBehaviour
     /// </summary>
     public void ThrowObj()
     {
+        if(Time.timeScale == 0)
+        {
+            return;
+        }
+
         if(_isHolding)
         {
             _isHolding = false;
