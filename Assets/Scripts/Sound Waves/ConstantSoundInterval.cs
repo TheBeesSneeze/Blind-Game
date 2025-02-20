@@ -63,9 +63,9 @@ public class ConstantSoundInterval : MonoBehaviour
 
         active = true;
 
-        //StartCoroutine(playSoundWaveOverInterval());
+        StartCoroutine(playSoundWaveOverInterval());
 
-        wave.PlayAtPosition(transform.position);
+        //wave.PlayAtPosition(transform.position);
 
         for(int i = 0; i < outlinedObjects.Count; i++)
         {
@@ -144,7 +144,7 @@ public class ConstantSoundInterval : MonoBehaviour
         {
             wave.PlayAtPosition(transform.position);
 
-            yield return new WaitForSeconds(secondsBetweenSoundWaves);
+            yield return new WaitForSeconds(secondsBetweenSoundWaves * 4);
         }
     }
 
